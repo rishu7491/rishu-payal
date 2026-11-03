@@ -39,5 +39,5 @@ Kesin komut parçacıkları ve tekrarlanabilir çekme süreci için [`docs/busin
 
 ## Buradan Sponsor Olun
 
-- GitHub Sponsors: [https://github.com/sponsors/affaan-m](https://github.com/sponsors/affaan-m)
+- GitHub Sponsors: [https://github.com/sponsors/rishu7491](https://github.com/sponsors/rishu7491)
 - Proje sitesi: [https://ecc.tools](https://ecc.tools)

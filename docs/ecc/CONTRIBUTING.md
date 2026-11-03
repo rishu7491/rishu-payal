@@ -56,7 +56,7 @@ Slash commands that invoke useful workflows:
 
 ```bash
 # 1. Fork and clone
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 
 # 2. Create a branch
@@ -560,8 +560,8 @@ Never move or re-tag a published version; ship a new patch version instead.
 
 ## Questions?
 
-- **Issues:** [github.com/affaan-m/ECC/issues](https://github.com/affaan-m/ECC/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Issues:** [github.com/rishu7491/rishu-payal/issues](https://github.com/rishu7491/rishu-payal/issues)
+- **X/Twitter:** [@rishu7491](https://x.com/rishu7491)
 
 ---
 

@@ -43,7 +43,7 @@ ECCでセキュリティ脆弱性を発見した場合は、責任ある方法�
 - あなたのマシンで実行されるフックスクリプト
 - インストール/アンインストール/修復ライフサイクルスクリプト
 - ECCに同梱されるMCP設定
-- AgentShieldセキュリティスキャナー（[github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)）
+- AgentShieldセキュリティスキャナー（[github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)）
 
 ## 運用ガイダンス
 

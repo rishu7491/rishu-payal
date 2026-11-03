@@ -5,7 +5,7 @@ This path is for a new contributor who wants to verify the release surface befor
 ## Clone
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 ```
 

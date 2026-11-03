@@ -208,7 +208,7 @@ So the rule is simple:
 
 ## Related Work
 
-- [Issue #1186](https://github.com/affaan-m/ECC/issues/1186)
-- [Discussion #1077](https://github.com/affaan-m/ECC/discussions/1077)
+- [Issue #1186](https://github.com/rishu7491/rishu-payal/issues/1186)
+- [Discussion #1077](https://github.com/rishu7491/rishu-payal/discussions/1077)
 - [Antigravity Guide](./ANTIGRAVITY-GUIDE.md)
 - [Troubleshooting](./TROUBLESHOOTING.md)

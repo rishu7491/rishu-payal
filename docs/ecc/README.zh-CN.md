@@ -1,8 +1,8 @@
 # ECC
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/stargazers)
+[![Forks](https://img.shields.io/github/forks/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/network/members)
+[![Contributors](https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/graphs/contributors)
 [![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
@@ -45,17 +45,17 @@
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://x.com/rishu7491/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://x.com/rishu7491/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://x.com/rishu7491/status/2033263813387223421">
 <img src="./assets/images/security/security-guide-header.png" alt="The Shorthand Guide to Everything Agentic Security" />
 </a>
 </td>
@@ -139,7 +139,7 @@ command -v ecc-memory-mcp
 
 ```bash
 # 添加市场
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # 安装插件
 /plugin install ecc@ecc
@@ -157,7 +157,7 @@ command -v ecc-memory-mcp
 
 ```bash
 # 首先克隆仓库
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 # 安装依赖（选择你常用的包管理器）
@@ -534,9 +534,9 @@ npx ecc-agentshield init
 
 **输出格式：** 终端（彩色等级 A-F）、JSON（CI 流水线）、Markdown、HTML。发现严重问题时返回退出码 2，可用于构建门禁。
 
-在 Claude Code 中使用 `/security-scan` 运行，或通过 [GitHub Action](https://github.com/affaan-m/agentshield) 集成到 CI。
+在 Claude Code 中使用 `/security-scan` 运行，或通过 [GitHub Action](https://github.com/rishu7491/agentshield) 集成到 CI。
 
-[GitHub](https://github.com/affaan-m/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
+[GitHub](https://github.com/rishu7491/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
 
 ### 持续学习 v2
 
@@ -575,7 +575,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 检测到重复的钩子文件：./hooks/hooks.json 指向已加载的文件
 ```
 
-**历史说明**：该问题曾在本仓库中引发多次「修复-回滚」循环（[#29](https://github.com/affaan-m/ECC/issues/29)、[#52](https://github.com/affaan-m/ECC/issues/52)、[#103](https://github.com/affaan-m/ECC/issues/103)）。因 Claude Code 版本间行为变更导致混淆，现已添加回归测试，防止该问题再次出现。
+**历史说明**：该问题曾在本仓库中引发多次「修复-回滚」循环（[#29](https://github.com/rishu7491/rishu-payal/issues/29)、[#52](https://github.com/rishu7491/rishu-payal/issues/52)、[#103](https://github.com/rishu7491/rishu-payal/issues/103)）。因 Claude Code 版本间行为变更导致混淆，现已添加回归测试，防止该问题再次出现。
 
 ---
 
@@ -587,7 +587,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 
 ```bash
 # 将此仓库添加为市场
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # 安装插件
 /plugin install ecc@ecc
@@ -601,7 +601,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "rishu7491/rishu-payal"
       }
     }
   },
@@ -617,7 +617,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 >
 > ```bash
 > # 首先克隆仓库
-> git clone https://github.com/affaan-m/ECC.git
+> git clone https://github.com/rishu7491/rishu-payal.git
 >
 > # 方案 A：用户级规则（对所有项目生效）
 > mkdir -p ~/.claude/rules
@@ -641,7 +641,7 @@ Claude Code v2.1+ 会**按照约定自动加载**已安装插件中的 `hooks/ho
 
 ```bash
 # 克隆仓库
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 
 # 将智能体文件复制到 Claude 配置目录
 cp ECC/agents/*.md ~/.claude/agents/
@@ -836,22 +836,22 @@ node tests/hooks/hooks.test.js
 
 本项目免费开源。赞助支持项目持续维护与功能迭代。
 
-[成为赞助者](https://github.com/sponsors/affaan-m) | [赞助档位](SPONSORS.md) | [赞助计划](SPONSORING.md)
+[成为赞助者](https://github.com/sponsors/rishu7491) | [赞助档位](SPONSORS.md) | [赞助计划](SPONSORING.md)
 
 ---
 
 ## Star 历史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date)](https://star-history.com/#affaan-m/ECC&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=rishu7491/rishu-payal&type=Date)](https://star-history.com/#rishu7491/rishu-payal&Date)
 
 ---
 
 ## 链接
 
-- **快速上手指南（入门首选）：** [ECC 简明指南](https://x.com/affaanmustafa/status/2012378465664745795)
-- **长文指南（高阶进阶）：** [ECC 完整版深度指南](https://x.com/affaanmustafa/status/2014040193557471352)
-- **安全指南：** [安全指南](./the-security-guide.md) | [推文详解](https://x.com/affaanmustafa/status/2033263813387223421)
-- **关注作者：** [@affaanmustafa](https://x.com/affaanmustafa)
+- **快速上手指南（入门首选）：** [ECC 简明指南](https://x.com/rishu7491/status/2012378465664745795)
+- **长文指南（高阶进阶）：** [ECC 完整版深度指南](https://x.com/rishu7491/status/2014040193557471352)
+- **安全指南：** [安全指南](./the-security-guide.md) | [推文详解](https://x.com/rishu7491/status/2033263813387223421)
+- **关注作者：** [@rishu7491](https://x.com/rishu7491)
 
 ---
 

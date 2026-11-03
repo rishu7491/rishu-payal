@@ -4,9 +4,9 @@
 
 ![ECC - hệ thống hiệu năng cho AI agent harness](../../assets/hero.png)
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/stargazers)
+[![Forks](https://img.shields.io/github/forks/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/network/members)
+[![Contributors](https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/graphs/contributors)
 [![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 
@@ -28,7 +28,7 @@
 
 ECC không chỉ là một bộ cấu hình. Repo này đóng gói agents, skills, hooks, rules, MCP config, selective install, kiểm tra bảo mật, và workflow vận hành cho Claude Code, Codex, Cursor, OpenCode, Gemini và các harness agent khác.
 
-Trang tiếng Việt này là bản onboarding gọn, được phục hồi từ đóng góp cộng đồng trong PR [#1322](https://github.com/affaan-m/ECC/pull/1322) và cập nhật để khớp mặt cài đặt hiện tại. README tiếng Anh vẫn là nguồn chuẩn đầy đủ nhất.
+Trang tiếng Việt này là bản onboarding gọn, được phục hồi từ đóng góp cộng đồng trong PR [#1322](https://github.com/rishu7491/rishu-payal/pull/1322) và cập nhật để khớp mặt cài đặt hiện tại. README tiếng Anh vẫn là nguồn chuẩn đầy đủ nhất.
 
 ---
 
@@ -48,7 +48,7 @@ Nếu bạn đã cài chồng nhiều lần và thấy skill/hook bị trùng, x
 
 ```bash
 # Thêm marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # Cài plugin
 /plugin install ecc@ecc
@@ -56,7 +56,7 @@ Nếu bạn đã cài chồng nhiều lần và thấy skill/hook bị trùng, x
 
 ECC có ba định danh công khai khác nhau:
 
-- Repo GitHub: `affaan-m/ECC`
+- Repo GitHub: `rishu7491/rishu-payal`
 - Plugin Claude marketplace: `ecc@ecc`
 - Gói npm: `ecc-universal`
 
@@ -67,7 +67,7 @@ Các tên này cố ý khác nhau. Plugin Claude Code dùng `ecc@ecc`; npm vẫn
 Plugin Claude Code không tự phân phối `rules/`. Nếu bạn đã cài bằng plugin, **đừng** chạy thêm full installer. Hãy copy riêng rule pack bạn muốn:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 mkdir -p ~/.claude/rules/ecc
@@ -76,7 +76,7 @@ cp -R rules/typescript ~/.claude/rules/ecc/
 ```
 
 ```powershell
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 New-Item -ItemType Directory -Force -Path "$HOME/.claude/rules/ecc" | Out-Null

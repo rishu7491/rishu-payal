@@ -23,7 +23,7 @@
 
 ثبّت ECC حصرياً عبر القنوات الرسمية المعتمدة:
 
-- مستودع المشروع الرسمي: [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
+- مستودع المشروع الرسمي: [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal)
 - حزم npm المعتمدة: [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) و[`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield)
 - تطبيق [ECC Tools على GitHub](https://github.com/apps/ecc-tools)
 - معرّف الإضافة المعتمد: `ecc@ecc`
@@ -56,7 +56,7 @@ bunx ecc-universal@2.2.3 setup
 في Claude Code، أضف سوق الإضافات ثم ثبّت الإضافة المعتمدة:
 
 ```text
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 /plugin install ecc@ecc
 ```
 
@@ -66,7 +66,7 @@ bunx ecc-universal@2.2.3 setup
 ### Codex
 
 ```bash
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 ```
 

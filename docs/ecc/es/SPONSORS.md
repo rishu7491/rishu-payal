@@ -4,7 +4,7 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 
 ## Patrocinadores Empresariales — $2,500/mes
 
-*Conviértete en [patrocinador Empresarial](https://github.com/sponsors/affaan-m) para aparecer aquí.*
+*Conviértete en [patrocinador Empresarial](https://github.com/sponsors/rishu7491) para aparecer aquí.*
 
 ## Patrocinadores Business — $500/mes
 
@@ -12,14 +12,14 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 |---------|------|-------|
 | [**CodeRabbit**](https://coderabbit.ai) | <img src="https://avatars.githubusercontent.com/u/132028505?s=120" width="60" alt="CodeRabbit" /> | 2026 |
 
-*[Conviértete en patrocinador Business](https://github.com/sponsors/affaan-m) para aparecer aquí con logo en el hero del README principal y un caso de estudio trimestral.*
+*[Conviértete en patrocinador Business](https://github.com/sponsors/rishu7491) para aparecer aquí con logo en el hero del README principal y un caso de estudio trimestral.*
 
 ## Patrocinadores Team — $200/mes
 
 | Patrocinador | Desde |
 |---------|-------|
 
-*[Conviértete en patrocinador Team](https://github.com/sponsors/affaan-m) para obtener un logo pequeño y 5 asientos de ECC Pro.*
+*[Conviértete en patrocinador Team](https://github.com/sponsors/rishu7491) para obtener un logo pequeño y 5 asientos de ECC Pro.*
 
 ## Patrocinadores anteriores
 
@@ -29,7 +29,7 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 
 ## Patrocinadores Pro — $50/mes
 
-*[Conviértete en patrocinador Pro](https://github.com/sponsors/affaan-m) para aparecer aquí con tu nombre en la fila de patrocinadores del README principal.*
+*[Conviértete en patrocinador Pro](https://github.com/sponsors/rishu7491) para aparecer aquí con tu nombre en la fila de patrocinadores del README principal.*
 
 ## Patrocinadores Builder — $25/mes
 
@@ -38,11 +38,11 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 - @massimotodaro (precio heredado en $10)
 - @meadmccabe (precio heredado en $10)
 
-*[Conviértete en patrocinador Builder](https://github.com/sponsors/affaan-m) para apoyar el proyecto y aparecer en esta lista + una nota mensual privada de progreso.*
+*[Conviértete en patrocinador Builder](https://github.com/sponsors/rishu7491) para apoyar el proyecto y aparecer en esta lista + una nota mensual privada de progreso.*
 
 ## Supporters — $5/mes
 
-*[Conviértete en Supporter](https://github.com/sponsors/affaan-m) para respaldar el proyecto con una insignia de perfil y un agradecimiento en nuestras notas de versión.*
+*[Conviértete en Supporter](https://github.com/sponsors/rishu7491) para respaldar el proyecto con una insignia de perfil y un agradecimiento en nuestras notas de versión.*
 
 ---
 
@@ -57,9 +57,9 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 |  Business | $500 | Lo anterior + logo destacado en el hero del README + caso de estudio trimestral + acceso al lounge de sponsors en Discord |
 |  Enterprise | $2,500 | Lo anterior + asientos Pro ilimitados + 30 min/mes con el fundador + SLA + canal dedicado |
 
-[**Conviértete en Patrocinador →**](https://github.com/sponsors/affaan-m)
+[**Conviértete en Patrocinador →**](https://github.com/sponsors/rishu7491)
 
-Para consultas de patrocinio corporativo, colaboraciones personalizadas o integraciones de PR, envía un correo a **[affaan@ecc.tools](mailto:affaan@ecc.tools)** con el nombre de tu empresa y el nivel deseado. Respondemos rápido — la mayoría de los acuerdos se cierran en 48 horas.
+Para consultas de patrocinio corporativo, colaboraciones personalizadas o integraciones de PR, envía un correo a **[rishu@ecc.tools](mailto:rishu@ecc.tools)** con el nombre de tu empresa y el nivel deseado. Respondemos rápido — la mayoría de los acuerdos se cierran en 48 horas.
 
 ---
 

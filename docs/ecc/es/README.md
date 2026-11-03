@@ -4,9 +4,9 @@
 
 ![ECC - el sistema operativo nativo del harness para trabajo agentivo](../../assets/hero.png)
 
-[![Estrellas de GitHub](https://img.shields.io/github/stars/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC)
-[![Forks de GitHub](https://img.shields.io/github/forks/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/forks)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![Estrellas de GitHub](https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal)
+[![Forks de GitHub](https://img.shields.io/github/forks/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/forks)
+[![Contributors](https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/graphs/contributors)
 [![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
@@ -53,13 +53,13 @@ ECC v2.0.0-rc.1 añade la historia pública del operador Hermes sobre esa capa r
   </a>
 </td>
 <td width="25%" align="center">
-  <a href="https://github.com/sponsors/affaan-m">
+  <a href="https://github.com/sponsors/rishu7491">
     <strong> Patrocinar</strong><br />
     <sub>Financia el OSS · Desde $5/mes</sub>
   </a>
 </td>
 <td width="25%" align="center">
-  <a href="https://github.com/affaan-m/ECC/discussions">
+  <a href="https://github.com/rishu7491/rishu-payal/discussions">
     <strong>Comunidad</strong>
     <br />
     <sub>Discusiones · Preguntas · Showcase</sub>
@@ -74,7 +74,7 @@ ECC v2.0.0-rc.1 añade la historia pública del operador Hermes sobre esa capa r
 </tr>
 </table>
 
-<sub>**El OSS es gratis para siempre.** Este repositorio tiene licencia MIT permanente. ECC Pro es la GitHub App alojada para repositorios privados. Los <a href="https://github.com/sponsors/affaan-m">patrocinadores</a> y los <a href="https://ecc.tools/pricing">suscriptores Pro</a> financian el trabajo — por eso un solo mantenedor publica semanalmente en 7 harnesses.</sub>
+<sub>**El OSS es gratis para siempre.** Este repositorio tiene licencia MIT permanente. ECC Pro es la GitHub App alojada para repositorios privados. Los <a href="https://github.com/sponsors/rishu7491">patrocinadores</a> y los <a href="https://ecc.tools/pricing">suscriptores Pro</a> financian el trabajo — por eso un solo mantenedor publica semanalmente en 7 harnesses.</sub>
 
 ---
 
@@ -85,17 +85,17 @@ Este repositorio contiene solo el código. Las guías explican todo.
 <table>
 <tr>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://x.com/rishu7491/status/2012378465664745795">
 <img src="../../assets/images/guides/shorthand-guide.png" alt="La Guía Resumida de ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://x.com/rishu7491/status/2014040193557471352">
 <img src="../../assets/images/guides/longform-guide.png" alt="La Guía Extensa de ECC" />
 </a>
 </td>
 <td width="33%">
-<a href="https://x.com/affaanmustafa/status/2033263813387223421">
+<a href="https://x.com/rishu7491/status/2033263813387223421">
 <img src="../../assets/images/security/security-guide-header.png" alt="La Guía de Seguridad Agentiva" />
 </a>
 </td>
@@ -174,7 +174,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 
 ### v1.4.1 — Corrección de Errores (Feb 2026)
 
-- **Corrección de pérdida de contenido en importación de instintos** — `parse_instinct_file()` descartaba silenciosamente todo el contenido tras el frontmatter (secciones Action, Evidence, Examples) durante `/instinct-import`. ([#148](https://github.com/affaan-m/ECC/issues/148), [#161](https://github.com/affaan-m/ECC/pull/161))
+- **Corrección de pérdida de contenido en importación de instintos** — `parse_instinct_file()` descartaba silenciosamente todo el contenido tras el frontmatter (secciones Action, Evidence, Examples) durante `/instinct-import`. ([#148](https://github.com/rishu7491/rishu-payal/issues/148), [#161](https://github.com/rishu7491/rishu-payal/pull/161))
 
 ### v1.4.0 — Reglas Multi-Lenguaje, Asistente de Instalación y PM2 (Feb 2026)
 
@@ -198,7 +198,7 @@ Este repositorio contiene solo el código. Las guías explican todo.
 - **Gestión de sesiones** — Comando `/sessions` para historial de sesiones
 - **Aprendizaje continuo v2** — Aprendizaje basado en instintos con puntuación de confianza, importación/exportación y evolución
 
-Consulta el changelog completo en [Releases](https://github.com/affaan-m/ECC/releases).
+Consulta el changelog completo en [Releases](https://github.com/rishu7491/rishu-payal/releases).
 
 ---
 
@@ -267,7 +267,7 @@ npx ecc-universal install --profile minimal --target claude --with capability:ma
 
 ```bash
 # Agregar marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # Instalar plugin
 /plugin install ecc@ecc
@@ -277,7 +277,7 @@ npx ecc-universal install --profile minimal --target claude --with capability:ma
 
 ECC tiene tres identificadores públicos que no son intercambiables:
 
-- Repositorio fuente de GitHub: `affaan-m/ECC`
+- Repositorio fuente de GitHub: `rishu7491/rishu-payal`
 - Identificador de marketplace/plugin de Claude: `ecc@ecc`
 - Paquete npm: `ecc-universal`
 
@@ -297,7 +297,7 @@ Esto es intencional. Las instalaciones del marketplace/plugin de Anthropic se id
 
 ```bash
 # Clonar el repo primero
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 # Instalar dependencias (elige tu gestor de paquetes)
@@ -632,9 +632,9 @@ npx ecc-agentshield init
 
 **Formatos de salida:** Terminal (color graduado A-F), JSON (pipelines de CI), Markdown, HTML. Código de salida 2 en hallazgos críticos para puertas de build.
 
-Usa `/security-scan` en Claude Code para ejecutarlo, o añádelo a CI con la [GitHub Action](https://github.com/affaan-m/agentshield).
+Usa `/security-scan` en Claude Code para ejecutarlo, o añádelo a CI con la [GitHub Action](https://github.com/rishu7491/agentshield).
 
-[GitHub](https://github.com/affaan-m/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
+[GitHub](https://github.com/rishu7491/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
 
 ### Aprendizaje Continuo v2
 
@@ -675,7 +675,7 @@ Claude Code v2.1+ **carga automáticamente** `hooks/hooks.json` de cualquier plu
 Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded file
 ```
 
-**Historial:** Esto ha causado ciclos repetidos de corrección/reversión en este repo ([#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103)). El comportamiento cambió entre versiones de Claude Code, generando confusión. Ahora tenemos una prueba de regresión para prevenir que se reintroduzca.
+**Historial:** Esto ha causado ciclos repetidos de corrección/reversión en este repo ([#29](https://github.com/rishu7491/rishu-payal/issues/29), [#52](https://github.com/rishu7491/rishu-payal/issues/52), [#103](https://github.com/rishu7491/rishu-payal/issues/103)). El comportamiento cambió entre versiones de Claude Code, generando confusión. Ahora tenemos una prueba de regresión para prevenir que se reintroduzca.
 
 ---
 
@@ -687,7 +687,7 @@ La forma más fácil de usar este repo — instálalo como plugin de Claude Code
 
 ```bash
 # Añadir este repo como marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # Instalar el plugin
 /plugin install ecc@ecc
@@ -701,7 +701,7 @@ O añade directamente a tu `~/.claude/settings.json`:
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "rishu7491/rishu-payal"
       }
     }
   },
@@ -717,7 +717,7 @@ Esto te da acceso instantáneo a todos los comandos, agentes, skills y hooks.
 >
 > ```bash
 > # Clonar el repo primero
-> git clone https://github.com/affaan-m/ECC.git
+> git clone https://github.com/rishu7491/rishu-payal.git
 > cd ECC
 >
 > # Opción A: Reglas a nivel de usuario (se aplican a todos los proyectos)
@@ -742,7 +742,7 @@ Si prefieres control manual sobre lo que se instala:
 
 ```bash
 # Clonar el repo
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 # Copiar agentes a tu configuración de Claude
@@ -945,7 +945,7 @@ Muestra todos los agentes, comandos y skills disponibles del plugin.
 <details>
 <summary><b>Mis hooks no funcionan / Veo errores de "Duplicate hooks file"</b></summary>
 
-Este es el problema más común. **NO añadas un campo `"hooks"` a `.claude-plugin/plugin.json`.** Claude Code v2.1+ carga automáticamente `hooks/hooks.json` de los plugins instalados. Declararlo explícitamente provoca errores de detección de duplicados. Consulta [#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103).
+Este es el problema más común. **NO añadas un campo `"hooks"` a `.claude-plugin/plugin.json`.** Claude Code v2.1+ carga automáticamente `hooks/hooks.json` de los plugins instalados. Declararlo explícitamente provoca errores de detección de duplicados. Consulta [#29](https://github.com/rishu7491/rishu-payal/issues/29), [#52](https://github.com/rishu7491/rishu-payal/issues/52), [#103](https://github.com/rishu7491/rishu-payal/issues/103).
 </details>
 
 <details>
@@ -1007,7 +1007,7 @@ Sí. ECC es multiplataforma:
 - **Cursor**: Configuraciones pre-traducidas en `.cursor/`. Consulta [Soporte para Cursor IDE](#soporte-para-cursor-ide).
 - **Gemini CLI**: Soporte experimental local al proyecto mediante `.gemini/GEMINI.md` y conexiones compartidas del instalador.
 - **OpenCode**: Soporte completo del plugin en `.opencode/`. Consulta [Soporte para OpenCode](#soporte-para-opencode).
-- **Codex**: Soporte de primera clase para la app macOS y CLI, con guardias de deriva del adaptador y fallback de SessionStart. Consulta PR [#257](https://github.com/affaan-m/ECC/pull/257).
+- **Codex**: Soporte de primera clase para la app macOS y CLI, con guardias de deriva del adaptador y fallback de SessionStart. Consulta PR [#257](https://github.com/rishu7491/rishu-payal/pull/257).
 - **GitHub Copilot (VS Code)**: Capa de instrucciones y prompts mediante `.github/copilot-instructions.md`, `.vscode/settings.json` y `.github/prompts/`. Consulta [Soporte para GitHub Copilot](#soporte-para-github-copilot).
 - **Antigravity**: Configuración estrechamente integrada para flujos de trabajo, skills y reglas aplanadas en `.agents/`. Consulta la [Guía de Antigravity](../ANTIGRAVITY-GUIDE.md).
 - **JoyCode / CodeBuddy**: Adaptadores de instalación selectiva locales al proyecto para comandos, agentes, skills y reglas aplanadas. Consulta la [Guía del Adaptador JoyCode](../JOYCODE-GUIDE.md).
@@ -1360,22 +1360,22 @@ Proyectos construidos sobre o inspirados en ECC:
 
 Este proyecto es gratuito y de código abierto. Los patrocinadores ayudan a mantenerlo y hacerlo crecer.
 
-[**Conviértete en Patrocinador**](https://github.com/sponsors/affaan-m) | [Niveles de Patrocinio](SPONSORS.md) | [Programa de Patrocinio](SPONSORING.md)
+[**Conviértete en Patrocinador**](https://github.com/sponsors/rishu7491) | [Niveles de Patrocinio](SPONSORS.md) | [Programa de Patrocinio](SPONSORING.md)
 
 ---
 
 ## Historial de Estrellas
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date)](https://star-history.com/#affaan-m/ECC&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=rishu7491/rishu-payal&type=Date)](https://star-history.com/#rishu7491/rishu-payal&Date)
 
 ---
 
 ## Enlaces
 
-- **Guía Resumida (Empieza aquí):** [La Guía Resumida de ECC](https://x.com/affaanmustafa/status/2012378465664745795)
-- **Guía Extensa (Avanzado):** [La Guía Extensa de ECC](https://x.com/affaanmustafa/status/2014040193557471352)
-- **Guía de Seguridad:** [Guía de Seguridad](../../the-security-guide.md) | [Hilo](https://x.com/affaanmustafa/status/2033263813387223421)
-- **Seguir:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Guía Resumida (Empieza aquí):** [La Guía Resumida de ECC](https://x.com/rishu7491/status/2012378465664745795)
+- **Guía Extensa (Avanzado):** [La Guía Extensa de ECC](https://x.com/rishu7491/status/2014040193557471352)
+- **Guía de Seguridad:** [Guía de Seguridad](../../the-security-guide.md) | [Hilo](https://x.com/rishu7491/status/2033263813387223421)
+- **Seguir:** [@rishu7491](https://x.com/rishu7491)
 
 ---
 

@@ -1,6 +1,6 @@
 # ECC
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/stargazers)
+[![Stars](https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 ![Shell](https://img.shields.io/badge/-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -32,12 +32,12 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://x.com/rishu7491/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="ECC 簡明指南" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://x.com/rishu7491/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="ECC 完整指南" />
 </a>
 </td>
@@ -67,7 +67,7 @@
 
 ```bash
 # 新增市集
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # 安裝外掛程式
 /plugin install ecc@ecc
@@ -79,7 +79,7 @@
 
 ```bash
 # 首先複製儲存庫
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 
 # 複製規則（應用於所有專案）
 cp -r ECC/rules/* ~/.claude/rules/
@@ -267,7 +267,7 @@ ECC/
 
 ```bash
 # 將此儲存庫新增為市集
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # 安裝外掛程式
 /plugin install ecc@ecc
@@ -281,7 +281,7 @@ ECC/
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "rishu7491/rishu-payal"
       }
     }
   },
@@ -301,7 +301,7 @@ ECC/
 
 ```bash
 # 複製儲存庫
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 
 # 將代理程式複製到您的 Claude 設定
 cp ECC/agents/*.md ~/.claude/agents/
@@ -459,15 +459,15 @@ node tests/hooks/hooks.test.js
 
 ## Star 歷史
 
-[![Star History Chart](https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date)](https://star-history.com/#affaan-m/ECC&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=rishu7491/rishu-payal&type=Date)](https://star-history.com/#rishu7491/rishu-payal&Date)
 
 ---
 
 ## 連結
 
-- **簡明指南（從這裡開始）：** [ECC 簡明指南](https://x.com/affaanmustafa/status/2012378465664745795)
-- **完整指南（進階）：** [ECC 完整指南](https://x.com/affaanmustafa/status/2014040193557471352)
-- **追蹤：** [@affaanmustafa](https://x.com/affaanmustafa)
+- **簡明指南（從這裡開始）：** [ECC 簡明指南](https://x.com/rishu7491/status/2012378465664745795)
+- **完整指南（進階）：** [ECC 完整指南](https://x.com/rishu7491/status/2014040193557471352)
+- **追蹤：** [@rishu7491](https://x.com/rishu7491)
 - **zenith.chat：** [zenith.chat](https://zenith.chat)
 - **技能目錄：** awesome-agent-skills（社區維護的智能體技能目錄）
 

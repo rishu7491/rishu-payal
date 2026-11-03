@@ -64,3 +64,4 @@ pytest -q
 - Zero credential leakage.
 - Policy-governed execution boundaries.
 - Local-first inference optimization.
+

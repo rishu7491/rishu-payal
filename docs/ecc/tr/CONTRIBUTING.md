@@ -51,7 +51,7 @@ Faydalı workflow'ları çağıran slash command'lar:
 
 ```bash
 # 1. Fork ve clone
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 
 # 2. Branch oluştur
@@ -453,8 +453,8 @@ Bunu nasıl test ettiniz.
 
 ## Sorularınız mı var?
 
-- **Issue'lar:** [github.com/affaan-m/ECC/issues](https://github.com/affaan-m/ECC/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **Issue'lar:** [github.com/rishu7491/rishu-payal/issues](https://github.com/rishu7491/rishu-payal/issues)
+- **X/Twitter:** [@rishu7491](https://x.com/rishu7491)
 
 ---
 

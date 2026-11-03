@@ -414,7 +414,7 @@ Si quieres una regla: nunca dejes que la capa de conveniencia supere a la capa d
 
 Esa regla única te lleva sorprendentemente lejos.
 
-Escanea tu configuración: [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+Escanea tu configuración: [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)
 
 ---
 
@@ -452,5 +452,5 @@ Si no has leído las guías anteriores, empieza aquí:
 > [La Guía Extendida de ECC](./the-longform-guide.md)
 
 también guarda estos repositorios:
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
-- [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+- [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal)
+- [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)

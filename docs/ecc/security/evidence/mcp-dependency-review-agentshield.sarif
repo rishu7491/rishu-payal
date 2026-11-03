@@ -6,7 +6,7 @@
       "tool": {
         "driver": {
           "name": "AgentShield",
-          "informationUri": "https://github.com/affaan-m/agentshield",
+          "informationUri": "https://github.com/rishu7491/agentshield",
           "rules": []
         }
       },

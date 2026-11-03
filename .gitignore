@@ -20,3 +20,4 @@ dist/
 htmlcov/
 .playwright-mcp/
 node_modules/
+

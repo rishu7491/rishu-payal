@@ -4,9 +4,9 @@
 
 ![ECC - এজেন্টিক কাজের জন্য হার্নেস-নেটিভ অপারেটর সিস্টেম](../../assets/hero.png)
 
-[![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat)](https://github.com/affaan-m/ECC/stargazers)
-[![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat)](https://github.com/affaan-m/ECC/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![Stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat)](https://github.com/rishu7491/rishu-payal/stargazers)
+[![Forks](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat)](https://github.com/rishu7491/rishu-payal/network/members)
+[![Contributors](https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/graphs/contributors)
 [![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
 [![npm ecc-agentshield](https://img.shields.io/npm/dw/ecc-agentshield?label=ecc-agentshield%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-agentshield)
 [![GitHub App Install](https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github)](https://github.com/marketplace/ecc-tools)
@@ -41,12 +41,12 @@
 <table>
 <tr>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2012378465664745795">
+<a href="https://x.com/rishu7491/status/2012378465664745795">
 <img src="https://github.com/user-attachments/assets/1a471488-59cc-425b-8345-5245c7efbcef" alt="The Shorthand Guide to Everything Claude Code" />
 </a>
 </td>
 <td width="50%">
-<a href="https://x.com/affaanmustafa/status/2014040193557471352">
+<a href="https://x.com/rishu7491/status/2014040193557471352">
 <img src="https://github.com/user-attachments/assets/c9ca43bc-b149-427f-b551-af6840c368f0" alt="The Longform Guide to Everything Claude Code" />
 </a>
 </td>
@@ -91,7 +91,7 @@
 - **`orch-*` অর্কেস্ট্রেটর পরিবার** — ক্রস-হার্নেস অর্কেস্ট্রেশন।
 - **ECC Discord কমিউনিটি** চালু।
 
-সম্পূর্ণ পরিবর্তনের তালিকা [Releases](https://github.com/affaan-m/ECC/releases)-এ দেখুন।
+সম্পূর্ণ পরিবর্তনের তালিকা [Releases](https://github.com/rishu7491/rishu-payal/releases)-এ দেখুন।
 
 ---
 
@@ -103,7 +103,7 @@
 
 ```bash
 # মার্কেটপ্লেস যোগ করুন
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # প্লাগইন ইনস্টল করুন
 /plugin install ecc@ecc
@@ -114,7 +114,7 @@
 > **গুরুত্বপূর্ণ:** Claude Code প্লাগইন `rules` স্বয়ংক্রিয়ভাবে ডেপ্লয় করতে পারে না। ম্যানুয়ালি ইনস্টল করতে হবে:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 mkdir -p ~/.claude/rules/ecc
 cp -R rules/common ~/.claude/rules/ecc/
@@ -243,7 +243,7 @@ tdd-workflow স্কিল  -> বাগ পুনরুৎপাদনকা�
 
 এই প্রজেক্ট বিনামূল্যে ওপেন সোর্স। স্পনসরদের সহায়তায় রক্ষণাবেক্ষণ ও উন্নয়ন চলে।
 
-[**স্পনসর হন**](https://github.com/sponsors/affaan-m) | [স্পনসর টায়ার](../../SPONSORS.md)
+[**স্পনসর হন**](https://github.com/sponsors/rishu7491) | [স্পনসর টায়ার](../../SPONSORS.md)
 
 ---
 

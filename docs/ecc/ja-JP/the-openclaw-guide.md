@@ -468,4 +468,4 @@ Andrej Karpathy が何かを「惨事」と呼び、コンピューターでそ�
 
 ***
 
-*Affaan Mustafa ([@affaanmustafa](https://x.com/affaanmustafa)) は AI コーディングツールを構築し、AI インフラセキュリティについて執筆している。彼の ECC リポジトリは GitHub で 5 万以上のスターを持つ。AgentShield を作成し、Anthropic x Forum Ventures ハッカソンで [zenith.chat](https://zenith.chat) を構築して優勝した。*
+*Rishabh Raj ([@rishu7491](https://x.com/rishu7491)) は AI コーディングツールを構築し、AI インフラセキュリティについて執筆している。彼の ECC リポジトリは GitHub で 5 万以上のスターを持つ。AgentShield を作成し、Anthropic x Forum Ventures ハッカソンで [zenith.chat](https://zenith.chat) を構築して優勝した。*

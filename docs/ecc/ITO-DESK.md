@@ -1,6 +1,6 @@
 # ECC and the Ito desk
 
-ECC is the public agentic-engineering toolkit; the Ito desk is Affaan's
+ECC is the public agentic-engineering toolkit; the Ito desk is Rishabh's
 private ops system. The connection surface in this repo is the set of
 public `ito-*` skills (`skills/ito-baskets`, `skills/ito-compute`,
 `skills/ito-inference`, `skills/ito-training`). Each of them is a thin
@@ -20,7 +20,7 @@ desk's earlier automation.
 
 The merge rule for anything desk-related in this repo: fixes and tests
 merge freely. Anything that adds a third-party tool, a vendor-named skill,
-or an external link waits for Affaan's explicit yes, recorded before merge.
+or an external link waits for Rishabh's explicit yes, recorded before merge.
 The living desk plan is `docs/PLAN.md` in `Ito-Markets/ito-desk`; task
 schemas and the spec book live under `docs/spec/` in the same repo. This
 file only describes the relationship; the plan repo is the source of truth.

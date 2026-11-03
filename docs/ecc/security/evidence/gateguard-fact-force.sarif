@@ -6,7 +6,7 @@
       "tool": {
         "driver": {
           "name": "gateguard-eval",
-          "informationUri": "https://github.com/affaan-m/ECC/blob/main/docs/gateguard/evaluation.md",
+          "informationUri": "https://github.com/rishu7491/rishu-payal/blob/main/docs/gateguard/evaluation.md",
           "rules": [
             {
               "id": "gateguard/must-deny-bypass",

@@ -48,13 +48,13 @@ origin: ECC
 
 ## 输出约定
 
-生成一个可复用的`VOICE PROFILE`代码块，供下游技能直接调用。使用[references/voice-profile-schema.md](https://github.com/affaan-m/ECC/blob/main/skills/brand-voice/references/voice-profile-schema.md)中的架构。
+生成一个可复用的`VOICE PROFILE`代码块，供下游技能直接调用。使用[references/voice-profile-schema.md](https://github.com/rishu7491/rishu-payal/blob/main/skills/brand-voice/references/voice-profile-schema.md)中的架构。
 
 保持档案结构化且足够简短，以便在会话上下文中复用。重点不是文学批评，而是操作复用。
 
-## Affaan / ECC 默认设置
+## Rishabh / ECC 默认设置
 
-若用户需要Affaan/ECC声音且实时素材不足，除非有更新素材覆盖，否则从以下默认值开始：
+若用户需要Rishabh/ECC声音且实时素材不足，除非有更新素材覆盖，否则从以下默认值开始：
 
 * 直接、压缩、具体
 * 细节、机制、实证和数字优于形容词

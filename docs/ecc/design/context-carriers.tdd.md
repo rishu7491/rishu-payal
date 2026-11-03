@@ -1,6 +1,6 @@
 # ECC-029 carrier slice evidence
 
-Date: September 8, 2026. Milestone: M1 canonical context profiles. The P2a/P2b/P2c stack follows [PR #3037](https://github.com/affaan-m/ECC/pull/3037), based on main `5064474d4d762dc9640234a41617cccb79185cec`. Environment: macOS 26.6.2 arm64, Node 24.9.0, ECC 2.2.1. This source-only report records local development evidence. The packed [carrier contract](context-carriers.md) defines the public boundaries.
+Date: September 8, 2026. Milestone: M1 canonical context profiles. The P2a/P2b/P2c stack follows [PR #3037](https://github.com/rishu7491/rishu-payal/pull/3037), based on main `5064474d4d762dc9640234a41617cccb79185cec`. Environment: macOS 26.6.2 arm64, Node 24.9.0, ECC 2.2.1. This source-only report records local development evidence. The packed [carrier contract](context-carriers.md) defines the public boundaries.
 
 ## Test-first slices and review regressions
 

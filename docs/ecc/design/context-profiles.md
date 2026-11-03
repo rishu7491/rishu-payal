@@ -135,12 +135,12 @@ These related PRs are integration inputs, not claims that their proposed behavio
 
 | Contribution | Intended integration | Boundary |
 | --- | --- | --- |
-| [#2788](https://github.com/affaan-m/ECC/pull/2788) | Native discovery carriers and associated ownership/receipt work | Consume this registry and plan; carrier generation and activation belong to later slices |
-| [#2844](https://github.com/affaan-m/ECC/pull/2844) | Catalog grouping, deterministic selection fixtures, and listing projection | Reuse canonical IDs and pack ownership instead of introducing competing profile authority |
-| [#2945](https://github.com/affaan-m/ECC/pull/2945) | Task routing and automatic-selection proposals | Future structured task resolver; `selectionMode: "auto"` alone implements none of this |
-| [#2740](https://github.com/affaan-m/ECC/pull/2740) | Native context counters and bounded diagnostics | Keep observed measurements separate from fixture estimates and scan assumptions |
-| [#3030](https://github.com/affaan-m/ECC/pull/3030) | Contributor skill-quality validation | Content-quality checks complement inventory validation; they do not prove runtime activation or workflow outcomes |
-| [#3032](https://github.com/affaan-m/ECC/pull/3032) | Existing js-yaml dependency security update | Verify contributor integration before release; retain both lockfiles and rerun dependency and regression checks |
+| [#2788](https://github.com/rishu7491/rishu-payal/pull/2788) | Native discovery carriers and associated ownership/receipt work | Consume this registry and plan; carrier generation and activation belong to later slices |
+| [#2844](https://github.com/rishu7491/rishu-payal/pull/2844) | Catalog grouping, deterministic selection fixtures, and listing projection | Reuse canonical IDs and pack ownership instead of introducing competing profile authority |
+| [#2945](https://github.com/rishu7491/rishu-payal/pull/2945) | Task routing and automatic-selection proposals | Future structured task resolver; `selectionMode: "auto"` alone implements none of this |
+| [#2740](https://github.com/rishu7491/rishu-payal/pull/2740) | Native context counters and bounded diagnostics | Keep observed measurements separate from fixture estimates and scan assumptions |
+| [#3030](https://github.com/rishu7491/rishu-payal/pull/3030) | Contributor skill-quality validation | Content-quality checks complement inventory validation; they do not prove runtime activation or workflow outcomes |
+| [#3032](https://github.com/rishu7491/rishu-payal/pull/3032) | Existing js-yaml dependency security update | Verify contributor integration before release; retain both lockfiles and rerun dependency and regression checks |
 
 The original September 8 dependency baseline pinned js-yaml 4.3.1, affected by [GHSA-2883-xcg3-v3hh](https://github.com/nodeca/js-yaml/security/advisories/GHSA-2883-xcg3-v3hh). PR preparation exposed that existing finding in hosted CI. This branch now includes Myles Agnew's exact 4.3.2 upgrade from #3032 as an attributed prerequisite commit, updating the runtime pin, overrides, resolutions, and both lockfiles. Runtime audit reports zero vulnerabilities after installation. The original contributor PR remains independently reviewable. This registry's `JSON_SCHEMA` excludes the advisory's merge behavior, but upgrading also protects existing default-schema parsers.
 

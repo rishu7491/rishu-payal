@@ -3,16 +3,16 @@
 </p>
 
 <p align="center">
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark" />
-      <img src="https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending" alt="GitHub Trending Repository of the Day" height="46" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=trending&theme=dark" />
+      <img src="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=trending" alt="GitHub Trending Repository of the Day" height="46" />
     </picture>
   </a>
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark" />
-      <img src="https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank" alt="Star History Global Rank" height="46" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=rank&theme=dark" />
+      <img src="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=rank" alt="Star History Global Rank" height="46" />
     </picture>
   </a>
 </p>
@@ -45,9 +45,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/affaan-m/ECC/stargazers"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat" alt="Stars" /></a>
-  <a href="https://github.com/affaan-m/ECC/network/members"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat" alt="Forks" /></a>
-  <a href="https://github.com/affaan-m/ECC/graphs/contributors"><img src="https://img.shields.io/github/contributors/affaan-m/ECC?style=flat" alt="Contributors" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal/stargazers"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fstars&style=flat" alt="Stars" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal/network/members"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Fforks&style=flat" alt="Forks" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal/graphs/contributors"><img src="https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat" alt="Contributors" /></a>
   <a href="https://github.com/marketplace/ecc-tools"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github" alt="GitHub App インストール数" /></a>
 </p>
 
@@ -67,7 +67,7 @@
 </p>
 
 > [!WARNING]
-> **公式ソースからのみインストールしてください。** ECC は検証済みのチャネルからのみインストールしてください。GitHub リポジトリ [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)、npm パッケージ [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) と [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield)、[GitHub App](https://github.com/apps/ecc-tools)、plugin スラッグ `ecc@ecc`、そしてプロジェクト公式サイト [ecc.tools](https://ecc.tools) です。第三者による再アップロードや非公式ミラーはプロジェクトが保守・レビューしておらず、マルウェアを含む可能性があります。
+> **公式ソースからのみインストールしてください。** ECC は検証済みのチャネルからのみインストールしてください。GitHub リポジトリ [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal)、npm パッケージ [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) と [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield)、[GitHub App](https://github.com/apps/ecc-tools)、plugin スラッグ `ecc@ecc`、そしてプロジェクト公式サイト [ecc.tools](https://ecc.tools) です。第三者による再アップロードや非公式ミラーはプロジェクトが保守・レビューしておらず、マルウェアを含む可能性があります。
 
 ## Claude Code でインストール
 
@@ -85,7 +85,7 @@
   <sub><a href="https://github.com/apps/ecc-tools">無料でインストール</a> · <a href="https://ecc.tools/pricing">プライベートリポジトリは $19/シート/月から</a></sub>
 </td>
 <td width="33%" align="center">
-  <a href="https://github.com/sponsors/affaan-m">
+  <a href="https://github.com/sponsors/rishu7491">
     <img src="../../assets/images/community/heart.svg" height="42" alt="" /><br />
     <strong>ECC をスポンサーする</strong>
   </a><br />
@@ -103,7 +103,7 @@
 
 </div>
 
-<sub>**OSS は今後も無料です。** このリポジトリは永久に MIT ライセンスです。ECC Pro はプライベートリポジトリ向けのホスト型 GitHub App です。<a href="https://github.com/sponsors/affaan-m">スポンサー</a>と <a href="https://ecc.tools/pricing">Pro 購読者</a>がこの活動を支えています。だからこそ、たった一人のメンテナーが 7 つのハーネスに対して毎週リリースを続けられるのです。</sub>
+<sub>**OSS は今後も無料です。** このリポジトリは永久に MIT ライセンスです。ECC Pro はプライベートリポジトリ向けのホスト型 GitHub App です。<a href="https://github.com/sponsors/rishu7491">スポンサー</a>と <a href="https://ecc.tools/pricing">Pro 購読者</a>がこの活動を支えています。だからこそ、たった一人のメンテナーが 7 つのハーネスに対して毎週リリースを続けられるのです。</sub>
 
 <div align="center">
 
@@ -121,7 +121,7 @@
 
 <sub><strong>コミュニティスポンサー:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@1anter</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
 
-<sub><a href="https://github.com/sponsors/affaan-m"><strong>スポンサーになる</strong></a> · <a href="../../SPONSORS.md">スポンサーティア</a> · <a href="../../SPONSORING.md">スポンサーシッププログラム</a></sub>
+<sub><a href="https://github.com/sponsors/rishu7491"><strong>スポンサーになる</strong></a> · <a href="../../SPONSORS.md">スポンサーティア</a> · <a href="../../SPONSORING.md">スポンサーシッププログラム</a></sub>
 
 </div>
 
@@ -153,7 +153,7 @@ ECC は MIT ライセンスのオープンソースです。現時点では Clau
 | AgentShield      |    同梱 | プロンプト、hooks、MCP 設定、パーミッション、シークレット、agent ファイルのスキャン    |
 
 <p align="center">
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="../../assets/star-history-dark.svg" />
       <img src="../../assets/star-history-light.svg" alt="ECC のスター履歴: 2026年1月18日から2月7日までの最初の 40,000 スター" width="100%" />
@@ -255,14 +255,14 @@ ECC は Claude Code、Codex、その他のハーネスで同時に使用でき�
 
 すでに複数のインストールを重ねてしまい、重複しているように見える場合は、[ECC のリセット / アンインストール](#ecc-のリセット--アンインストール)に直接進んでください。
 
-**インストールで困っていますか？** 短い[インストールまたはランタイムの問題フォーム](https://github.com/affaan-m/ECC/issues/new?template=install-problem.yml)を開くか、`ecc feedback` を実行してください。ECC が診断情報を自動でアップロードすることはありません。
+**インストールで困っていますか？** 短い[インストールまたはランタイムの問題フォーム](https://github.com/rishu7491/rishu-payal/issues/new?template=install-problem.yml)を開くか、`ecc feedback` を実行してください。ECC が診断情報を自動でアップロードすることはありません。
 
 ### Claude Code の詳細
 
 代わりに、Claude Code 内で Claude Code のネイティブ plugin コマンドを実行することもできます。
 
 ```text
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 /plugin install ecc@ecc
 ```
 
@@ -275,7 +275,7 @@ ECC のインストール後は、`/ecc:configure-ecc` が名前空間付きの 
 Claude Code plugins は `rules` を配布できないため、本当に必要な rule パックだけを追加してください。
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 mkdir -p ~/.claude/rules/ecc
 cp -R rules/common ~/.claude/rules/ecc/
@@ -295,7 +295,7 @@ cp -R rules/typescript ~/.claude/rules/ecc/  # 使用しているスタックに
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "rishu7491/rishu-payal"
       }
     }
   },
@@ -309,11 +309,11 @@ cp -R rules/typescript ~/.claude/rules/ecc/  # 使用しているスタックに
 </details>
 
 <details>
-<summary><strong>命名と移行に関する注記（ecc@ecc、affaan-m/ECC、ecc-universal）</strong></summary>
+<summary><strong>命名と移行に関する注記（ecc@ecc、rishu7491/rishu-payal、ecc-universal）</strong></summary>
 
 ECC には三つの公開識別子があり、これらは互いに置き換えられません。
 
-- GitHub ソースリポジトリ: `affaan-m/ECC`
+- GitHub ソースリポジトリ: `rishu7491/rishu-payal`
 - Claude マーケットプレイス/plugin 識別子: `ecc@ecc`
 - npm パッケージ: `ecc-universal`
 
@@ -329,7 +329,7 @@ npm リリースはコミットごとではなくバージョンタグごとに�
 現在の Codex リリースでは、ECC をネイティブのリポジトリマーケットプレイス plugin としてインストールできます。マーケットプレイスエントリはリポジトリルートを使用するため、Codex のキャッシュはマニフェストとともに、参照されるすべての skills、MCP 設定、hook ランタイム、スクリプト、アセットを受け取ります。
 
 ```bash
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 codex plugin list --json
 node scripts/codex/check-plugin-cache.js
@@ -340,7 +340,7 @@ node scripts/codex/check-plugin-cache.js
 従来の `scripts/sync-ecc-to-codex.sh` パスは、`~/.codex` にコピーおよびマージされた設定を意図的に必要とするユーザー向けの非推奨互換オプションであり、ネイティブ plugin には不要です。新しい同期の実行では所有権マニフェストを書き出すため、クリーンアップ時に変更されたユーザーファイルを保護できます。まず Codex を一度実行して `~/.codex/config.toml` が存在する状態にしてから、次を実行します。
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 npm install
 bash scripts/sync-ecc-to-codex.sh
@@ -367,7 +367,7 @@ node scripts/ecc.js uninstall --legacy-codex-sync
 ECC を一度クローンし、使用しているハーネスに合ったターゲットを選択します。
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 ```
 
@@ -508,7 +508,7 @@ rules は常時ロードされるコンテキストなので、`common` と実�
 plugin パスを意図的にスキップする場合にのみ使用してください。
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 ./install.sh --profile full
 ```
@@ -516,7 +516,7 @@ cd ECC
 Windows:
 
 ```powershell
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 .\install.ps1 --profile full
 ```
@@ -612,7 +612,7 @@ node scripts/uninstall.js --dry-run
 node scripts/uninstall.js
 ```
 
-ECC をやめる場合、アンインストールコマンドは任意の[20秒フィードバックフォーム](https://github.com/affaan-m/ECC/issues/new?template=quick-feedback.yml)を表示します。これは公開の GitHub issue であり、アンインストールを妨げることはなく、ECC が診断情報をアップロードすることもありません。問題報告、フィードバック、機能要望の窓口を確認するには、いつでも `ecc feedback` を実行できます。
+ECC をやめる場合、アンインストールコマンドは任意の[20秒フィードバックフォーム](https://github.com/rishu7491/rishu-payal/issues/new?template=quick-feedback.yml)を表示します。これは公開の GitHub issue であり、アンインストールを妨げることはなく、ECC が診断情報をアップロードすることもありません。問題報告、フィードバック、機能要望の窓口を確認するには、いつでも `ecc feedback` を実行できます。
 
 plugin ユーザーは Claude Code から plugin を削除し、その後、手動でコピーして不要になった rule フォルダーだけを削除してください。ECC はインストール状態に記録されたファイルのみを削除します。ハーネスディレクトリ内の無関係なファイルを自分のものとして扱うことはありません。
 
@@ -1125,21 +1125,21 @@ rules/
 <img src="../../assets/images/guides/shorthand-guide.png" width="213" height="120" alt="ECC 簡潔ガイド" /><br />
 <strong>簡潔ガイド</strong>
 </a>
-<br /><sub>セットアップ、基礎、初日からの使い方。<b>まずこれを読んでください。</b>（<a href="https://x.com/affaan/status/2012378465664745795">スレッド</a>）</sub>
+<br /><sub>セットアップ、基礎、初日からの使い方。<b>まずこれを読んでください。</b>（<a href="https://x.com/rishu/status/2012378465664745795">スレッド</a>）</sub>
 </td>
 <td width="33%" align="center">
 <a href="../../the-longform-guide.md">
 <img src="../../assets/images/guides/longform-guide.png" width="213" height="120" alt="ECC 長文ガイド" /><br />
 <strong>長文ガイド</strong>
 </a>
-<br /><sub>コンテキストの経済性、メモリ、評価、並列エージェント。（<a href="https://x.com/affaan/status/2014040193557471352">スレッド</a>）</sub>
+<br /><sub>コンテキストの経済性、メモリ、評価、並列エージェント。（<a href="https://x.com/rishu/status/2014040193557471352">スレッド</a>）</sub>
 </td>
 <td width="33%" align="center">
 <a href="../../the-security-guide.md">
 <img src="../../assets/images/guides/security-guide.png" width="213" height="120" alt="ECC セキュリティガイド" /><br />
 <strong>セキュリティガイド</strong>
 </a>
-<br /><sub>プロンプトインジェクション、hooks、MCP、AgentShield。（<a href="https://x.com/affaan/status/2033263813387223421">スレッド</a>）</sub>
+<br /><sub>プロンプトインジェクション、hooks、MCP、AgentShield。（<a href="https://x.com/rishu/status/2033263813387223421">スレッド</a>）</sub>
 </td>
 </tr>
 </table>
@@ -1253,9 +1253,9 @@ ECC のコアとなる Node.js CLI とマネージドインストーラーは **
 | プラットフォーム | ステータス | 現在の制限 |
 |---|---|---|
 | Linux | コアをサポート | オプション機能には Bash、Python、またはプロバイダー固有のツールが必要な場合があります。 |
-| macOS | コアをサポート | スタンドアロンの GAN シェルパスはシステムの Bash 3.2 と互換性がなく、現在スコア解析の不具合があります（[#2674](https://github.com/affaan-m/ECC/issues/2674)）。 |
+| macOS | コアをサポート | スタンドアロンの GAN シェルパスはシステムの Bash 3.2 と互換性がなく、現在スコア解析の不具合があります（[#2674](https://github.com/rishu7491/rishu-payal/issues/2674)）。 |
 | Windows + WSL | コアをサポート | WSL は Linux のパスに従います。Windows ホスト側の統合はハーネスによって異なります。 |
-| Windows ネイティブ | 制限付きでサポート | 継続的学習 v2 のオブザーバーデーモンと memory-vault の書き込みには、ネイティブ Windows での未解決の不具合があります（[#2489](https://github.com/affaan-m/ECC/issues/2489)、[#2626](https://github.com/affaan-m/ECC/issues/2626)）。シェルに依存するオプション機能には Git Bash/WSL が必要か、利用できません。 |
+| Windows ネイティブ | 制限付きでサポート | 継続的学習 v2 のオブザーバーデーモンと memory-vault の書き込みには、ネイティブ Windows での未解決の不具合があります（[#2489](https://github.com/rishu7491/rishu-payal/issues/2489)、[#2626](https://github.com/rishu7491/rishu-payal/issues/2626)）。シェルに依存するオプション機能には Git Bash/WSL が必要か、利用できません。 |
 
 以下の `stable`、`beta`、`experimental`、`instruction-only` は、マーケティング上の等級ではなく、機能の状態を示すものとして扱ってください。
 
@@ -1263,8 +1263,8 @@ ECC のコアとなる Node.js CLI とマネージドインストーラーは **
 |---|---|---|---|
 | Claude Code | Stable（主要） | Plugin または選択的インストーラー | plugin はインストール済みカタログをモデルに通知します。コンテキストの占有量が重要な場合は、選択的/manual profile を使用してください。シェルに依存するオプションの skills はすべての OS に移植可能ではありません。 |
 | Codex | ネイティブ plugin をサポート | Codex マーケットプレイス plugin またはリポジトリ設定 | ネイティブ hooks には明示的な信頼の決定が必要で、Claude の hook profile は使用しません。レガシーの sync は互換性維持のみです。 |
-| Cursor | Beta プロジェクトアダプター | `.cursor/` への選択的インストーラー | agent の検出は Cursor のビルドによって異なり、ECC のインストーラーパスはまだ同一の hook セットを公開していません（[#2419](https://github.com/affaan-m/ECC/issues/2419)）。 |
-| OpenCode | Beta ビルド済み plugin | plugin をビルドしてから選択的インストーラー | ECC はカタログのサブセットを同梱しています。OpenCode でプロバイダーを接続しモデルを選択してください（[#2617](https://github.com/affaan-m/ECC/issues/2617)）。 |
+| Cursor | Beta プロジェクトアダプター | `.cursor/` への選択的インストーラー | agent の検出は Cursor のビルドによって異なり、ECC のインストーラーパスはまだ同一の hook セットを公開していません（[#2419](https://github.com/rishu7491/rishu-payal/issues/2419)）。 |
+| OpenCode | Beta ビルド済み plugin | plugin をビルドしてから選択的インストーラー | ECC はカタログのサブセットを同梱しています。OpenCode でプロバイダーを接続しモデルを選択してください（[#2617](https://github.com/rishu7491/rishu-payal/issues/2617)）。 |
 | GitHub Copilot | Instruction-only | チェックインされた instructions とプロンプトファイル | ECC の hooks、ランタイム agents、委譲、ネイティブの skill 検出はありません。 |
 | Gemini、Zed、Antigravity、Qwen、Hermes、OpenClaw、Kimi、CodeBuddy、JoyCode | Experimental/最小限のアダプター | ハーネス固有の選択的ターゲット | ファイル配置と instructions の移植性はテスト済みです。Claude との完全な機能同等性は主張していません。 |
 
@@ -1363,7 +1363,7 @@ export ECC_AGENT_DATA_HOME="$HOME/.cursor/ecc"
 - `$ECC_AGENT_DATA_HOME/session-aliases.json`：セッションエイリアス
 - `$ECC_AGENT_DATA_HOME/metrics/`：コストとアクティビティのメトリクス
 
-[affaan-m/ECC#2065](https://github.com/affaan-m/ECC/issues/2065) を参照してください。
+[rishu7491/rishu-payal#2065](https://github.com/rishu7491/rishu-payal/issues/2065) を参照してください。
 </details>
 
 <details>
@@ -1476,7 +1476,7 @@ ECC は、macOS アプリと CLI 向けに、サポート対象のネイティ�
 
 ```bash
 # 現在推奨されるインストール：リポジトリのマーケットプレイスから ECC のネイティブ plugin を追加
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 codex plugin list --json
 
@@ -1775,14 +1775,14 @@ Claude Code v2.1 以降は、インストールされた任意の plugin の `ho
 Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded file
 ```
 
-**経緯：**この問題はこのリポジトリで修正/差し戻しのサイクルを繰り返し引き起こしてきました（[#29](https://github.com/affaan-m/ECC/issues/29)、[#52](https://github.com/affaan-m/ECC/issues/52)、[#103](https://github.com/affaan-m/ECC/issues/103)）。Claude Code のバージョン間で動作が変わり、混乱を招きました。現在は再発を防ぐためのリグレッションテストがあります。
+**経緯：**この問題はこのリポジトリで修正/差し戻しのサイクルを繰り返し引き起こしてきました（[#29](https://github.com/rishu7491/rishu-payal/issues/29)、[#52](https://github.com/rishu7491/rishu-payal/issues/52)、[#103](https://github.com/rishu7491/rishu-payal/issues/103)）。Claude Code のバージョン間で動作が変わり、混乱を招きました。現在は再発を防ぐためのリグレッションテストがあります。
 </details>
 
 ## セキュリティ
 
 ECC は公式ソースからのみインストールしてください：
 
-- GitHub リポジトリ：<https://github.com/affaan-m/ECC>
+- GitHub リポジトリ：<https://github.com/rishu7491/rishu-payal>
 - Claude Code plugin：`ecc@ecc`
 - npm パッケージ：[`ecc-universal`](https://www.npmjs.com/package/ecc-universal) と [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield)
 - GitHub App：<https://github.com/apps/ecc-tools>
@@ -1883,9 +1883,9 @@ agentshield init
 
 **出力形式：**ターミナル（A-F の色付き評価）、JSON（CI パイプライン）、Markdown、HTML。ビルドゲート用に、重大な検出があると終了コード 2 を返します。
 
-Claude Code で実行するには `/security-scan` を使うか、[GitHub Action](https://github.com/affaan-m/agentshield) で CI に追加してください。
+Claude Code で実行するには `/security-scan` を使うか、[GitHub Action](https://github.com/rishu7491/agentshield) で CI に追加してください。
 
-[GitHub](https://github.com/affaan-m/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
+[GitHub](https://github.com/rishu7491/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
 </details>
 
 <details>
@@ -1921,7 +1921,7 @@ hook 固有のチェックについては、[hooks README](../../hooks/README.md
 <details>
 <summary><strong>hooks が動作しない / "Duplicate hooks file" エラー</strong></summary>
 
-**`.claude-plugin/plugin.json` に `"hooks"` フィールドを追加しないでください。**Claude Code v2.1 以降は、インストールされた plugins の `hooks/hooks.json` を自動的に読み込みます。明示的に宣言すると重複検出エラーが発生します。[#29](https://github.com/affaan-m/ECC/issues/29)、[#52](https://github.com/affaan-m/ECC/issues/52)、[#103](https://github.com/affaan-m/ECC/issues/103) を参照してください。
+**`.claude-plugin/plugin.json` に `"hooks"` フィールドを追加しないでください。**Claude Code v2.1 以降は、インストールされた plugins の `hooks/hooks.json` を自動的に読み込みます。明示的に宣言すると重複検出エラーが発生します。[#29](https://github.com/rishu7491/rishu-payal/issues/29)、[#52](https://github.com/rishu7491/rishu-payal/issues/52)、[#103](https://github.com/rishu7491/rishu-payal/issues/103) を参照してください。
 </details>
 
 <details>
@@ -1970,13 +1970,13 @@ ECC Pro は、ホスト型 GitHub App を通じて、プライベートリポジ
 <table>
 <tr>
 <td width="25%" align="center"><a href="https://ecc.tools/pricing"><strong>ECC Pro</strong><br /><sub>プライベートリポジトリ向けホスト型 GitHub App</sub></a></td>
-<td width="25%" align="center"><a href="https://github.com/sponsors/affaan-m"><strong>ECC をスポンサーする</strong><br /><sub>OSS 活動を支援する</sub></a></td>
-<td width="25%" align="center"><a href="https://github.com/affaan-m/ECC/discussions"><strong>コミュニティ</strong><br /><sub>Q&amp;A、アイデア、Show and Tell</sub></a></td>
+<td width="25%" align="center"><a href="https://github.com/sponsors/rishu7491"><strong>ECC をスポンサーする</strong><br /><sub>OSS 活動を支援する</sub></a></td>
+<td width="25%" align="center"><a href="https://github.com/rishu7491/rishu-payal/discussions"><strong>コミュニティ</strong><br /><sub>Q&amp;A、アイデア、Show and Tell</sub></a></td>
 <td width="25%" align="center"><a href="https://github.com/apps/ecc-tools"><strong>GitHub App</strong><br /><sub>PR 監査とホスト型ワークフロー</sub></a></td>
 </tr>
 </table>
 
-[スポンサーになる](https://github.com/sponsors/affaan-m) | [スポンサーティア](../../SPONSORS.md) | [スポンサーシッププログラム](../../SPONSORING.md)
+[スポンサーになる](https://github.com/sponsors/rishu7491) | [スポンサーティア](../../SPONSORS.md) | [スポンサーシッププログラム](../../SPONSORING.md)
 </details>
 
 <details>
@@ -2006,10 +2006,10 @@ skills、agents、rules、hooks、ドキュメント、テスト、アダプタ�
 
 ## リンク
 
-- **簡潔ガイド（まずはここから）：**[ECC 簡潔ガイド](https://x.com/affaan/status/2012378465664745795)
-- **長文ガイド（上級者向け）：**[ECC 長文ガイド](https://x.com/affaan/status/2014040193557471352)
-- **セキュリティガイド：**[セキュリティガイド](../../the-security-guide.md) | [スレッド](https://x.com/affaan/status/2033263813387223421)
-- **フォロー：**[@affaan](https://x.com/affaan)
+- **簡潔ガイド（まずはここから）：**[ECC 簡潔ガイド](https://x.com/rishu/status/2012378465664745795)
+- **長文ガイド（上級者向け）：**[ECC 長文ガイド](https://x.com/rishu/status/2014040193557471352)
+- **セキュリティガイド：**[セキュリティガイド](../../the-security-guide.md) | [スレッド](https://x.com/rishu/status/2033263813387223421)
+- **フォロー：**[@rishu](https://x.com/rishu)
 
 ## ライセンス
 

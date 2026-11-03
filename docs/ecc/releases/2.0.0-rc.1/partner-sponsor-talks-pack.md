@@ -80,13 +80,13 @@ The current public sponsor ladder is:
 Business sponsors get logo placement and release visibility. Strategic partners
 can turn it into a deeper integration or launch motion.
 
-Repo: https://github.com/affaan-m/ECC
-Sponsor: https://github.com/sponsors/affaan-m
-Release notes: https://github.com/affaan-m/ECC/blob/main/docs/releases/2.0.0-rc.1/release-notes.md
+Repo: https://github.com/rishu7491/rishu-payal
+Sponsor: https://github.com/sponsors/rishu7491
+Release notes: https://github.com/rishu7491/rishu-payal/blob/main/docs/releases/2.0.0-rc.1/release-notes.md
 
 If useful, I can send the short sponsor packet and a proposed first 30-day plan.
 
-Affaan
+Rishabh
 ```
 
 ## Platform Partner DM
@@ -104,7 +104,7 @@ for teams using more than one AI coding harness.
 I think there is a real integration or co-launch angle here if your team wants
 better setup, policy, security, or workflow portability for agent users.
 
-Repo: https://github.com/affaan-m/ECC
+Repo: https://github.com/rishu7491/rishu-payal
 ```
 
 ## Consulting Intro
@@ -209,9 +209,9 @@ Use these with the release video suite:
 
 ## Routing Links
 
-- Repo: <https://github.com/affaan-m/ECC>
-- Release notes: <https://github.com/affaan-m/ECC/blob/main/docs/releases/2.0.0-rc.1/release-notes.md>
-- Quickstart: <https://github.com/affaan-m/ECC/blob/main/docs/releases/2.0.0-rc.1/quickstart.md>
-- Sponsor: <https://github.com/sponsors/affaan-m>
-- Sponsor tiers: <https://github.com/affaan-m/ECC/blob/main/SPONSORS.md>
-- Sponsoring guide: <https://github.com/affaan-m/ECC/blob/main/SPONSORING.md>
+- Repo: <https://github.com/rishu7491/rishu-payal>
+- Release notes: <https://github.com/rishu7491/rishu-payal/blob/main/docs/releases/2.0.0-rc.1/release-notes.md>
+- Quickstart: <https://github.com/rishu7491/rishu-payal/blob/main/docs/releases/2.0.0-rc.1/quickstart.md>
+- Sponsor: <https://github.com/sponsors/rishu7491>
+- Sponsor tiers: <https://github.com/rishu7491/rishu-payal/blob/main/SPONSORS.md>
+- Sponsoring guide: <https://github.com/rishu7491/rishu-payal/blob/main/SPONSORING.md>

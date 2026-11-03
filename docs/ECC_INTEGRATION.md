@@ -1,6 +1,6 @@
 # ECC (Enterprise Coding Companion) Integration in Payal AI
 
-This document catalogs the complete installation of the **affaan-m/ECC** repository into the **Payal Core Platform**.
+This document catalogs the complete installation of the **rishu7491/rishu-payal** repository into the **Payal Core Platform**.
 
 ---
 

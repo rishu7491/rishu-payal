@@ -49,7 +49,7 @@
 
 ```bash
 # 1. 포크 및 클론
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 
 # 2. 브랜치 생성
@@ -445,8 +445,8 @@ docs: improve contributing guide
 
 ## 질문이 있으신가요?
 
-- **이슈:** [github.com/affaan-m/ECC/issues](https://github.com/affaan-m/ECC/issues)
-- **X/Twitter:** [@affaanmustafa](https://x.com/affaanmustafa)
+- **이슈:** [github.com/rishu7491/rishu-payal/issues](https://github.com/rishu7491/rishu-payal/issues)
+- **X/Twitter:** [@rishu7491](https://x.com/rishu7491)
 
 ---
 

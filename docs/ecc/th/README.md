@@ -4,9 +4,9 @@
 
 ![ECC — ระบบเพิ่มประสิทธิภาพสำหรับ AI agent harness](../../assets/hero.png)
 
-[![Stars](https://img.shields.io/github/stars/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/stargazers)
-[![Forks](https://img.shields.io/github/forks/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/network/members)
-[![Contributors](https://img.shields.io/github/contributors/affaan-m/ECC?style=flat)](https://github.com/affaan-m/ECC/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/stargazers)
+[![Forks](https://img.shields.io/github/forks/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/network/members)
+[![Contributors](https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat)](https://github.com/rishu7491/rishu-payal/graphs/contributors)
 [![npm ecc-universal](https://img.shields.io/npm/dw/ecc-universal?label=ecc-universal%20weekly%20downloads&logo=npm)](https://www.npmjs.com/package/ecc-universal)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](../../LICENSE)
 
@@ -50,7 +50,7 @@ ECC ไม่ใช่แค่ชุดไฟล์คอนฟิก แต่
 
 ```bash
 # เพิ่ม marketplace
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 
 # ติดตั้ง plugin
 /plugin install ecc@ecc
@@ -58,7 +58,7 @@ ECC ไม่ใช่แค่ชุดไฟล์คอนฟิก แต่
 
 ECC มีชื่อเรียกในระบบสาธารณะ 3 ชื่อที่ต่างกัน:
 
-- GitHub repo: `affaan-m/ECC`
+- GitHub repo: `rishu7491/rishu-payal`
 - Claude marketplace plugin: `ecc@ecc`
 - npm package: `ecc-universal`
 
@@ -69,7 +69,7 @@ ECC มีชื่อเรียกในระบบสาธารณะ 3 �
 Plugin ของ Claude Code จะไม่ติดตั้ง `rules/` ให้อัตโนมัติ หากคุณติดตั้งผ่าน plugin **อย่า** รัน full installer เพิ่ม ให้คัดลอกเฉพาะชุด rule ที่ต้องการแทน:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 mkdir -p ~/.claude/rules/ecc
@@ -78,7 +78,7 @@ cp -R rules/typescript ~/.claude/rules/ecc/
 ```
 
 ```powershell
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 
 New-Item -ItemType Directory -Force -Path "$HOME/.claude/rules/ecc" | Out-Null
@@ -230,7 +230,7 @@ ECC จะลบเฉพาะไฟล์ที่อยู่ใน install-s
 
 ```bash
 # 1. Fork และ clone
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 
 # 2. สร้าง branch
@@ -249,8 +249,8 @@ git add . && git commit -m "feat: add my-skill" && git push -u origin feat/my-co
 
 ## ชุมชน & สนับสนุน
 
-- [GitHub Discussions](https://github.com/affaan-m/ECC/discussions) — ถาม-ตอบ, โชว์ผลงาน
-- [GitHub Sponsors](https://github.com/sponsors/affaan-m) — สนับสนุน OSS เริ่มที่ $5/เดือน
+- [GitHub Discussions](https://github.com/rishu7491/rishu-payal/discussions) — ถาม-ตอบ, โชว์ผลงาน
+- [GitHub Sponsors](https://github.com/sponsors/rishu7491) — สนับสนุน OSS เริ่มที่ $5/เดือน
 - [ECC Pro](https://ecc.tools/pricing) — private repo + GitHub App ($19/seat/เดือน)
 - [ECC Tools GitHub App](https://github.com/marketplace/ecc-tools) — ติดตั้ง, PR audit, มี free tier
 

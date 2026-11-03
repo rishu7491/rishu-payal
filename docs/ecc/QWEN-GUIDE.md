@@ -8,7 +8,7 @@ Qwen Code also supports installing the Claude marketplace package through its
 own extension manager:
 
 ```bash
-qwen extensions install https://github.com/affaan-m/ECC:ecc
+qwen extensions install https://github.com/rishu7491/rishu-payal:ecc
 ```
 
 This is a different installation path from the managed adapter below. On Qwen

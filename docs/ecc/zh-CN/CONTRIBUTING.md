@@ -59,7 +59,7 @@
 
 ```bash
 # 1. Fork and clone
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 
 # 2. Create a branch
@@ -457,8 +457,8 @@ docs: 完善贡献指南
 
 ## 有问题吗？
 
-* **问题：** [github.com/affaan-m/ECC/issues](https://github.com/affaan-m/ECC/issues)
-* **X/Twitter：** [@affaanmustafa](https://x.com/affaanmustafa)
+* **问题：** [github.com/rishu7491/rishu-payal/issues](https://github.com/rishu7491/rishu-payal/issues)
+* **X/Twitter：** [@rishu7491](https://x.com/rishu7491)
 
 ***
 

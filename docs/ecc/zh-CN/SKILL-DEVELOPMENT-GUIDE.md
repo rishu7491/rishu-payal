@@ -632,7 +632,7 @@ go build ./examples/...
 ### 1. Fork 并 Clone
 
 ```bash
-gh repo fork affaan-m/ECC --clone
+gh repo fork rishu7491/rishu-payal --clone
 cd ECC
 ```
 

@@ -420,7 +420,7 @@ If you want one rule: never let the convenience layer outrun the isolation layer
 
 That one rule gets you surprisingly far.
 
-Scan your setup: [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+Scan your setup: [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)
 
 ---
 
@@ -454,10 +454,10 @@ Scan your setup: [github.com/affaan-m/agentshield](https://github.com/affaan-m/a
 
 If you haven't read the previous guides, start here:
 
-> [The Shorthand Guide to ECC](https://x.com/affaanmustafa/status/2012378465664745795)
+> [The Shorthand Guide to ECC](https://x.com/rishu7491/status/2012378465664745795)
 >
-> [The Longform Guide to ECC](https://x.com/affaanmustafa/status/2014040193557471352)
+> [The Longform Guide to ECC](https://x.com/rishu7491/status/2014040193557471352)
 
 go do that and also save these repos:
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
-- [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+- [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal)
+- [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)

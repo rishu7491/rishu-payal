@@ -3,16 +3,16 @@
 </p>
 
 <p align="center">
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending&theme=dark" />
-      <img src="https://api.star-history.com/badge?repo=affaan-m/ECC&type=trending" alt="GitHub Trending Repository of the Day" height="46" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=trending&theme=dark" />
+      <img src="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=trending" alt="GitHub Trending Repository of the Day" height="46" />
     </picture>
   </a>
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank&theme=dark" />
-      <img src="https://api.star-history.com/badge?repo=affaan-m/ECC&type=rank" alt="Star History Global Rank" height="46" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=rank&theme=dark" />
+      <img src="https://api.star-history.com/badge?repo=rishu7491/rishu-payal&type=rank" alt="Star History Global Rank" height="46" />
     </picture>
   </a>
 </p>
@@ -45,9 +45,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/affaan-m/ECC"><img src="https://img.shields.io/github/stars/affaan-m/ECC?style=flat" alt="GitHub stars" /></a>
-  <a href="https://github.com/affaan-m/ECC/forks"><img src="https://img.shields.io/github/forks/affaan-m/ECC?style=flat" alt="GitHub forks" /></a>
-  <a href="https://github.com/affaan-m/ECC/graphs/contributors"><img src="https://img.shields.io/github/contributors/affaan-m/ECC?style=flat" alt="Contributors" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal"><img src="https://img.shields.io/github/stars/rishu7491/rishu-payal?style=flat" alt="GitHub stars" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal/forks"><img src="https://img.shields.io/github/forks/rishu7491/rishu-payal?style=flat" alt="GitHub forks" /></a>
+  <a href="https://github.com/rishu7491/rishu-payal/graphs/contributors"><img src="https://img.shields.io/github/contributors/rishu7491/rishu-payal?style=flat" alt="Contributors" /></a>
   <a href="https://github.com/marketplace/ecc-tools"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fapi.ecc.tools%2Fbadge%2Finstalls&logo=github" alt="GitHub App installs" /></a>
 </p>
 
@@ -67,7 +67,7 @@
 </p>
 
 > [!WARNING]
-> **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
+> **Official sources only.** Install ECC only from verified channels: the GitHub repository [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal), the npm packages [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield), the [GitHub App](https://github.com/apps/ecc-tools), the plugin slug `ecc@ecc`, and the project website [ecc.tools](https://ecc.tools). Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
 
 ## Install with Claude Code
 
@@ -85,7 +85,7 @@ Use the [guided setup](#install-ecc) or [native plugin commands](#claude-code-de
   <sub><a href="https://github.com/apps/ecc-tools">Install free</a> · <a href="https://ecc.tools/pricing">Private repos from $19/seat/mo</a></sub>
 </td>
 <td width="33%" align="center">
-  <a href="https://github.com/sponsors/affaan-m">
+  <a href="https://github.com/sponsors/rishu7491">
     <img src="assets/images/community/heart.svg" height="42" alt="" /><br />
     <strong>Sponsor ECC</strong>
   </a><br />
@@ -103,7 +103,7 @@ Use the [guided setup](#install-ecc) or [native plugin commands](#claude-code-de
 
 </div>
 
-<sub>**OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos. <a href="https://github.com/sponsors/affaan-m">Sponsors</a> and <a href="https://ecc.tools/pricing">Pro subscribers</a> fund the work. That's why a single maintainer ships weekly across 7 harnesses.</sub>
+<sub>**OSS stays free.** This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos. <a href="https://github.com/sponsors/rishu7491">Sponsors</a> and <a href="https://ecc.tools/pricing">Pro subscribers</a> fund the work. That's why a single maintainer ships weekly across 7 harnesses.</sub>
 
 <div align="center">
 
@@ -121,7 +121,7 @@ Use the [guided setup](#install-ecc) or [native plugin commands](#claude-code-de
 
 <sub><strong>Community sponsors:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@1anter</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
 
-<sub><a href="https://github.com/sponsors/affaan-m"><strong>Become a Sponsor</strong></a> · <a href="SPONSORS.md">Sponsor Tiers</a> · <a href="SPONSORING.md">Sponsorship Program</a></sub>
+<sub><a href="https://github.com/sponsors/rishu7491"><strong>Become a Sponsor</strong></a> · <a href="SPONSORS.md">Sponsor Tiers</a> · <a href="SPONSORING.md">Sponsorship Program</a></sub>
 
 </div>
 
@@ -153,10 +153,10 @@ Access to 71 agents, 314 skills, and 98 legacy command shims, plus hooks, rules,
 | AgentShield      |    Included | Scanning for prompts, hooks, MCP config, permissions, secrets, and agent files       |
 
 <p align="center">
-  <a href="https://www.star-history.com/affaan-m/ecc">
+  <a href="https://www.star-history.com/rishu7491/ecc">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date&theme=dark" />
-      <img src="https://api.star-history.com/svg?repos=affaan-m/ECC&type=Date" alt="Live star history chart for affaan-m/ECC" width="100%" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rishu7491/rishu-payal&type=Date&theme=dark" />
+      <img src="https://api.star-history.com/svg?repos=rishu7491/rishu-payal&type=Date" alt="Live star history chart for rishu7491/rishu-payal" width="100%" />
     </picture>
   </a>
 </p>
@@ -280,14 +280,14 @@ You can use ECC with Claude Code, Codex, and other harnesses at the same time. C
 
 If you already layered multiple installs and things look duplicated, skip straight to [Reset / Uninstall ECC](#reset--uninstall-ecc).
 
-**Install trouble?** Open the short [install or runtime problem form](https://github.com/affaan-m/ECC/issues/new?template=install-problem.yml), or run `ecc feedback`. ECC never uploads diagnostics automatically.
+**Install trouble?** Open the short [install or runtime problem form](https://github.com/rishu7491/rishu-payal/issues/new?template=install-problem.yml), or run `ecc feedback`. ECC never uploads diagnostics automatically.
 
 ### Claude Code details
 
 Alternatively, run Claude Code's native plugin commands inside Claude Code:
 
 ```text
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 /plugin install ecc@ecc
 ```
 
@@ -300,7 +300,7 @@ After ECC is installed, `/ecc:configure-ecc` is the namespaced in-Claude reconfi
 Claude Code plugins cannot distribute `rules`, so add only the rule packs you actually want:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 mkdir -p ~/.claude/rules/ecc
 cp -R rules/common ~/.claude/rules/ecc/
@@ -320,7 +320,7 @@ Add directly to your `~/.claude/settings.json`:
     "ecc": {
       "source": {
         "source": "github",
-        "repo": "affaan-m/ECC"
+        "repo": "rishu7491/rishu-payal"
       }
     }
   },
@@ -334,11 +334,11 @@ This gives you the same result as the two `/plugin` commands above.
 </details>
 
 <details>
-<summary><strong>Naming + migration note (ecc@ecc, affaan-m/ECC, ecc-universal)</strong></summary>
+<summary><strong>Naming + migration note (ecc@ecc, rishu7491/rishu-payal, ecc-universal)</strong></summary>
 
 ECC has three public identifiers, and they are not interchangeable:
 
-- GitHub source repo: `affaan-m/ECC`
+- GitHub source repo: `rishu7491/rishu-payal`
 - Claude marketplace/plugin identifier: `ecc@ecc`
 - npm package: `ecc-universal`
 
@@ -354,7 +354,7 @@ If your local Claude setup was wiped or reset, that does not mean you need to re
 Current Codex releases can install ECC as a native repo-marketplace plugin. The marketplace entry uses the repository root so Codex's cache receives the manifest together with all referenced skills, MCP configuration, hook runtime, scripts, and assets:
 
 ```bash
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 codex plugin list --json
 node scripts/codex/check-plugin-cache.js
@@ -365,7 +365,7 @@ Both add commands are idempotent. To refresh later, run `codex plugin marketplac
 The older `scripts/sync-ecc-to-codex.sh` path is a deprecated compatibility option for users who intentionally need copied and merged configuration in `~/.codex`; it is not required for the native plugin. New sync runs write an ownership manifest so cleanup can preserve modified user files. Run Codex once first so `~/.codex/config.toml` exists, then:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 npm install
 bash scripts/sync-ecc-to-codex.sh
@@ -417,7 +417,7 @@ the [.qoder-plugin notes](.qoder-plugin/README.md) for the exact boundary.
 Clone ECC once, then choose the target that matches your harness:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 ```
 
@@ -560,7 +560,7 @@ Rules are always-loaded context, so begin with `common` and one pack for the sta
 Use this only when you are intentionally skipping the plugin path:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 ./install.sh --profile full --enable-hooks
 ```
@@ -568,7 +568,7 @@ cd ECC
 Windows:
 
 ```powershell
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cd ECC
 .\install.ps1 --profile full --enable-hooks
 ```
@@ -672,7 +672,7 @@ node scripts/uninstall.js --dry-run
 node scripts/uninstall.js
 ```
 
-If you are leaving, the uninstall command prints an optional [20-second feedback form](https://github.com/affaan-m/ECC/issues/new?template=quick-feedback.yml). It is a public GitHub issue, never blocks uninstall, and ECC does not upload diagnostics. You can also run `ecc feedback` at any time to see the problem, feedback, and feature routes.
+If you are leaving, the uninstall command prints an optional [20-second feedback form](https://github.com/rishu7491/rishu-payal/issues/new?template=quick-feedback.yml). It is a public GitHub issue, never blocks uninstall, and ECC does not upload diagnostics. You can also run `ecc feedback` at any time to see the problem, feedback, and feature routes.
 
 Plugin users should remove the plugin from Claude Code, then delete only the rule folders they manually copied and no longer want. ECC only removes files recorded in its install-state. It does not claim unrelated files in your harness directories.
 
@@ -1190,21 +1190,21 @@ This repo is the raw code. The guides explain everything.
 <img src="assets/images/guides/shorthand-guide.png" width="213" height="120" alt="The Shorthand Guide to ECC" /><br />
 <strong>The Shorthand Guide</strong>
 </a>
-<br /><sub>Setup, foundations, and day-one use. <b>Read this first.</b> (<a href="https://x.com/affaan/status/2012378465664745795">thread</a>)</sub>
+<br /><sub>Setup, foundations, and day-one use. <b>Read this first.</b> (<a href="https://x.com/rishu/status/2012378465664745795">thread</a>)</sub>
 </td>
 <td width="33%" align="center">
 <a href="./the-longform-guide.md">
 <img src="assets/images/guides/longform-guide.png" width="213" height="120" alt="The Longform Guide to ECC" /><br />
 <strong>The Longform Guide</strong>
 </a>
-<br /><sub>Context economics, memory, evals, and parallel agents. (<a href="https://x.com/affaan/status/2014040193557471352">thread</a>)</sub>
+<br /><sub>Context economics, memory, evals, and parallel agents. (<a href="https://x.com/rishu/status/2014040193557471352">thread</a>)</sub>
 </td>
 <td width="33%" align="center">
 <a href="./the-security-guide.md">
 <img src="assets/images/guides/security-guide.png" width="213" height="120" alt="The Security Guide to ECC" /><br />
 <strong>The Security Guide</strong>
 </a>
-<br /><sub>Prompt injection, hooks, MCP, and AgentShield. (<a href="https://x.com/affaan/status/2033263813387223421">thread</a>)</sub>
+<br /><sub>Prompt injection, hooks, MCP, and AgentShield. (<a href="https://x.com/rishu/status/2033263813387223421">thread</a>)</sub>
 </td>
 </tr>
 </table>
@@ -1318,9 +1318,9 @@ ECC's core Node.js CLI and managed installers run on **Windows, macOS, and Linux
 | Platform | Status | Current limitation |
 |---|---|---|
 | Linux | Supported core | Optional features may require Bash, Python, or provider-specific tools. |
-| macOS | Supported core | The standalone GAN shell path is not compatible with the system Bash 3.2 and currently has a score-parsing defect ([#2674](https://github.com/affaan-m/ECC/issues/2674)). |
+| macOS | Supported core | The standalone GAN shell path is not compatible with the system Bash 3.2 and currently has a score-parsing defect ([#2674](https://github.com/rishu7491/rishu-payal/issues/2674)). |
 | Windows + WSL | Supported core | WSL follows the Linux paths; Windows host integrations still vary by harness. |
-| Windows native | Supported with limitations | Continuous-learning v2's observer daemon and memory-vault writes have open native-Windows defects ([#2489](https://github.com/affaan-m/ECC/issues/2489), [#2626](https://github.com/affaan-m/ECC/issues/2626)). Shell-backed optional features require Git Bash/WSL or are unavailable. |
+| Windows native | Supported with limitations | Continuous-learning v2's observer daemon and memory-vault writes have open native-Windows defects ([#2489](https://github.com/rishu7491/rishu-payal/issues/2489), [#2626](https://github.com/rishu7491/rishu-payal/issues/2626)). Shell-backed optional features require Git Bash/WSL or are unavailable. |
 
 Treat `stable`, `beta`, `experimental`, and `instruction-only` below as capability statements, not marketing tiers.
 
@@ -1330,7 +1330,7 @@ Treat `stable`, `beta`, `experimental`, and `instruction-only` below as capabili
 | Codex | Supported native plugin | Codex marketplace plugin or repo config | Native hooks require an explicit trust decision and do not use Claude's hook profiles. The legacy sync is compatibility-only. |
 | Qoder | Supported native plugin | Local plugin directory in Qoder CLI or ZIP upload in Qoder IDE | Loads the canonical skills, agents, commands, and MCP config; only the reviewed SessionStart hook is enabled, and Node.js 18+ must be on the non-interactive PATH. |
 | Cursor | Beta project adapter | Selective installer into `.cursor/` | Agent discovery varies by Cursor build; hook events use profile-gated dispatchers, but full Claude feature parity is not claimed. |
-| OpenCode | Beta built plugin | Build plugin, then selective installer | ECC ships a subset of the catalog; connect a provider and select a model in OpenCode ([#2617](https://github.com/affaan-m/ECC/issues/2617)). |
+| OpenCode | Beta built plugin | Build plugin, then selective installer | ECC ships a subset of the catalog; connect a provider and select a model in OpenCode ([#2617](https://github.com/rishu7491/rishu-payal/issues/2617)). |
 | GitHub Copilot Chat | Instruction-only | Checked-in instructions and prompt files | ECC hooks are not adapted. |
 | GitHub Copilot CLI | Beta project adapter | `--target copilot` places skills, adapted agents, and converted rules in `.github/` | ECC hooks and command shims are not installed by this target. |
 | Gemini, Zed, Antigravity, Qwen, Hermes, OpenClaw, Kimi, CodeBuddy, JoyCode | Experimental/minimal adapters | Harness-specific selective target | File placement and instruction portability are tested; full Claude feature parity is not claimed. |
@@ -1430,7 +1430,7 @@ Paths resolved under that root include:
 - `$ECC_AGENT_DATA_HOME/session-aliases.json`: session aliases
 - `$ECC_AGENT_DATA_HOME/metrics/`: cost and activity metrics
 
-See [affaan-m/ECC#2065](https://github.com/affaan-m/ECC/issues/2065).
+See [rishu7491/rishu-payal#2065](https://github.com/rishu7491/rishu-payal/issues/2065).
 </details>
 
 <details>
@@ -1543,7 +1543,7 @@ ECC provides a supported native Codex marketplace plugin and repo-local configur
 
 ```bash
 # Recommended current install: add ECC's native plugin from the repo marketplace
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 codex plugin list --json
 
@@ -1728,7 +1728,7 @@ Because ECC ships a skill subset in `.agents/skills/`, a plain clone of this
 repository is picked up by Copilot CLI with no configuration at all:
 
 ```bash
-git clone https://github.com/affaan-m/ECC.git && cd ECC
+git clone https://github.com/rishu7491/rishu-payal.git && cd ECC
 copilot skill list
 # The inventory depends on the checkout and CLI version.
 ```
@@ -1742,7 +1742,7 @@ To check this with a temporary npm-distributed CLI, run the pinned build
 against a throwaway clone:
 
 ```bash
-git clone --depth 1 https://github.com/affaan-m/ECC.git && cd ECC
+git clone --depth 1 https://github.com/rishu7491/rishu-payal.git && cd ECC
 npx -y @github/copilot@1.0.82 skill list --json | jq '[.[] | select(.source=="project")] | length'
 # Count the current inventory rather than assuming a fixed total.
 ```
@@ -1962,14 +1962,14 @@ Claude Code v2.1+ **automatically loads** `hooks/hooks.json` from any installed 
 Duplicate hooks file detected: ./hooks/hooks.json resolves to already-loaded file
 ```
 
-**History:** This has caused repeated fix/revert cycles in this repo ([#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103)). The behavior changed between Claude Code versions, leading to confusion. There is now a regression test to prevent this from being reintroduced.
+**History:** This has caused repeated fix/revert cycles in this repo ([#29](https://github.com/rishu7491/rishu-payal/issues/29), [#52](https://github.com/rishu7491/rishu-payal/issues/52), [#103](https://github.com/rishu7491/rishu-payal/issues/103)). The behavior changed between Claude Code versions, leading to confusion. There is now a regression test to prevent this from being reintroduced.
 </details>
 
 ## Security
 
 Install ECC only from official sources:
 
-- GitHub repository: <https://github.com/affaan-m/ECC>
+- GitHub repository: <https://github.com/rishu7491/rishu-payal>
 - Claude Code plugin: `ecc@ecc`
 - npm packages: [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) and [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield)
 - GitHub App: <https://github.com/apps/ecc-tools>
@@ -2070,9 +2070,9 @@ agentshield init
 
 **Output formats:** Terminal (color-graded A-F), JSON (CI pipelines), Markdown, HTML. Exit code 2 on critical findings for build gates.
 
-Use `/security-scan` in Claude Code to run it, or add to CI with the [GitHub Action](https://github.com/affaan-m/agentshield).
+Use `/security-scan` in Claude Code to run it, or add to CI with the [GitHub Action](https://github.com/rishu7491/agentshield).
 
-[GitHub](https://github.com/affaan-m/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
+[GitHub](https://github.com/rishu7491/agentshield) | [npm](https://www.npmjs.com/package/ecc-agentshield)
 </details>
 
 <details>
@@ -2108,7 +2108,7 @@ For hook-specific checks, see the [hooks README](hooks/README.md).
 <details>
 <summary><strong>My hooks aren't working / "Duplicate hooks file" errors</strong></summary>
 
-**Do NOT add a `"hooks"` field to `.claude-plugin/plugin.json`.** Claude Code v2.1+ automatically loads `hooks/hooks.json` from installed plugins. Explicitly declaring it causes duplicate detection errors. See [#29](https://github.com/affaan-m/ECC/issues/29), [#52](https://github.com/affaan-m/ECC/issues/52), [#103](https://github.com/affaan-m/ECC/issues/103).
+**Do NOT add a `"hooks"` field to `.claude-plugin/plugin.json`.** Claude Code v2.1+ automatically loads `hooks/hooks.json` from installed plugins. Explicitly declaring it causes duplicate detection errors. See [#29](https://github.com/rishu7491/rishu-payal/issues/29), [#52](https://github.com/rishu7491/rishu-payal/issues/52), [#103](https://github.com/rishu7491/rishu-payal/issues/103).
 </details>
 
 <details>
@@ -2161,13 +2161,13 @@ ECC Pro adds private-repo analysis, PR-triggered audits, AgentShield-backed scan
 <table>
 <tr>
 <td width="25%" align="center"><a href="https://ecc.tools/pricing"><strong>ECC Pro</strong><br /><sub>Hosted GitHub App for private repos</sub></a></td>
-<td width="25%" align="center"><a href="https://github.com/sponsors/affaan-m"><strong>Sponsor ECC</strong><br /><sub>Fund the OSS work</sub></a></td>
-<td width="25%" align="center"><a href="https://github.com/affaan-m/ECC/discussions"><strong>Community</strong><br /><sub>Q&amp;A, ideas, and Show and Tell</sub></a></td>
+<td width="25%" align="center"><a href="https://github.com/sponsors/rishu7491"><strong>Sponsor ECC</strong><br /><sub>Fund the OSS work</sub></a></td>
+<td width="25%" align="center"><a href="https://github.com/rishu7491/rishu-payal/discussions"><strong>Community</strong><br /><sub>Q&amp;A, ideas, and Show and Tell</sub></a></td>
 <td width="25%" align="center"><a href="https://github.com/apps/ecc-tools"><strong>GitHub App</strong><br /><sub>PR audits and hosted workflows</sub></a></td>
 </tr>
 </table>
 
-[Become a sponsor](https://github.com/sponsors/affaan-m) | [Sponsor tiers](SPONSORS.md) | [Sponsorship program](SPONSORING.md)
+[Become a sponsor](https://github.com/sponsors/rishu7491) | [Sponsor tiers](SPONSORS.md) | [Sponsorship program](SPONSORING.md)
 </details>
 
 <details>
@@ -2197,10 +2197,10 @@ The short version:
 
 ## Links
 
-- **Shorthand Guide (Start Here):** [The Shorthand Guide to ECC](https://x.com/affaan/status/2012378465664745795)
-- **Longform Guide (Advanced):** [The Longform Guide to ECC](https://x.com/affaan/status/2014040193557471352)
-- **Security Guide:** [Security Guide](./the-security-guide.md) | [Thread](https://x.com/affaan/status/2033263813387223421)
-- **Follow:** [@affaan](https://x.com/affaan)
+- **Shorthand Guide (Start Here):** [The Shorthand Guide to ECC](https://x.com/rishu/status/2012378465664745795)
+- **Longform Guide (Advanced):** [The Longform Guide to ECC](https://x.com/rishu/status/2014040193557471352)
+- **Security Guide:** [Security Guide](./the-security-guide.md) | [Thread](https://x.com/rishu/status/2033263813387223421)
+- **Follow:** [@rishu](https://x.com/rishu)
 
 ## License
 

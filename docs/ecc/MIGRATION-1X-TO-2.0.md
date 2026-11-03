@@ -1,6 +1,6 @@
 # Migrating From ECC 1.x To 2.0
 
-ECC 2.0 renamed the repo (`affaan-m/everything-claude-code` → `affaan-m/ECC`) and the plugin identifier (`everything-claude-code@everything-claude-code` → `ecc@ecc`). If you installed 1.x, follow this guide to upgrade cleanly. See also the [Naming + Migration Note](../README.md#claude-code-details) in the README.
+ECC 2.0 renamed the repo (`rishu7491/everything-claude-code` → `rishu7491/rishu-payal`) and the plugin identifier (`everything-claude-code@everything-claude-code` → `ecc@ecc`). If you installed 1.x, follow this guide to upgrade cleanly. See also the [Naming + Migration Note](../README.md#claude-code-details) in the README.
 
 ## TL;DR
 
@@ -8,7 +8,7 @@ Before uninstalling, back up any saved plugin options, secrets, and data you nee
 
 ```bash
 # 1. Install 2.0
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 /plugin install ecc@ecc
 
 # 2. Remove the old plugin
@@ -46,7 +46,7 @@ Uninstalling the old plugin does not itself replace a persistent `extraKnownMark
        "ecc": {
          "source": {
            "source": "github",
-           "repo": "affaan-m/ECC"
+           "repo": "rishu7491/rishu-payal"
          }
        }
      }
@@ -54,7 +54,7 @@ Uninstalling the old plugin does not itself replace a persistent `extraKnownMark
    ```
 
    This snippet registers the marketplace only. Use the enablement choice recorded in step 2. If you previously enabled the old plugin and want to continue using it, install `ecc@ecc` and use `"ecc@ecc": true` in `enabledPlugins` at the intended scope. If you kept it disabled, preserve `"ecc@ecc": false`; if you did not enable it, do not add an enablement entry just to repair the marketplace. Remove any obsolete `everything-claude-code@everything-claude-code` enablement entry while preserving unrelated entries.
-5. Restart Claude Code and run `/plugin marketplace list` (or `claude plugin marketplace list --json` from the shell). Confirm that the legacy ECC marketplace is absent and `ecc` points to `affaan-m/ECC`; unrelated marketplaces should remain. In the JSON output, check that ECC's `installLocation` directory exists and its `.claude-plugin/marketplace.json` declares `"name": "ecc"`. Use `/plugin list` to confirm the legacy plugin is no longer installed, and `/plugin` to confirm the new plugin's enabled/disabled state matches your choice. If the old marketplace returns, recheck the settings scopes for a remaining declaration rather than repeatedly deleting its cache.
+5. Restart Claude Code and run `/plugin marketplace list` (or `claude plugin marketplace list --json` from the shell). Confirm that the legacy ECC marketplace is absent and `ecc` points to `rishu7491/rishu-payal`; unrelated marketplaces should remain. In the JSON output, check that ECC's `installLocation` directory exists and its `.claude-plugin/marketplace.json` declares `"name": "ecc"`. Use `/plugin list` to confirm the legacy plugin is no longer installed, and `/plugin` to confirm the new plugin's enabled/disabled state matches your choice. If the old marketplace returns, recheck the settings scopes for a remaining declaration rather than repeatedly deleting its cache.
 
 ### Abandoned temporary marketplace clones
 

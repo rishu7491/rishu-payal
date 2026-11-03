@@ -2,7 +2,7 @@
 name: logistics-exception-management
 description: Codified freight-exception handling expertise for shipment delays, damages, losses, shortages, and carrier disputes, with escalation protocols, carrier-specific behaviors by mode, claims procedures, and eat-the-cost vs fight-the-claim judgment frameworks. Use when handling shipping exceptions, freight claims, delivery issues, or carrier disputes.
 license: Apache-2.0
-homepage: https://github.com/affaan-m/ECC
+homepage: https://github.com/rishu7491/rishu-payal
 metadata:
   version: 1.0.0
   origin: ECC

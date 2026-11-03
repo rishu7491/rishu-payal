@@ -264,7 +264,7 @@ claude --version
 # Claude Code 2.0+ gerektirir
 
 # Manuel kurulum (marketplace başarısız olursa)
-git clone https://github.com/affaan-m/ECC.git
+git clone https://github.com/rishu7491/rishu-payal.git
 cp -r ECC ~/.claude/plugins/ecc
 ```
 
@@ -397,7 +397,7 @@ find ~/.claude/plugins -name "*.sh" -exec dos2unix {} \;
 
 Hala sorunlar yaşıyorsanız:
 
-1. **GitHub Issues'ı Kontrol Edin**: [github.com/affaan-m/ECC/issues](https://github.com/affaan-m/ECC/issues)
+1. **GitHub Issues'ı Kontrol Edin**: [github.com/rishu7491/rishu-payal/issues](https://github.com/rishu7491/rishu-payal/issues)
 2. **Debug Logging'i Etkinleştirin**:
    ```bash
    export CLAUDE_DEBUG=1

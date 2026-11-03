@@ -149,7 +149,7 @@ claim those profiles map to Codex.
 If the ECC marketplace is missing, add it. Otherwise refresh its snapshot:
 
 ```bash
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin marketplace upgrade ecc --json
 ```
 

@@ -6,7 +6,7 @@ origin: ECC
 
 # 安全扫描技能
 
-使用 [AgentShield](https://github.com/affaan-m/agentshield) 审计您的 Claude Code 配置中的安全问题。
+使用 [AgentShield](https://github.com/rishu7491/agentshield) 审计您的 Claude Code 配置中的安全问题。
 
 ## 何时激活
 
@@ -123,7 +123,7 @@ npx ecc-agentshield init
 添加到您的 CI 流水线中：
 
 ```yaml
-- uses: affaan-m/agentshield@v1
+- uses: rishu7491/agentshield@v1
   with:
     path: '.'
     min-severity: 'medium'
@@ -168,5 +168,5 @@ npx ecc-agentshield init
 
 ## 链接
 
-* **GitHub**: [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+* **GitHub**: [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)
 * **npm**: [npmjs.com/package/ecc-agentshield](https://www.npmjs.com/package/ecc-agentshield)

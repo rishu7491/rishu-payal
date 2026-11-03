@@ -22,7 +22,7 @@ rzeczywistych przepływów pracy i działa w wielu środowiskach: **Claude Code*
 
 Instaluj ECC wyłącznie ze zweryfikowanych kanałów:
 
-- repozytorium [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC),
+- repozytorium [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal),
 - pakiety npm [`ecc-universal`](https://www.npmjs.com/package/ecc-universal) i
   [`ecc-agentshield`](https://www.npmjs.com/package/ecc-agentshield),
 - aplikacja [ECC Tools dla GitHub](https://github.com/apps/ecc-tools),
@@ -57,7 +57,7 @@ Przed uruchomieniem kodu pakietu sprawdź źródło wydania i integralność rej
 W Claude Code dodaj marketplace i zainstaluj plugin:
 
 ```text
-/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin marketplace add https://github.com/rishu7491/rishu-payal
 /plugin install ecc@ecc
 ```
 
@@ -68,7 +68,7 @@ których rzeczywiście używasz. Po instalacji pluginu nie uruchamiaj dodatkowo 
 ### Codex
 
 ```bash
-codex plugin marketplace add affaan-m/ECC
+codex plugin marketplace add rishu7491/rishu-payal
 codex plugin add ecc@ecc
 ```
 

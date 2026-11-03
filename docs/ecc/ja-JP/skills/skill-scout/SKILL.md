@@ -59,7 +59,7 @@ Web検索では、最大3つのターゲットクエリを使用します（例�
 ```text
 "claude code skill" keyword
 "SKILL.md" keyword
-"affaan-m/ECC" keyword
+"rishu7491/rishu-payal" keyword
 ```
 
 ### ステップ4 - 外部マッチを審査する

@@ -171,4 +171,4 @@ src/
 
 ---
 
-*[ECC](https://github.com/affaan-m/ECC)の一部*
+*[ECC](https://github.com/rishu7491/rishu-payal)の一部*

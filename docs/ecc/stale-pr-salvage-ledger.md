@@ -114,7 +114,7 @@ The ECC release repos were already clean, but an owner-wide `gh search` sweep
 found stale queues in older public/private projects. The cleanup closed 24
 stale dependency-bot PRs and 72 stale legacy payments/0EM roadmap issues,
 then closed the final 9 stale/generated/conflicting/test PRs and 5
-legacy/outreach/placeholder issues. The `affaan-m` owner namespace is now at 0
+legacy/outreach/placeholder issues. The `rishu7491` owner namespace is now at 0
 open PRs and 0 open issues by live `gh search`. The detailed before/after
 evidence and final queue disposition are recorded in
 `docs/releases/2.0.0-rc.1/owner-queue-cleanup-2026-05-18.md`.

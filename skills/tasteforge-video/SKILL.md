@@ -77,7 +77,7 @@ dry-run/dry_run semantics — say "dry-run spec" or "deterministic plan", never
 
 ## Canonical Implementation
 
-- Repository: `affaan-m/ECC`; Python distribution `ecc-tasteforge`, package
+- Repository: `rishu7491/rishu-payal`; Python distribution `ecc-tasteforge`, package
   directory `skills/taste-application/scripts/tasteforge/`. Install from the
   extracted ECC package with `python3 -m pip install ./skills/taste-application/scripts`.
   The example project `Ito-Markets/ito-video` pins a specific ECC commit.

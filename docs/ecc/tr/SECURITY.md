@@ -43,7 +43,7 @@ Bu politika aşağıdakileri kapsar:
 - Makinenizde çalışan hook script'leri
 - Install/uninstall/repair yaşam döngüsü script'leri
 - ECC ile birlikte gelen MCP konfigürasyonları
-- AgentShield güvenlik tarayıcısı ([github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield))
+- AgentShield güvenlik tarayıcısı ([github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield))
 
 ## Güvenlik Kaynakları
 

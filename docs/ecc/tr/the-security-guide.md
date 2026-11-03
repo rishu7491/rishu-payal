@@ -414,7 +414,7 @@ Bir kural istiyorsanız: asla kolaylık katmanının izolasyon katmanını geçm
 
 Bu bir kural sizi şaşırtıcı derecede ileri götürür.
 
-Kurulumunuzu tarayın: [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+Kurulumunuzu tarayın: [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)
 
 ---
 
@@ -446,10 +446,10 @@ Kurulumunuzu tarayın: [github.com/affaan-m/agentshield](https://github.com/affa
 
 Önceki kılavuzları okumadıysanız, buradan başlayın:
 
-> [Claude Code'un Her Şeyine Dair Kısa Kılavuz](https://x.com/affaanmustafa/status/2012378465664745795)
+> [Claude Code'un Her Şeyine Dair Kısa Kılavuz](https://x.com/rishu7491/status/2012378465664745795)
 >
-> [Claude Code'un Her Şeyine Dair Uzun Kılavuz](https://x.com/affaanmustafa/status/2014040193557471352)
+> [Claude Code'un Her Şeyine Dair Uzun Kılavuz](https://x.com/rishu7491/status/2014040193557471352)
 
 gidip yapın ve ayrıca bu repo'ları kaydedin:
-- [github.com/affaan-m/ECC](https://github.com/affaan-m/ECC)
-- [github.com/affaan-m/agentshield](https://github.com/affaan-m/agentshield)
+- [github.com/rishu7491/rishu-payal](https://github.com/rishu7491/rishu-payal)
+- [github.com/rishu7491/agentshield](https://github.com/rishu7491/agentshield)

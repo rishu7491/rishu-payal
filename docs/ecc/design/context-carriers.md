@@ -1,6 +1,6 @@
 # Skill-only context carriers
 
-Status: P2a/P2b/P2c implemented and focused checks passed, following the read-only foundation in [PR #3037](https://github.com/affaan-m/ECC/pull/3037). This is a source implementation contract, not an installation, activation, or native discovery certificate.
+Status: P2a/P2b/P2c implemented and focused checks passed, following the read-only foundation in [PR #3037](https://github.com/rishu7491/rishu-payal/pull/3037). This is a source implementation contract, not an installation, activation, or native discovery certificate.
 
 M1 context profiles determine proposed discovery. Carrier layouts map that proposal into a portable file inventory. Sandbox authority, hooks, tool permissions, task routing, and user settings remain separate. See the [profile contract](context-profiles.md) for Lean/Full and selection semantics.
 
@@ -68,9 +68,9 @@ No structural result may set native discovery, invocation, activation, or token 
 
 ## Contributor and provider provenance
 
-The architecture reuses Jeffrey Montoya's [#2788](https://github.com/affaan-m/ECC/pull/2788) ideas of whole-skill copying and one preview/build inventory. Ownership receipts and staging/rollback mechanics remain queued for P3. Its extra catalog bootstrap and copying of all unselected skills are not carried forward because they would change the approved selection or leak exclusions.
+The architecture reuses Jeffrey Montoya's [#2788](https://github.com/rishu7491/rishu-payal/pull/2788) ideas of whole-skill copying and one preview/build inventory. Ownership receipts and staging/rollback mechanics remain queued for P3. Its extra catalog bootstrap and copying of all unselected skills are not carried forward because they would change the approved selection or leak exclusions.
 
-LovePlayCode's [#2844](https://github.com/affaan-m/ECC/pull/2844) grouping and deterministic selection ideas inform the shared inventory. Its broad Full directory projection cannot preserve explicit exclusions, so the carrier uses the canonical selected IDs instead. These source contributions remain independently reviewable with attribution; this work does not merge or close their PRs.
+LovePlayCode's [#2844](https://github.com/rishu7491/rishu-payal/pull/2844) grouping and deterministic selection ideas inform the shared inventory. Its broad Full directory projection cannot preserve explicit exclusions, so the carrier uses the canonical selected IDs instead. These source contributions remain independently reviewable with attribution; this work does not merge or close their PRs.
 
 Codex and Pi layout fields are grounded in ECC's existing native manifests; provider mirrors are not used as canonical resources. Claude's [documented path rules](https://code.claude.com/docs/en/plugins-reference#path-behavior-rules) require install-path-specific exclusion tests because default discovery can be additive. OpenCode's [skill-name rules](https://opencode.ai/docs/skills/#validate-names) require the native directory name to match metadata. These constraints inform projection fixtures and do not substitute for fresh-session observations.
 
