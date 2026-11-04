@@ -9,7 +9,7 @@ import asyncio
 import os
 import subprocess
 from typing import Any, Dict
-from payal.core.identity.config import CONFIG
+from core.identity.config import CONFIG
 
 
 class KaliAdapter:

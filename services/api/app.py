@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 
 from core.identity.config import CONFIG
 from core.identity.identity import get_identity
-from services.api.routes import chat, health, models
+from services.api.routes import chat, components, health, memory, models, orchestrator
 
 
 def create_app() -> FastAPI:
@@ -49,6 +49,9 @@ def create_app() -> FastAPI:
     app.include_router(health.router)
     app.include_router(models.router)
     app.include_router(chat.router)
+    app.include_router(components.router)
+    app.include_router(orchestrator.router)
+    app.include_router(memory.router)
 
     @app.get("/")
     async def root():

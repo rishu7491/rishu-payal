@@ -20,4 +20,8 @@ dist/
 htmlcov/
 .playwright-mcp/
 node_modules/
+*.db
+*.sqlite
+*.sqlite3
+data/memory/*.db
 

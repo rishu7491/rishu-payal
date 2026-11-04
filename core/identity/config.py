@@ -17,6 +17,16 @@ class ModelConfig(BaseModel):
     llamacpp_model: str = "default"
 
 
+class KaliConfig(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+
+    vbox_manage_path: str = r"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe"
+    vm_name: str = "kali-linux-2026.3-virtualbox-amd64"
+    guest_user: str = "kali"
+    guest_password: str = "kali"
+    wsl_distro: str = "kali-linux"
+
+
 class PayalConfig(BaseModel):
     model_config = ConfigDict(extra="ignore")
 
@@ -26,6 +36,7 @@ class PayalConfig(BaseModel):
     persona: PersonaSchema = Field(default_factory=PersonaSchema)
     security: SecuritySchema = Field(default_factory=SecuritySchema)
     model: ModelConfig = Field(default_factory=ModelConfig)
+    kali: KaliConfig = Field(default_factory=KaliConfig)
     workspace_root: Path = Field(default_factory=Path.cwd)
 
 
