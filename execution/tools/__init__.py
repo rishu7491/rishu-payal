@@ -21,6 +21,12 @@ from .memory_tools import (
     SaveMemoryTool,
     SearchMemoryTool,
 )
+from .ecosystem_tools import (
+    WebNavigateTool,
+    ScreenCaptureTool,
+    AnalyzeImageTool,
+    CreateBackupTool,
+)
 from .registry import ToolRegistry
 from .schemas import (
     PermissionLevel,
@@ -48,6 +54,10 @@ def create_default_tool_registry() -> ToolRegistry:
     registry.register(SaveMemoryTool())
     registry.register(GetMemoryTool())
     registry.register(DeleteMemoryTool())
+    registry.register(WebNavigateTool())
+    registry.register(ScreenCaptureTool())
+    registry.register(AnalyzeImageTool())
+    registry.register(CreateBackupTool())
     return registry
 
 
@@ -78,4 +88,8 @@ __all__ = [
     "SaveMemoryTool",
     "GetMemoryTool",
     "DeleteMemoryTool",
+    "WebNavigateTool",
+    "ScreenCaptureTool",
+    "AnalyzeImageTool",
+    "CreateBackupTool",
 ]

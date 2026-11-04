@@ -24,4 +24,7 @@ node_modules/
 *.sqlite
 *.sqlite3
 data/memory/*.db
+data/backups/
+data/*.jsonl
+data/*.zip
 

@@ -217,6 +217,12 @@ class PersistentMemoryStore:
             conn.commit()
             return cursor.rowcount > 0
 
+    def count(self) -> int:
+        """Return total count of stored memory records."""
+        with self._get_connection() as conn:
+            row = conn.execute("SELECT COUNT(*) FROM memories").fetchone()
+            return row[0] if row else 0
+
     def list(
         self,
         kind: Optional[str] = None,

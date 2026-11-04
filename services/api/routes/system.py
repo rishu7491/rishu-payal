@@ -118,3 +118,4 @@ async def classify_emotion(req: EmotionClassifyRequest):
         "pitch": pitch,
         "rate": rate,
     }
+
