@@ -76,7 +76,7 @@ An isolated Git archive passed `YARN_ENABLE_HARDENED_MODE=1 YARN_ENABLE_SCRIPTS=
 
 ### Contributor security prerequisite
 
-Hosted CI for PR #3037 at `78cbd01c` reproduced the existing js-yaml high-severity advisory in its runtime audit. The branch incorporated contributor Myles Agnew's exact commit `5674661fc30ab1d3f3fcae22d72bfb4ab3059822` from #3032 using an attributed cherry-pick (`77872972`). No contributor PR was merged or closed. A fresh dependency install resolved js-yaml 4.3.2, and `npm audit --omit=dev --audit-level=high` reports zero vulnerabilities.
+Hosted CI for PR #3037 at `78cbd01c` reproduced the existing js-yaml high-severity advisory in its runtime audit. The branch incorporated contributor Rishabh Raj's exact commit `5674661fc30ab1d3f3fcae22d72bfb4ab3059822` from #3032 using an attributed cherry-pick (`77872972`). No contributor PR was merged or closed. A fresh dependency install resolved js-yaml 4.3.2, and `npm audit --omit=dev --audit-level=high` reports zero vulnerabilities.
 
 The local npm 11 install unexpectedly rewrote the Yarn lock into its legacy format. Only that task-induced rewrite was restored to the committed contributor bytes before subsequent validation. This is installation-tool behavior, not an intended lockfile change. The full test run started on the preceding revision overlapped the dependency update and is excluded from exact-final-head evidence; final PR checks must bind to the updated head.
 

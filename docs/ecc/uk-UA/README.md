@@ -111,7 +111,7 @@
   <a href="https://serpapi.com/github-ecc" title="SerpApi: Web Search API"><picture><source media="(prefers-color-scheme: dark)" srcset="../../assets/images/sponsors/serpapi-logo-dark-mode.svg" /><img src="../../assets/images/sponsors/serpapi-logo-light-mode.svg" width="200" alt="SerpApi: Web Search API" /></picture></a>
 </p>
 
-<sub><strong>Спонсори спільноти:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@1anter</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
+<sub><strong>Спонсори спільноти:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@rishu7491</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
 <sub><strong>Минулі спонсори:</strong> <a href="https://www.atlascloud.ai/?utm_source=github&amp;utm_medium=link&amp;utm_campaign=ECC">Atlas Cloud</a> · <a href="https://github.com/mikejmorgan-ai">Mike Morgan (неактивний)</a></sub>
 
 <sub><a href="https://github.com/sponsors/rishu7491"><strong>Стати спонсором</strong></a> · <a href="../../SPONSORS.md">Рівні спонсорства</a> · <a href="../../SPONSORING.md">Програма спонсорства</a></sub>

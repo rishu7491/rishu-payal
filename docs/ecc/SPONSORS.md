@@ -41,7 +41,7 @@ Run or self-host any open-source model. Itô partners with ECC on compute, while
 ## Builder Sponsors — $25/mo
 
 - @jasonwu513 (grandfathered at $10)
-- @1anter (grandfathered at $10)
+- @rishu7491 (grandfathered at $10)
 - @massimotodaro (grandfathered at $10)
 - @meadmccabe (grandfathered at $10)
 

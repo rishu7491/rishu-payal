@@ -119,7 +119,7 @@ Use the [guided setup](#install-ecc) or [native plugin commands](#claude-code-de
 
 <sub><strong>Past sponsors:</strong> <a href="https://www.atlascloud.ai/?utm_source=github&amp;utm_medium=link&amp;utm_campaign=ECC">Atlas Cloud</a> · <a href="https://github.com/mikejmorgan-ai">Mike Morgan (inactive)</a></sub>
 
-<sub><strong>Community sponsors:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@1anter</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
+<sub><strong>Community sponsors:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@rishu7491</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
 
 <sub><a href="https://github.com/sponsors/rishu7491"><strong>Become a Sponsor</strong></a> · <a href="SPONSORS.md">Sponsor Tiers</a> · <a href="SPONSORING.md">Sponsorship Program</a></sub>
 

@@ -155,6 +155,6 @@ claude /schedule-reply "取締役会についてサラに返信"
 ## 前提条件
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- Gmail CLI（例: @ptermのgog）
+- Gmail CLI（例: gmail-cliのgog）
 - Node.js 18+（calendar-suggest.js用）
 - オプション: Slack MCPサーバー、Matrixブリッジ（LINE）、Chrome + Playwright（Messenger）

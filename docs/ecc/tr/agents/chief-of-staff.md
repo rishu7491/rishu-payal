@@ -146,6 +146,6 @@ claude /schedule-reply "Yönetim kurulu toplantısı hakkında Sarah'ya yanıt v
 ## Ön Koşullar
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- Gmail CLI (örn. @pterm tarafından gog)
+- Gmail CLI (örn. gmail-cli tarafından gog)
 - Node.js 18+ (calendar-suggest.js için)
 - İsteğe bağlı: Slack MCP sunucusu, Matrix köprüsü (LINE), Chrome + Playwright (Messenger)

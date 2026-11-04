@@ -34,7 +34,7 @@ Gracias a todos los que financian el trabajo de código abierto de ECC. Tu patro
 ## Patrocinadores Builder — $25/mes
 
 - @jasonwu513 (precio heredado en $10)
-- @1anter (precio heredado en $10)
+- @rishu7491 (precio heredado en $10)
 - @massimotodaro (precio heredado en $10)
 - @meadmccabe (precio heredado en $10)
 

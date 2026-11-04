@@ -119,7 +119,7 @@
 
 <sub><strong>過去のスポンサー:</strong> <a href="https://www.atlascloud.ai/?utm_source=github&amp;utm_medium=link&amp;utm_campaign=ECC">Atlas Cloud</a> · <a href="https://github.com/mikejmorgan-ai">Mike Morgan (inactive)</a></sub>
 
-<sub><strong>コミュニティスポンサー:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@1anter</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
+<sub><strong>コミュニティスポンサー:</strong> <a href="https://github.com/jasonwu513">@jasonwu513</a> · <a href="https://github.com/1anter">@rishu7491</a> · <a href="https://github.com/massimotodaro">@massimotodaro</a> · <a href="https://github.com/meadmccabe">@meadmccabe</a></sub>
 
 <sub><a href="https://github.com/sponsors/rishu7491"><strong>スポンサーになる</strong></a> · <a href="../../SPONSORS.md">スポンサーティア</a> · <a href="../../SPONSORING.md">スポンサーシッププログラム</a></sub>
 

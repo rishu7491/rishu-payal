@@ -155,6 +155,6 @@ claude /schedule-reply "Responder a Sarah sobre la reunión de directorio"
 ## Prerrequisitos
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code)
-- Gmail CLI (p. ej., gog by @pterm)
+- Gmail CLI (p. ej., gog by gmail-cli)
 - Node.js 18+ (para calendar-suggest.js)
 - Opcional: servidor MCP de Slack, bridge Matrix (LINE), Chrome + Playwright (Messenger)
