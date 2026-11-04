@@ -149,3 +149,4 @@ def test_memory_manager_workflow(temp_memory_manager):
 
     stats = mgr.get_stats()
     assert stats["total_memories"] >= 3
+

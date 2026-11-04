@@ -147,3 +147,4 @@ class DeleteMemoryTool(BaseTool):
             output=f"Memory item '{args.memory_id}' {'deleted' if deleted else 'not found'}.",
             error=None if deleted else "Item not found",
         )
+

@@ -145,3 +145,34 @@ def test_orchestrator_run_api():
     assert len(data["step_results"]) >= 2
     assert "final_output" in data
     assert data["summary"]["memory_recorded"] is True
+
+
+def test_system_status_api():
+    """Verify /api/system/status returns host and Kali status."""
+    res = client.get("/api/system/status")
+    assert res.status_code == 200
+    data = res.json()
+    assert "host_os" in data
+    assert "kali" in data
+
+
+def test_system_emotion_classify_api():
+    """Verify /api/system/emotion tags emotion and voice parameters."""
+    res_proud = client.post("/api/system/emotion", json={"text": "Workout complete! Milestone achieved."})
+    assert res_proud.status_code == 200
+    assert res_proud.json()["emotion"] in ["proud", "happy"]
+    assert res_proud.json()["pitch"] > 1.0
+
+    res_sad = client.post("/api/system/emotion", json={"text": "Task missed and failed."})
+    assert res_sad.status_code == 200
+    assert res_sad.json()["emotion"] == "sad"
+    assert res_sad.json()["pitch"] < 1.0
+
+
+def test_ui_static_endpoints():
+    """Verify /ui and /app serve Desktop & Mobile frontend."""
+    res_ui = client.get("/ui")
+    assert res_ui.status_code in [200, 307]
+
+    res_app = client.get("/app")
+    assert res_app.status_code in [200, 307]

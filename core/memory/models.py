@@ -52,3 +52,4 @@ class ContextTiers(BaseModel):
     l1_overview: str = ""  # Architecture, active components, API contracts
     l2_detail: str = ""    # Active traces, recent tool outputs, tests, errors
     updated_at: float = Field(default_factory=time.time)
+

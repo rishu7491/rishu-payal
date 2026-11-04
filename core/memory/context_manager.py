@@ -85,3 +85,4 @@ class ContextManager:
 
 # Global singleton context manager
 CONTEXT_MANAGER = ContextManager()
+

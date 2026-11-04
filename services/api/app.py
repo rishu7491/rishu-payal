@@ -1,13 +1,15 @@
 """Payal Core Engine FastAPI Application."""
 
+from pathlib import Path
 from fastapi import FastAPI, Request, status
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 
 from core.identity.config import CONFIG
 from core.identity.identity import get_identity
-from services.api.routes import chat, components, health, memory, models, orchestrator
+from services.api.routes import chat, components, health, memory, models, orchestrator, system
 
 
 def create_app() -> FastAPI:
@@ -52,6 +54,13 @@ def create_app() -> FastAPI:
     app.include_router(components.router)
     app.include_router(orchestrator.router)
     app.include_router(memory.router)
+    app.include_router(system.router)
+
+    # Mount Static Web Interface for Desktop & Mobile UI
+    frontend_dir = Path(__file__).resolve().parent.parent.parent / "apps" / "frontend"
+    if frontend_dir.exists():
+        app.mount("/ui", StaticFiles(directory=str(frontend_dir), html=True), name="ui")
+        app.mount("/app", StaticFiles(directory=str(frontend_dir), html=True), name="app")
 
     @app.get("/")
     async def root():
@@ -61,6 +70,8 @@ def create_app() -> FastAPI:
             "title": identity.title,
             "version": CONFIG.config_version,
             "status": "operational",
+            "ui": "/ui",
+            "app": "/app",
             "docs": "/docs",
         }
 

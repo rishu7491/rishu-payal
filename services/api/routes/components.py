@@ -52,3 +52,4 @@ async def list_commands(limit: int = Query(50, ge=1, le=100)):
     """List registered ECC slash and CLI commands."""
     commands = ECC_REGISTRY.list_commands()[:limit]
     return [c.model_dump() for c in commands]
+

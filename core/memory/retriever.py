@@ -59,3 +59,4 @@ class MemoryRetriever:
 
 # Global singleton retriever
 MEMORY_RETRIEVER = MemoryRetriever()
+

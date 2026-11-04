@@ -6,6 +6,7 @@ from .health import router as health_router
 from .memory import router as memory_router
 from .models import router as models_router
 from .orchestrator import router as orchestrator_router
+from .system import router as system_router
 
 __all__ = [
     "chat_router",
@@ -14,4 +15,5 @@ __all__ = [
     "memory_router",
     "models_router",
     "orchestrator_router",
+    "system_router",
 ]

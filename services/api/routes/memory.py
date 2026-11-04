@@ -120,3 +120,4 @@ async def search_memories(req: SearchMemoryRequest):
     """Search memories by keyword and semantic tokens."""
     results = MEMORY_MANAGER.search_memories(query=req.query, limit=req.limit)
     return [r.model_dump() for r in results]
+
