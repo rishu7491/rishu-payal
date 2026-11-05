@@ -38,6 +38,7 @@ class RobotCompanion {
 
     // Speech Synthesis & Recognition
     this.synth = window.speechSynthesis;
+    this.selectedVoice = null;
     this.recognition = null;
     this.isListening = false;
     this.onSpeechResult = null;
@@ -48,7 +49,35 @@ class RobotCompanion {
     this.animate();
   }
 
+  initVoice() {
+    if (!this.synth) return;
+    const voices = this.synth.getVoices();
+    if (!voices || voices.length === 0) return;
+
+    // Preference: 1. Natural/Online Indian voices, 2. Hindi, 3. Indian English, 4. Natural English
+    const naturalIndian = voices.find(v => {
+      const name = v.name.toLowerCase();
+      const lang = (v.lang || '').toLowerCase();
+      const isIndian = lang.includes('hi') || lang.includes('in');
+      const isNatural = name.includes('natural') || name.includes('online') || name.includes('google') || name.includes('swara');
+      return isIndian && isNatural;
+    });
+
+    const anyHindi = voices.find(v => (v.lang || '').toLowerCase().startsWith('hi'));
+    const anyIndian = voices.find(v => (v.lang || '').toLowerCase().includes('in') || v.name.toLowerCase().includes('india') || v.name.toLowerCase().includes('neerja'));
+    const anyNatural = voices.find(v => v.name.toLowerCase().includes('natural') || v.name.toLowerCase().includes('google'));
+
+    this.selectedVoice = naturalIndian || anyHindi || anyIndian || anyNatural || voices[0];
+  }
+
   initAudioAndSpeech() {
+    if (this.synth) {
+      this.initVoice();
+      if (typeof this.synth.onvoiceschanged !== 'undefined') {
+        this.synth.onvoiceschanged = () => this.initVoice();
+      }
+    }
+
     // Initialize Web Speech Recognition if supported
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (SpeechRecognition) {
@@ -138,44 +167,74 @@ class RobotCompanion {
     if (micBtn) micBtn.classList.toggle('active', this.isListening);
   }
 
+  prepareTextForSpeech(text) {
+    if (!text) return '';
+    // Strip code blocks
+    let clean = text.replace(/```[\s\S]*?```/g, 'मैंने कोड तैयार कर दिया है।');
+    // Strip URLs
+    clean = clean.replace(/https?:\/\/\S+/g, '');
+    // Strip markdown formatting symbols
+    clean = clean.replace(/[*#`_\[\]()]/g, ' ');
+    // Strip system disclaimers or trailing metadata
+    clean = clean.replace(/---\s*\*Skipped:[\s\S]*$/gi, '');
+    clean = clean.replace(/\*Skipped:[^\*]*\*/gi, '');
+    clean = clean.replace(/\*Risk:[^\*]*\*/gi, '');
+    clean = clean.replace(/MOOD:\s*\w+/gi, '');
+    // Normalize spaces
+    clean = clean.replace(/\s+/g, ' ').trim();
+
+    // Limit voice speech to conversational sentences (first 2-3 sentences max)
+    const sentences = clean.split(/(?<=[.?!।])\s+/);
+    if (sentences.length > 3) {
+      clean = sentences.slice(0, 3).join(' ');
+    }
+    return clean;
+  }
+
   speak(text, emotion = null) {
     if (!this.synth) return;
     if (emotion) this.setEmotion(emotion);
 
     this.synth.cancel(); // Stop prior utterance
 
-    const cleanText = text.replace(/[*#`_\[\]]/g, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
+    const speechText = this.prepareTextForSpeech(text);
+    if (!speechText) return;
 
-    // Emotion Voice Modulation
+    const utterance = new SpeechSynthesisUtterance(speechText);
+    if (!this.selectedVoice) this.initVoice();
+    if (this.selectedVoice) {
+      utterance.voice = this.selectedVoice;
+      utterance.lang = this.selectedVoice.lang || 'hi-IN';
+    } else {
+      utterance.lang = 'hi-IN';
+    }
+
+    // Natural, Human-Like Voice Modulation (not cartoonish/robotic)
     switch (this.emotion) {
       case 'happy':
-        utterance.pitch = 1.25;
-        utterance.rate = 1.12;
-        break;
       case 'excited':
-        utterance.pitch = 1.35;
-        utterance.rate = 1.2;
-        break;
-      case 'proud':
-        utterance.pitch = 1.15;
+        utterance.pitch = 1.04;
         utterance.rate = 1.05;
         break;
+      case 'proud':
+        utterance.pitch = 1.02;
+        utterance.rate = 1.02;
+        break;
       case 'sad':
-        utterance.pitch = 0.82;
-        utterance.rate = 0.85;
+        utterance.pitch = 0.95;
+        utterance.rate = 0.92;
         break;
       case 'serious':
-        utterance.pitch = 0.92;
-        utterance.rate = 0.95;
+        utterance.pitch = 0.98;
+        utterance.rate = 0.98;
         break;
       case 'thinking':
         utterance.pitch = 1.0;
-        utterance.rate = 0.95;
+        utterance.rate = 1.0;
         break;
       default:
-        utterance.pitch = 1.05;
-        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        utterance.rate = 1.02;
     }
 
     utterance.onstart = () => {

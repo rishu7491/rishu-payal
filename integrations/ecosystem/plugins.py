@@ -182,3 +182,4 @@ class PluginManager:
 
 
 PLUGIN_MANAGER = PluginManager()
+

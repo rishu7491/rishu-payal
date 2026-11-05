@@ -168,3 +168,4 @@ class MCPIntegrationManager:
 
 
 MCP_CLIENT = MCPIntegrationManager()
+

@@ -92,3 +92,4 @@ class CircuitBreakerManager:
 
 
 CIRCUIT_BREAKER = CircuitBreakerManager()
+

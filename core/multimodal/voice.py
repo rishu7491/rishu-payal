@@ -61,3 +61,4 @@ class VoiceEngine:
 
 # Global singleton voice engine
 VOICE_ENGINE = VoiceEngine()
+

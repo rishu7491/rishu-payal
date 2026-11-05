@@ -133,3 +133,4 @@ async def run_multimodal_workflow_endpoint(req: WorkflowAPIRequest):
     )
     res = await MULTIMODAL_WORKFLOW.process(mm_req)
     return {"status": "success" if res.success else "error", "result": res}
+

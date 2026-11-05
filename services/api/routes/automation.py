@@ -144,3 +144,4 @@ async def mark_notification_read(notif_id: str):
     if not marked:
         raise HTTPException(status_code=404, detail=f"Notification '{notif_id}' not found.")
     return {"status": "read", "id": notif_id}
+

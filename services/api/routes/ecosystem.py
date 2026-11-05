@@ -118,3 +118,4 @@ async def navigate_web_page(req: WebNavigateRequest) -> Dict[str, Any]:
         "content_preview": res.content_text,
         "duration_seconds": res.duration_seconds,
     }
+

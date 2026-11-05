@@ -10,7 +10,7 @@ class ModelConfig(BaseModel):
 
     primary_provider: str = "agy_bridge"
     agy_bridge_url: str = "http://127.0.0.1:8788/v1"
-    agy_model: str = "gemini-3.8-flash-high"
+    agy_model: str = "gemini-3.8-flash-low"
     api_key: str = "local"
     timeout_seconds: int = 120
     llamacpp_url: str = "http://127.0.0.1:8080/v1"

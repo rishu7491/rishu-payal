@@ -1,11 +1,23 @@
 """Chat completion endpoint for Payal Core Engine."""
 
+import re
 from fastapi import APIRouter, Depends, HTTPException
 from core.identity.config import CONFIG
 from core.identity.persona import SYSTEM_PROMPT
 from core.model_router.router import ModelRouter
 from core.model_router.schemas import ChatMessage, CompletionRequest
 from services.api.schemas import ChatRequest, ChatResponse
+
+
+def clean_conversational_text(text: str) -> str:
+    """Strip out system-level technical disclaimers, skipped lines, or internal boilerplates."""
+    if not text:
+        return ""
+    # Strip *Skipped: ...* and *Risk: ...*
+    cleaned = re.sub(r"\n*---*\s*\*Skipped:.*?(?:\n|$)", "", text, flags=re.DOTALL).strip()
+    cleaned = re.sub(r"\*Skipped:[^\*]*\*", "", cleaned, flags=re.DOTALL).strip()
+    cleaned = re.sub(r"\*Risk:[^\*]*\*", "", cleaned, flags=re.DOTALL).strip()
+    return cleaned.strip()
 
 
 router = APIRouter(prefix="/api/v1", tags=["Chat"])
@@ -53,7 +65,7 @@ async def chat_completion(
             provider_name=request.provider,
         )
         return ChatResponse(
-            content=response.content,
+            content=clean_conversational_text(response.content),
             model=response.model,
             provider=response.provider,
             session_id=response.session_id,
