@@ -1,270 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Payal — Unified Desktop & Mobile Remote Workspace</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#08080b">
+  <title>Payal — Personal AI Assistant</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Top Application Header -->
-  <header class="app-header">
-    <div class="brand">
-      <div class="brand-icon">✨</div>
-      <div class="brand-info">
-        <h1>Payal Core Engine</h1>
-        <span>Desktop & Remote Companion • Owned by Rishabh Raj</span>
+  <!-- Slide-out Navigation Drawer -->
+  <div id="drawerOverlay" class="drawer-overlay" onclick="toggleDrawer(false)"></div>
+  <aside id="sideDrawer" class="side-drawer">
+    <div class="drawer-header">
+      <div class="drawer-logo">▲</div>
+      <div>
+        <h2>Payal</h2>
+        <p class="drawer-subtitle">Always by your side ❤️</p>
+      </div>
+      <button class="drawer-close-btn" onclick="toggleDrawer(false)">✕</button>
+    </div>
+    <nav class="drawer-menu">
+      <button class="drawer-item active" onclick="showPage('home'); toggleDrawer(false)">
+        <span class="drawer-icon">⌂</span> Home
+      </button>
+      <button class="drawer-item" onclick="showPage('voice'); toggleDrawer(false)">
+        <span class="drawer-icon">🎙</span> Voice Assistant
+      </button>
+      <button class="drawer-item" onclick="showPage('chat'); toggleDrawer(false)">
+        <span class="drawer-icon">💬</span> Chat
+      </button>
+      <button class="drawer-item" onclick="showPage('tasks'); toggleDrawer(false)">
+        <span class="drawer-icon">▣</span> Tasks & Goals
+      </button>
+      <button class="drawer-item" onclick="showPage('devices'); toggleDrawer(false)">
+        <span class="drawer-icon">⌁</span> My Devices
+      </button>
+      <button class="drawer-item" onclick="showPage('approvals'); toggleDrawer(false)">
+        <span class="drawer-icon">🛡</span> Approvals <span class="badge-pill" id="drawerApprovalCount">0</span>
+      </button>
+      <button class="drawer-item" onclick="showPage('terminal'); toggleDrawer(false)">
+        <span class="drawer-icon">💻</span> System Terminal
+      </button>
+      <button class="drawer-item" onclick="showPage('settings'); toggleDrawer(false)">
+        <span class="drawer-icon">⚙</span> Settings
+      </button>
+    </nav>
+    <div class="drawer-footer">
+      <div class="user-pill">
+        <span class="user-avatar-mini">👑</span>
+        <div class="user-info">
+          <strong>Rishabh Raj</strong>
+          <small>Owner & Creator</small>
+        </div>
       </div>
     </div>
+  </aside>
 
-    <div class="header-controls">
-      <div class="status-badge">
-        <span class="status-dot"></span>
-        <span>ENGINE ONLINE</span>
-      </div>
+  <!-- Main Mobile App Shell -->
+  <div class="app">
 
-      <button id="btnVoiceToggle" class="btn-icon active" title="Toggle Emotional Voice Output (TTS)">
-        🔊
+    <!-- Top Application Bar -->
+    <header class="top-bar">
+      <button class="iconbtn" aria-label="Menu" onclick="toggleDrawer(true)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
 
-      <button id="btnMicToggle" class="btn-icon" title="Toggle Voice Input (Speech-to-Text)">
-        🎙️
-      </button>
-
-      <button id="btnFloatCompanion" class="btn-icon" title="Toggle Floating Picture-in-Picture Companion">
-        🤖
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Workspace Grid -->
-  <div class="workspace-container">
-
-    <!-- Left Stage: Interactive Robot Companion -->
-    <aside id="companionStage" class="companion-stage">
-      <div class="robot-card">
-        <div class="avatar-canvas-container">
-          <canvas id="robotCanvas" width="200" height="200"></canvas>
-        </div>
-
-        <div id="emotionBadge" class="emotion-tag-pill neutral">
-          NEUTRAL
-        </div>
-
-        <div class="voice-equalizer" title="Real-time Voice & Lip-Sync Frequency">
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-          <span class="eq-bar"></span>
-        </div>
-
-        <!-- Emotion Quick Modulation Triggers -->
-        <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: center;">
-          <button class="emotion-chip btn-companion" data-emotion="happy" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">😊 Happy</button>
-          <button class="emotion-chip btn-companion" data-emotion="proud" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">⭐ Proud</button>
-          <button class="emotion-chip btn-companion" data-emotion="excited" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">⚡ Excited</button>
-          <button class="emotion-chip btn-companion" data-emotion="serious" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">🛡️ Serious</button>
-          <button class="emotion-chip btn-companion" data-emotion="thinking" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">🧠 Thinking</button>
-          <button class="emotion-chip btn-companion" data-emotion="sad" style="flex:none; padding:0.25rem 0.5rem; font-size:0.75rem;">🥺 Sad</button>
-        </div>
+      <div class="brand" onclick="showPage('home')">
+        <div class="logo">✦</div>
+        <span>PAYAL</span>
+        <span class="crown-icon">👑</span>
       </div>
 
-      <!-- Engine & System Stats Widget -->
-      <div class="system-widget">
-        <div class="widget-title">Engine Catalog & Memory</div>
-        <div class="system-row">
-          <span>Integrated Skills:</span>
-          <span id="statSkills">314</span>
-        </div>
-        <div class="system-row">
-          <span>ECC Agents:</span>
-          <span id="statAgents">71</span>
-        </div>
-        <div class="system-row">
-          <span>Memory Backend:</span>
-          <span>SQLite / OpenViking</span>
-        </div>
-        <div class="system-row">
-          <span>Host System:</span>
-          <span>Windows 11 + Kali</span>
-        </div>
+      <div class="top-actions">
+        <button class="iconbtn" id="btnTopVoice" aria-label="Voice Toggle" title="Voice Output On/Off" onclick="toggleVoiceOutput()">
+          <span id="topVoiceIcon">🔊</span>
+        </button>
+        <button class="iconbtn" id="btnNotificationBell" aria-label="Notifications" onclick="showPage('approvals')">
+          <span class="bell-icon">🔔</span>
+          <span class="notif-dot" id="headerNotifDot"></span>
+        </button>
       </div>
-    </aside>
+    </header>
 
-    <!-- Main Right Stage: Workspaces -->
-    <main class="main-workspace">
-      <!-- Workspace Navigation Tabs -->
-      <nav class="workspace-tabs">
-        <button class="tab-btn active" data-tab="chat">💬 AI Chat & Companion</button>
-        <button class="tab-btn" data-tab="orchestrate">⚡ Autonomous Orchestrator</button>
-        <button class="tab-btn" data-tab="catalog">📦 ECC Catalog</button>
-        <button class="tab-btn" data-tab="memory">🧠 Memory Vault</button>
-        <button class="tab-btn" data-tab="terminal">💻 System Terminal</button>
-      </nav>
+    <!-- Main Content Stage -->
+    <main class="page-container">
 
-      <!-- Panel 1: Chat Tab -->
-      <section id="panel-chat" class="tab-panel active">
-        <div class="chat-container">
-          <div id="chatMessages" class="chat-messages">
-            <div class="message-bubble assistant">
-              <div class="bubble-avatar">✨</div>
-              <div class="bubble-content">
-                Hello Rishabh! I am Payal, your autonomous AI partner and desktop companion. I can execute multi-step coding, research, system tasks, and remember everything in persistent memory. How can I help you right now?
+      <!-- ================= PAGE 1: HOME ================= -->
+      <section class="page active" id="page-home">
+        <div class="hero">
+          <!-- Avatar Stage with Mode Toggle (Portrait vs Interactive 60fps Robot Face) -->
+          <div class="avatar-wrapper">
+            <div id="portraitAvatar" class="avatar-portrait">
+              <div class="avatar-glow-ring"></div>
+              <div class="avatar-img-box">
+                <div class="avatar-inner-art">✨👩</div>
               </div>
+              <span class="online-status-dot"></span>
             </div>
-          </div>
 
-          <div class="chat-input-bar">
-            <input type="text" id="chatInput" class="chat-input" placeholder="Type instructions or click mic to speak..." autocomplete="off">
-            <button id="btnSendChat" class="btn-send">
-              Send 🚀
+            <div id="canvasAvatar" class="avatar-canvas-box" style="display:none;">
+              <canvas id="robotCanvas" width="160" height="160"></canvas>
+              <span class="online-status-dot"></span>
+            </div>
+
+            <!-- Avatar Face Mode Switcher -->
+            <button class="avatar-mode-switch" onclick="toggleAvatarMode()" title="Toggle between Digital Avatar and 60fps Expressive Robot Face">
+              <span id="avatarModeLabel">🤖 Show Face</span>
             </button>
           </div>
+
+          <h1 class="hero-title">Payal 👑</h1>
+          <p class="hero-subtitle">Your Personal AI Assistant</p>
+          <p class="hero-quote">“Always with you, Rishu ❤️”</p>
+        </div>
+
+        <!-- Live Server Status Bar -->
+        <div class="status-card" onclick="checkServerHealth()">
+          <span class="status-pulse-dot" id="statusDot"></span>
+          <div class="status-info">
+            <strong id="statusTitle">Payal is Online & Ready</strong>
+            <small id="statusSub">Laptop Core • <span id="hostIpDisplay">10.196.121.14:8000</span></small>
+          </div>
+          <span class="pill-green" id="statusBadge">ONLINE</span>
+        </div>
+
+        <!-- 2x2 Quick Action Cards Grid -->
+        <div class="quick-grid">
+          <button class="action-card" onclick="showPage('voice'); startVoiceSession()">
+            <div class="action-icon action-red">🎙</div>
+            <strong>Talk to Payal</strong>
+            <small>Voice Assistant</small>
+          </button>
+          <button class="action-card" onclick="showQuickActionsModal()">
+            <div class="action-icon action-yellow">⚡</div>
+            <strong>Quick Actions</strong>
+            <small>Tools & Health</small>
+          </button>
+          <button class="action-card" onclick="showPage('tasks')">
+            <div class="action-icon action-purple">▣</div>
+            <strong>My Tasks</strong>
+            <small id="homeTaskCount">4 Active Tasks</small>
+          </button>
+          <button class="action-card" onclick="showPage('devices')">
+            <div class="action-icon action-blue">⚙</div>
+            <strong>Connected Devices</strong>
+            <small>3 Nodes Online</small>
+          </button>
+        </div>
+
+        <!-- Connected Devices Preview Card -->
+        <div class="section-heading">
+          <h2>Connected Devices</h2>
+          <span class="heading-link" onclick="showPage('devices')">View All ›</span>
+        </div>
+
+        <div class="device-card" onclick="showPage('devices')">
+          <div class="device-icon">💻</div>
+          <div class="device-details">
+            <strong>Windows Laptop</strong>
+            <small>Payal Core Server • Online</small>
+          </div>
+          <span class="pill-green">CORE</span>
+        </div>
+
+        <div class="device-card" onclick="showPage('devices')">
+          <div class="device-icon">📱</div>
+          <div class="device-details">
+            <strong>Android Phone</strong>
+            <small>Connected Client • Local Wi-Fi</small>
+          </div>
+          <span class="pill-green">ACTIVE</span>
         </div>
       </section>
 
-      <!-- Panel 2: Orchestrator Tab -->
-      <section id="panel-orchestrate" class="tab-panel">
-        <div class="orch-grid">
-          <!-- Left: Goal Input & Plan Form -->
-          <div class="orch-card">
-            <h3 style="font-size: 1.1rem;">Autonomous Goal Execution</h3>
-            <div class="form-group">
-              <label for="orchGoalInput">Enter High-Level Goal:</label>
-              <textarea id="orchGoalInput" class="form-textarea" rows="3" placeholder="e.g., Build a fast REST API with password encryption and verification..."></textarea>
+      <!-- ================= PAGE 2: VOICE ASSISTANT ================= -->
+      <section class="page" id="page-voice">
+        <div class="voice-screen">
+          <div class="voice-header">
+            <button class="iconbtn-back" onclick="showPage('home')">‹ Back</button>
+            <span class="eyebrow-tag">PAYAL VOICE AI</span>
+            <div class="voice-wave-mini">
+              <span></span><span></span><span></span><span></span>
             </div>
+          </div>
 
-            <div style="display: flex; gap: 0.75rem;">
-              <button id="btnPreviewPlan" class="btn-companion" style="background:rgba(56,189,248,0.15); color:var(--color-primary);">Preview Plan 📋</button>
-              <button id="btnRunOrchestration" class="btn-send" style="flex:1;">Execute Autonomous Pipeline ⚡</button>
+          <div class="voice-center">
+            <!-- Pulsing Glowing Red Mic Orb -->
+            <button class="voice-mic-orb" id="voiceMicOrb" onclick="toggleVoiceSession()">
+              <span class="mic-icon-svg">🎙</span>
+              <div class="mic-ripple-1"></div>
+              <div class="mic-ripple-2"></div>
+            </button>
+
+            <h2 id="voiceMainStatus">Tap mic to speak</h2>
+            <p class="voice-transcription-preview" id="voiceLiveTranscript">“Payal, mera workout schedule check karo”</p>
+
+            <div class="voice-action-row">
+              <button class="btn-voice-cancel" onclick="stopVoiceSession()">
+                ✕ Cancel
+              </button>
+              <button class="btn-voice-chat" onclick="showPage('chat')">
+                💬 Open Chat
+              </button>
             </div>
+          </div>
 
-            <div class="form-group" style="margin-top: 1rem;">
-              <label>Plan Execution Timeline:</label>
-              <div id="orchStepTimeline" class="step-timeline">
-                <div style="color:var(--text-muted); font-size:0.85rem;">No active plan. Enter a goal above to generate steps.</div>
+          <div class="voice-footer-waves">
+            <div class="wave-glow"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: CHAT ================= -->
+      <section class="page" id="page-chat">
+        <div class="chat-screen">
+          <div class="chat-header">
+            <div class="chat-user-box">
+              <div class="chat-avatar-mini">✨</div>
+              <div>
+                <strong>Payal</strong>
+                <small class="text-green">● Online • Natural Hinglish</small>
+              </div>
+            </div>
+            <div class="chat-header-actions">
+              <button class="iconbtn" onclick="showPage('voice'); startVoiceSession()" title="Start Voice Call">📞</button>
+              <button class="iconbtn" onclick="clearChatHistory()" title="Clear Chat">🗑</button>
+            </div>
+          </div>
+
+          <div class="chat-messages-container" id="chatMessages">
+            <div class="bubble assistant">
+              <div class="bubble-content">
+                Hello Rishabh! 😊 Main Payal hoon. Aaj hum kya karne wale hain? Code, BCA studies, workout, ya system automation?
+              </div>
+              <span class="bubble-time">9:41 AM</span>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Chips -->
+          <div class="chat-chips-scroll">
+            <button class="chat-chip" onclick="sendChipMessage('Mera daily routine aur tasks batao')">📋 Show My Tasks</button>
+            <button class="chat-chip" onclick="sendChipMessage('Laptop aur network ka health check karo')">🛡 System Health</button>
+            <button class="chat-chip" onclick="sendChipMessage('Workout timer start karo 2 hours ke liye')">⏱ Workout Timer</button>
+            <button class="chat-chip" onclick="sendChipMessage('Backup banao system ka')">💾 Take Backup</button>
+          </div>
+
+          <!-- Chat Input Bar -->
+          <form class="chat-input-bar" onsubmit="handleChatSubmit(event)">
+            <button type="button" class="btn-input-icon" onclick="toggleVoiceInputFromChat()">🎙</button>
+            <input type="text" id="chatTextInput" placeholder="Type a message to Payal…" autocomplete="off">
+            <button type="submit" class="btn-send-red" id="btnSendChat">➤</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4: TASKS & ORCHESTRATOR ================= -->
+      <section class="page" id="page-tasks">
+        <div class="tasks-screen">
+          <div class="section-heading">
+            <h2>Tasks & Automation</h2>
+            <button class="iconbtn" onclick="loadTasks()" title="Refresh Tasks">↻</button>
+          </div>
+
+          <!-- Task Tabs Filter -->
+          <div class="tasks-filter-bar">
+            <button class="task-tab-btn active" id="tabActiveTasks" onclick="switchTaskTab('active')">
+              Active (<span id="activeTaskCount">4</span>)
+            </button>
+            <button class="task-tab-btn" id="tabCompletedTasks" onclick="switchTaskTab('completed')">
+              Completed (<span id="completedTaskCount">12</span>)
+            </button>
+          </div>
+
+          <!-- Task Progress Card -->
+          <div class="task-progress-card">
+            <div class="progress-ring-box">
+              <div class="progress-circle" id="taskProgressCircle" style="--percent: 25%;">
+                <span class="progress-number">25%</span>
+              </div>
+            </div>
+            <div class="progress-info">
+              <strong>Task Progress</strong>
+              <small id="progressRatioText">1 of 4 tasks completed today</small>
+              <div class="mini-bar-chart">
+                <span style="height: 40%"></span>
+                <span style="height: 70%"></span>
+                <span style="height: 55%"></span>
+                <span style="height: 90%" class="active"></span>
+                <span style="height: 60%"></span>
               </div>
             </div>
           </div>
 
-          <!-- Right: Execution Report & Synthesis -->
-          <div class="orch-card">
-            <h3 style="font-size: 1.1rem;">Verified Output & Traces</h3>
-            <pre id="orchFinalOutput" style="background:#05080f; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:1rem; font-family:var(--font-mono); font-size:0.85rem; color:var(--color-primary); flex:1; overflow-y:auto; white-space:pre-wrap;">Awaiting task execution...</pre>
+          <!-- Task Items List -->
+          <div class="tasks-list" id="tasksListContainer">
+            <div class="task-item">
+              <button class="task-check-circle" onclick="toggleTaskDone(this)"></button>
+              <div class="task-content">
+                <strong>Complete BCA Notes</strong>
+                <small>Study • High Priority</small>
+              </div>
+              <span class="chevron">›</span>
+            </div>
+
+            <div class="task-item">
+              <button class="task-check-circle" onclick="toggleTaskDone(this)"></button>
+              <div class="task-content">
+                <strong>Workout 2 Hours</strong>
+                <small>Health • Daily Routine</small>
+                <div class="task-progress-bar"><span style="width: 35%;"></span></div>
+              </div>
+              <span class="task-percent-tag">35%</span>
+            </div>
+
+            <div class="task-item">
+              <button class="task-check-circle" onclick="toggleTaskDone(this)"></button>
+              <div class="task-content">
+                <strong>Update RishuMart Project</strong>
+                <small>Coding • Next Milestone</small>
+                <div class="task-progress-bar"><span style="width: 0%;"></span></div>
+              </div>
+              <span class="task-percent-tag">0%</span>
+            </div>
+
+            <div class="task-item">
+              <button class="task-check-circle" onclick="toggleTaskDone(this)"></button>
+              <div class="task-content">
+                <strong>Check Phone & Laptop Battery</strong>
+                <small>Devices • System Monitor</small>
+              </div>
+              <span class="battery-tag">🔋 84%</span>
+            </div>
+          </div>
+
+          <!-- Add / Run Autonomous Goal Button -->
+          <button class="btn-primary-red" style="margin-top: 14px; width: 100%;" onclick="openAddTaskModal()">
+            ＋ Add Task or Goal
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 5: MY DEVICES ================= -->
+      <section class="page" id="page-devices">
+        <div class="devices-screen">
+          <div class="section-heading">
+            <h2>My Devices</h2>
+            <button class="iconbtn" onclick="checkDevicesHealth()" title="Refresh Nodes">↻</button>
+          </div>
+
+          <!-- Success Banner -->
+          <div class="devices-banner-success">
+            <span class="banner-icon">🛡️</span>
+            <div>
+              <strong>All Devices Connected</strong>
+              <small>Local Wi-Fi Mesh Perfect! 🎉</small>
+            </div>
+          </div>
+
+          <!-- Device Nodes -->
+          <div class="device-node-card">
+            <div class="node-icon">💻</div>
+            <div class="node-details">
+              <strong>Windows Laptop</strong>
+              <small>Payal Core Host • Online</small>
+            </div>
+            <span class="pill-green">THIS DEVICE</span>
+          </div>
+
+          <div class="device-node-card">
+            <div class="node-icon">📱</div>
+            <div class="node-details">
+              <strong>Home Phone</strong>
+              <small>Android • Always-Listening Station</small>
+            </div>
+            <span class="pill-green">ONLINE</span>
+          </div>
+
+          <div class="device-node-card">
+            <div class="node-icon">📱</div>
+            <div class="node-details">
+              <strong>Personal Phone</strong>
+              <small>Android • Pocket Mobile UI</small>
+            </div>
+            <span class="pill-green">ONLINE</span>
+          </div>
+
+          <!-- Network Info Card -->
+          <div class="network-info-card">
+            <div class="network-title">Network Info</div>
+            <div class="network-row">
+              <span>📶 Wi-Fi Network:</span>
+              <strong id="netSsid">Local Wi-Fi</strong>
+            </div>
+            <div class="network-row">
+              <span>🌐 Laptop IP:</span>
+              <strong id="netIp">10.196.121.14:8000</strong>
+            </div>
+            <div class="network-row">
+              <span>🔒 Subnet Security:</span>
+              <span class="pill-green">FIREWALL SECURED</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Panel 3: Catalog Tab -->
-      <section id="panel-catalog" class="tab-panel">
-        <div class="catalog-search-bar">
-          <input type="text" id="catalogSearchInput" class="form-input" style="flex:1;" placeholder="Search across 314 skills, 71 agents, 22 rule suites...">
-          <select id="catalogFilterSelect" class="form-input" style="width: 140px;">
-            <option value="agents">Agents (71)</option>
-            <option value="skills">Skills (314)</option>
-            <option value="rules">Rule Suites (22)</option>
-            <option value="commands">Commands (98)</option>
-          </select>
-        </div>
-        <div id="catalogGrid" class="catalog-grid"></div>
-      </section>
-
-      <!-- Panel 4: Memory Vault Tab -->
-      <section id="panel-memory" class="tab-panel">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-          <h3>Persistent Memory & Knowledge Vault</h3>
-          <button id="btnRefreshMemory" class="btn-companion" style="flex:none;">Refresh 🔄</button>
-        </div>
-
-        <div class="orch-grid">
-          <div class="orch-card">
-            <h4>Saved Memory Artifacts</h4>
-            <div id="memoryListContainer" style="overflow-y:auto; max-height:480px;"></div>
+      <!-- ================= PAGE 6: APPROVALS ================= -->
+      <section class="page" id="page-approvals">
+        <div class="approvals-screen">
+          <div class="section-heading">
+            <h2>Security Approvals</h2>
+            <span class="pill-red" id="approvalCountBadge">1 Pending</span>
           </div>
 
-          <div class="orch-card">
-            <h4>Add New Durable Memory</h4>
-            <div class="form-group">
-              <label>Title:</label>
-              <input type="text" id="memTitleInput" class="form-input" placeholder="e.g., User Routine Preference">
+          <!-- Active Approval Card -->
+          <div class="approval-card" id="approvalCardExample">
+            <div class="approval-title-row">
+              <span class="approval-icon">🛡️</span>
+              <div>
+                <strong>Sensitive Action Request</strong>
+                <small>Payal Execution Runtime</small>
+              </div>
             </div>
-            <div class="form-group">
-              <label>Kind:</label>
-              <select id="memKindSelect" class="form-input">
-                <option value="knowledge">Knowledge</option>
-                <option value="preference">User Preference</option>
-                <option value="lesson">Lesson Learned</option>
-                <option value="fact">Fact</option>
-              </select>
+            <p class="approval-desc">Payal wants to take a full system snapshot and sync memory to backup vault.</p>
+            <div class="approval-buttons">
+              <button class="btn-approve" onclick="resolveApprovalCard(true)">Approve ✓</button>
+              <button class="btn-reject" onclick="resolveApprovalCard(false)">Reject ✕</button>
             </div>
-            <div class="form-group">
-              <label>Content:</label>
-              <textarea id="memContentInput" class="form-textarea" rows="4" placeholder="Memory details..."></textarea>
+          </div>
+
+          <!-- Recent Incident / Audit Ledger -->
+          <div class="section-heading" style="margin-top: 24px;">
+            <h2>Recent Security Audits</h2>
+            <small class="text-muted">Immutable Ledger</small>
+          </div>
+          <div id="auditLedgerContainer" class="audit-list">
+            <div class="audit-item">
+              <div>
+                <strong>System Health Checked</strong>
+                <small>PowerShell • Memory • Model Router</small>
+              </div>
+              <span class="pill-green">PASSED</span>
             </div>
-            <button id="btnSaveMemory" class="btn-send">Save into Memory 💾</button>
+            <div class="audit-item">
+              <div>
+                <strong>Local Subnet Authorized</strong>
+                <small>Port 8000 inbound rule</small>
+              </div>
+              <span class="pill-green">ALLOWED</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Panel 5: System Terminal Tab -->
-      <section id="panel-terminal" class="tab-panel">
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <span style="font-weight:700; font-size:0.85rem;">💻 PAYAL SYSTEM CONSOLE</span>
-            <div style="display:flex; gap:0.5rem; align-items:center;">
-              <label style="font-size:0.75rem; color:var(--text-secondary);">Target System:</label>
-              <select id="terminalSystemSelect" class="form-input" style="padding:0.2rem 0.5rem; font-size:0.75rem;">
-                <option value="windows">Windows 11 (PowerShell)</option>
-                <option value="kali">Kali Linux (WSL / VM)</option>
-              </select>
+      <!-- ================= PAGE 7: SYSTEM TERMINAL ================= -->
+      <section class="page" id="page-terminal">
+        <div class="terminal-screen">
+          <div class="section-heading">
+            <h2>Payal System Console</h2>
+            <select id="terminalTargetSelect" class="select-system">
+              <option value="windows">Windows 11 (PowerShell)</option>
+              <option value="kali">Kali Linux (WSL / VM)</option>
+            </select>
+          </div>
+
+          <div class="terminal-box">
+            <div class="terminal-bar">
+              <div class="term-dots">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+              </div>
+              <small>PAYAL HOST TERMINAL</small>
+            </div>
+            <pre class="terminal-body" id="termOutput">Payal Core Terminal initialized.
+Listening on 10.196.121.14:8000.
+Ready for system commands.</pre>
+          </div>
+
+          <form class="terminal-input-row" onsubmit="handleTerminalSubmit(event)">
+            <span class="term-prompt">&gt;</span>
+            <input type="text" id="termInput" placeholder="Enter PowerShell or Kali command…" autocomplete="off">
+            <button type="submit" class="btn-term-run">Run</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 8: SETTINGS ================= -->
+      <section class="page" id="page-settings">
+        <div class="settings-screen">
+          <div class="section-heading">
+            <h2>Settings</h2>
+          </div>
+
+          <!-- User Card -->
+          <div class="settings-profile-card">
+            <div class="profile-avatar">👑</div>
+            <div class="profile-details">
+              <strong>Rishabh Raj</strong>
+              <small>Owner / Creator 👑</small>
             </div>
           </div>
 
-          <pre id="terminalOutput" class="terminal-output">Payal System Console initialized. Ready for commands.</pre>
+          <!-- Settings Items -->
+          <div class="setting-row" onclick="openVoiceSettingsModal()">
+            <span class="setting-icon">🗣</span>
+            <div class="setting-details">
+              <strong>Voice & Audio Settings</strong>
+              <small>Indian Natural Voices • Speech Pitch & Speed</small>
+            </div>
+            <span class="chevron">›</span>
+          </div>
 
-          <div class="terminal-input-bar">
-            <span style="color:var(--color-primary); margin-right:0.5rem; font-weight:700;">&gt;</span>
-            <input type="text" id="terminalInput" style="flex:1; background:transparent; border:none; color:#f8fafc; font-family:var(--font-mono); font-size:0.85rem; outline:none;" placeholder="Enter PowerShell or Kali command...">
-            <button id="btnRunTerminal" class="btn-send" style="padding:0.25rem 0.75rem; font-size:0.8rem;">Run</button>
+          <div class="setting-row">
+            <span class="setting-icon">🔔</span>
+            <div class="setting-details">
+              <strong>Notifications & Alerts</strong>
+              <small>Task alerts & proactive suggestions</small>
+            </div>
+            <div class="switch on" id="switchNotifs" onclick="this.classList.toggle('on'); toast('Notifications toggled')"></div>
+          </div>
+
+          <div class="setting-row" onclick="showPage('devices')">
+            <span class="setting-icon">🔒</span>
+            <div class="setting-details">
+              <strong>Privacy & Security</strong>
+              <small>Local Wi-Fi only • Private GitHub Repo</small>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+          <div class="setting-row" onclick="triggerSystemBackup()">
+            <span class="setting-icon">💾</span>
+            <div class="setting-details">
+              <strong>Backup & Restore</strong>
+              <small>Create snapshot zip of memory database</small>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+          <div class="setting-row" onclick="showPage('terminal')">
+            <span class="setting-icon">💻</span>
+            <div class="setting-details">
+              <strong>System Console & Kali</strong>
+              <small>Access host PowerShell & WSL</small>
+            </div>
+            <span class="chevron">›</span>
+          </div>
+
+          <div class="setting-row">
+            <span class="setting-icon">ℹ️</span>
+            <div class="setting-details">
+              <strong>About Payal</strong>
+              <small>Version 1.0.0 • Autonomous Assistant</small>
+            </div>
+            <span class="pill-green">v1.0</span>
           </div>
         </div>
       </section>
     </main>
-  </div>
 
-  <!-- Mobile Bottom Navigation Bar (Phone-Friendly) -->
-  <nav class="mobile-nav-bar">
-    <button class="mobile-nav-item" data-tab="companion">
-      <span style="font-size: 1.2rem;">🤖</span>
-      <span>Face</span>
-    </button>
-    <button class="mobile-nav-item active" data-tab="chat">
-      <span style="font-size: 1.2rem;">💬</span>
-      <span>Chat</span>
-    </button>
-    <button class="mobile-nav-item" data-tab="orchestrate">
-      <span style="font-size: 1.2rem;">⚡</span>
-      <span>Tasks</span>
-    </button>
-    <button class="mobile-nav-item" data-tab="memory">
-      <span style="font-size: 1.2rem;">🧠</span>
-      <span>Memory</span>
-    </button>
-    <button class="mobile-nav-item" data-tab="terminal">
-      <span style="font-size: 1.2rem;">💻</span>
-      <span>Terminal</span>
-    </button>
-  </nav>
+    <!-- Bottom Floating Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="home" onclick="showPage('home')">
+        <span class="nav-glyph">⌂</span>
+        <span>Home</span>
+      </button>
+      <button class="nav-item" data-page="chat" onclick="showPage('chat')">
+        <span class="nav-glyph">💬</span>
+        <span>Chat</span>
+      </button>
+      <button class="nav-item nav-center-mic" data-page="voice" onclick="showPage('voice'); startVoiceSession()" title="Talk to Payal">
+        <div class="nav-mic-bubble">🎙</div>
+      </button>
+      <button class="nav-item" data-page="tasks" onclick="showPage('tasks')">
+        <span class="nav-glyph">▣</span>
+        <span>Tasks</span>
+      </button>
+      <button class="nav-item" data-page="devices" onclick="showPage('devices')">
+        <span class="nav-glyph">⌁</span>
+        <span>Devices</span>
+      </button>
+    </nav>
 
-  <!-- Floating Picture-in-Picture Robot Avatar -->
-  <div id="floatingCompanionBox" class="floating-companion-box">
-    <div style="font-size:3rem; animation:pulse-dot 2s infinite;">✨🤖</div>
+    <!-- Toast Notification Popup -->
+    <div class="toast-popup" id="toastBox">Notification message</div>
   </div>
 
   <!-- Scripts -->
@@ -272,4 +595,3 @@
   <script src="workspace.js"></script>
 </body>
 </html>
-

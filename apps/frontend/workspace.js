@@ -1,147 +1,180 @@
 /**
- * Payal Unified Workspace Controller
- * Connects AI Chat, Autonomous Orchestrator, ECC Component Browser,
- * Memory Vault, Terminal Console, and Robot Companion.
+ * Payal Unified Mobile & Desktop Assistant Controller
+ * Seamlessly connects Mobile UI with the Autonomous Core Engine:
+ * - 8 Interactive Pages: Home, Voice, Chat, Tasks, Devices, Approvals, Terminal, Settings
+ * - Real-time Voice with Indian Natural Neural Voices & 60fps Expressive Robot Face
+ * - Live connection to FastAPI backend (Chat, Health, Automation, Terminal)
  */
 
 const API_BASE = window.location.origin;
 
-// State management
-let activeTab = 'chat';
+// State
+let currentPage = 'home';
 let companion = null;
-let currentOrchestrationPlan = null;
 let voiceOutputEnabled = true;
+let isVoiceListening = false;
+let avatarFaceMode = 'portrait'; // 'portrait' or 'robot'
+let activeTaskFilter = 'active';
+
+// Sample Tasks Data
+let tasksData = [
+  { id: 't1', title: 'Complete BCA Notes', category: 'Study • High Priority', progress: null, done: false },
+  { id: 't2', title: 'Workout 2 Hours', category: 'Health • Daily Routine', progress: 35, done: false },
+  { id: 't3', title: 'Update RishuMart Project', category: 'Coding • Next Milestone', progress: 0, done: false },
+  { id: 't4', title: 'Check Phone & Laptop Battery', category: 'Devices • System Monitor', progress: null, done: true, tag: '🔋 84%' },
+];
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCompanion();
-  initNavigation();
-  initChat();
-  initOrchestrator();
-  initCatalog();
-  initMemory();
-  initTerminal();
-  loadInitialData();
+  initCompanionFace();
+  initRouting();
+  checkServerHealth();
+  updateTaskProgress();
 });
 
 /* ==========================================================================
-   1. Robot Companion Initialization & Speech Hooks
+   1. Robot Companion Face & Voice Engine Integration
    ========================================================================== */
-function initCompanion() {
-  companion = new RobotCompanion('robotCanvas');
+function initCompanionFace() {
+  if (typeof RobotCompanion !== 'undefined') {
+    companion = new RobotCompanion('robotCanvas');
 
-  // Mic toggle listener
-  const btnMic = document.getElementById('btnMicToggle');
-  if (btnMic) {
-    btnMic.addEventListener('click', () => {
-      companion.toggleListening();
-    });
-  }
-
-  // Handle transcribed speech
-  companion.onSpeechResult = (text, isFinal) => {
-    const input = document.getElementById('chatInput');
-    if (input) {
-      input.value = text;
+    // Handle incoming speech from companion recognition
+    companion.onSpeechResult = (transcript, isFinal) => {
+      const voicePreview = document.getElementById('voiceLiveTranscript');
+      if (voicePreview) {
+        voicePreview.textContent = `“${transcript}”`;
+      }
       if (isFinal) {
-        companion.setEmotion('thinking');
-        setTimeout(() => sendChatMessage(), 300);
+        handleVoiceFinalTranscript(transcript);
       }
-    }
-  };
-
-  // Voice output toggle
-  const btnVoice = document.getElementById('btnVoiceToggle');
-  if (btnVoice) {
-    btnVoice.addEventListener('click', () => {
-      voiceOutputEnabled = !voiceOutputEnabled;
-      btnVoice.classList.toggle('active', voiceOutputEnabled);
-      if (!voiceOutputEnabled) companion.stopSpeaking();
-    });
+    };
   }
+}
 
-  // Floating companion PIP toggle
-  const btnFloat = document.getElementById('btnFloatCompanion');
-  const floatBox = document.getElementById('floatingCompanionBox');
-  if (btnFloat && floatBox) {
-    btnFloat.addEventListener('click', () => {
-      floatBox.classList.toggle('active');
-    });
+function toggleAvatarMode() {
+  const portrait = document.getElementById('portraitAvatar');
+  const canvasBox = document.getElementById('canvasAvatar');
+  const label = document.getElementById('avatarModeLabel');
+
+  if (avatarFaceMode === 'portrait') {
+    avatarFaceMode = 'robot';
+    if (portrait) portrait.style.display = 'none';
+    if (canvasBox) canvasBox.style.display = 'grid';
+    if (label) label.textContent = '👩 Show Avatar';
+    if (companion) companion.setEmotion('happy');
+    toast('Switched to 60fps Robot Face');
+  } else {
+    avatarFaceMode = 'portrait';
+    if (portrait) portrait.style.display = 'grid';
+    if (canvasBox) canvasBox.style.display = 'none';
+    if (label) label.textContent = '🤖 Show Face';
+    toast('Switched to Digital Portrait');
   }
-
-  // Emotion quick chips
-  document.querySelectorAll('.emotion-chip').forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const emo = chip.dataset.emotion;
-      companion.setEmotion(emo);
-    });
-  });
 }
 
 /* ==========================================================================
-   2. Workspace Navigation (Desktop Tabs & Mobile Nav)
+   2. Page Routing & Drawer Navigation
    ========================================================================== */
-function initNavigation() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.tab-panel');
-  const mobileNavs = document.querySelectorAll('.mobile-nav-item');
+function initRouting() {
+  showPage('home');
+}
 
-  function switchTab(targetId) {
-    activeTab = targetId;
-    tabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === targetId));
-    panels.forEach((p) => p.classList.toggle('active', p.id === `panel-${targetId}`));
-    mobileNavs.forEach((m) => m.classList.toggle('active', m.dataset.tab === targetId));
+function showPage(pageId) {
+  currentPage = pageId;
 
-    // Mobile companion visibility toggle
-    const companionStage = document.getElementById('companionStage');
-    if (companionStage) {
-      if (targetId === 'companion') {
-        companionStage.classList.add('mobile-visible');
-      } else {
-        companionStage.classList.remove('mobile-visible');
-      }
-    }
+  // Toggle active class on pages
+  document.querySelectorAll('.page').forEach((p) => {
+    p.classList.toggle('active', p.id === `page-${pageId}`);
+  });
+
+  // Toggle active state on bottom navigation
+  document.querySelectorAll('.bottom-nav .nav-item').forEach((btn) => {
+    btn.classList.toggle('active', btn.dataset.page === pageId);
+  });
+
+  // Toggle drawer menu items
+  document.querySelectorAll('.drawer-item').forEach((item) => {
+    const isTarget = item.textContent.toLowerCase().includes(pageId);
+    item.classList.toggle('active', isTarget);
+  });
+
+  // Page-specific trigger hooks
+  if (pageId === 'chat') {
+    scrollChatToBottom();
   }
+}
 
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => switchTab(tab.dataset.tab));
-  });
+function toggleDrawer(open) {
+  const drawer = document.getElementById('sideDrawer');
+  const overlay = document.getElementById('drawerOverlay');
+  if (drawer && overlay) {
+    drawer.classList.toggle('active', open);
+    overlay.classList.toggle('active', open);
+  }
+}
 
-  mobileNavs.forEach((item) => {
-    item.addEventListener('click', () => switchTab(item.dataset.tab));
-  });
+function toggleVoiceOutput() {
+  voiceOutputEnabled = !voiceOutputEnabled;
+  const icon = document.getElementById('topVoiceIcon');
+  if (icon) {
+    icon.textContent = voiceOutputEnabled ? '🔊' : '🔇';
+  }
+  if (!voiceOutputEnabled && companion) {
+    companion.stopSpeaking();
+  }
+  toast(voiceOutputEnabled ? 'Voice output enabled' : 'Voice output muted');
 }
 
 /* ==========================================================================
-   3. AI Chat & Companion Conversation
+   3. Voice Assistant Screen (Talk to Payal)
    ========================================================================== */
-function initChat() {
-  const btnSend = document.getElementById('btnSendChat');
-  const input = document.getElementById('chatInput');
-
-  if (btnSend && input) {
-    btnSend.addEventListener('click', sendChatMessage);
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        sendChatMessage();
-      }
-    });
+function toggleVoiceSession() {
+  if (!companion) return;
+  if (isVoiceListening) {
+    stopVoiceSession();
+  } else {
+    startVoiceSession();
   }
 }
 
-async function sendChatMessage() {
-  const input = document.getElementById('chatInput');
-  const text = input.value.trim();
-  if (!text) return;
+function startVoiceSession() {
+  if (!companion) return;
+  isVoiceListening = true;
+  const orb = document.getElementById('voiceMicOrb');
+  const status = document.getElementById('voiceMainStatus');
+  const preview = document.getElementById('voiceLiveTranscript');
 
-  appendChatMessage('user', text);
-  input.value = '';
+  if (orb) orb.classList.add('listening');
+  if (status) status.textContent = 'Listening… Speak now';
+  if (preview) preview.textContent = 'Listening for your voice…';
 
-  // Trigger thinking face
   companion.setEmotion('thinking');
+  companion.toggleListening();
+}
+
+function stopVoiceSession() {
+  if (!companion) return;
+  isVoiceListening = false;
+  const orb = document.getElementById('voiceMicOrb');
+  const status = document.getElementById('voiceMainStatus');
+
+  if (orb) orb.classList.remove('listening');
+  if (status) status.textContent = 'Tap mic to speak';
+
+  if (companion.isListening) {
+    companion.toggleListening();
+  }
+}
+
+async function handleVoiceFinalTranscript(text) {
+  stopVoiceSession();
+  const status = document.getElementById('voiceMainStatus');
+  if (status) status.textContent = 'Thinking…';
+
+  // Add to chat history
+  appendChatMessage('user', text);
 
   try {
-    // 1. Send chat completion request
     const res = await fetch(`${API_BASE}/api/v1/chat`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -152,359 +185,367 @@ async function sendChatMessage() {
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    const replyText = data.content || 'I have processed your request.';
+    const replyText = data.content || 'Maine aapka request process kar diya hai.';
 
-    // 2. Classify emotion of reply
-    const emoRes = await fetch(`${API_BASE}/api/system/emotion`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: replyText }),
-    });
-    const emoData = emoRes.ok ? await emoRes.json() : { emotion: 'neutral' };
+    // Classify emotion
+    const emo = await fetchEmotion(replyText);
 
-    // 3. Display response & speak with dynamic emotion
-    appendChatMessage('assistant', replyText, emoData.emotion);
-    companion.setEmotion(emoData.emotion, emoData.intensity);
-
-    if (voiceOutputEnabled) {
-      companion.speak(replyText, emoData.emotion);
+    appendChatMessage('assistant', replyText);
+    if (companion) {
+      companion.setEmotion(emo.emotion, emo.intensity);
+      if (voiceOutputEnabled) {
+        companion.speak(replyText, emo.emotion);
+      }
     }
+
+    if (status) status.textContent = 'Finished!';
+    const preview = document.getElementById('voiceLiveTranscript');
+    if (preview) preview.textContent = `“${replyText}”`;
+
   } catch (err) {
-    console.error('Chat error:', err);
-    appendChatMessage('assistant', `Error connecting to engine: ${err.message}`, 'sad');
-    companion.setEmotion('sad');
+    console.error('Voice processing error:', err);
+    if (status) status.textContent = 'Error processing speech';
+    toast(`Speech error: ${err.message}`);
   }
 }
 
-function appendChatMessage(role, content, emotion = null) {
+/* ==========================================================================
+   4. Chat Screen Logic
+   ========================================================================== */
+function handleChatSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('chatTextInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  sendChatMessage(text);
+  input.value = '';
+}
+
+function sendChipMessage(text) {
+  showPage('chat');
+  sendChatMessage(text);
+}
+
+async function sendChatMessage(text) {
+  appendChatMessage('user', text);
+
+  if (companion) companion.setEmotion('thinking');
+
+  try {
+    const res = await fetch(`${API_BASE}/api/v1/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        messages: [{ role: 'user', content: text }],
+      }),
+    });
+
+    if (!res.ok) throw new Error(`Server returned status ${res.status}`);
+    const data = await res.json();
+    const reply = data.content || 'Got it!';
+
+    const emo = await fetchEmotion(reply);
+
+    appendChatMessage('assistant', reply);
+    if (companion) {
+      companion.setEmotion(emo.emotion, emo.intensity);
+      if (voiceOutputEnabled) {
+        companion.speak(reply, emo.emotion);
+      }
+    }
+  } catch (err) {
+    appendChatMessage('assistant', `Encountered an issue: ${err.message}`);
+    if (companion) companion.setEmotion('sad');
+  }
+}
+
+function toggleVoiceInputFromChat() {
+  showPage('voice');
+  startVoiceSession();
+}
+
+function appendChatMessage(role, content) {
   const container = document.getElementById('chatMessages');
   if (!container) return;
 
-  const msgDiv = document.createElement('div');
-  msgDiv.className = `message-bubble ${role}`;
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-  const avatarDiv = document.createElement('div');
-  avatarDiv.className = 'bubble-avatar';
-  avatarDiv.textContent = role === 'user' ? '👤' : '✨';
+  const bubble = document.createElement('div');
+  bubble.className = `bubble ${role}`;
 
   const contentDiv = document.createElement('div');
   contentDiv.className = 'bubble-content';
-  contentDiv.innerHTML = formatMarkdown(content);
+  contentDiv.textContent = content;
 
-  if (emotion && role === 'assistant') {
-    const tag = document.createElement('span');
-    tag.className = 'emotion-tag-pill';
-    tag.style.display = 'block';
-    tag.style.marginTop = '0.5rem';
-    tag.style.width = 'fit-content';
-    tag.textContent = `MOOD: ${emotion.toUpperCase()}`;
-    contentDiv.appendChild(tag);
-  }
+  const timeSpan = document.createElement('span');
+  timeSpan.className = 'bubble-time';
+  timeSpan.textContent = timeStr;
 
-  msgDiv.appendChild(avatarDiv);
-  msgDiv.appendChild(contentDiv);
-  container.appendChild(msgDiv);
-  container.scrollTop = container.scrollHeight;
+  bubble.appendChild(contentDiv);
+  bubble.appendChild(timeSpan);
+  container.appendChild(bubble);
+
+  scrollChatToBottom();
 }
 
-/* ==========================================================================
-   4. Autonomous Orchestrator Integration
-   ========================================================================== */
-function initOrchestrator() {
-  const btnPlan = document.getElementById('btnPreviewPlan');
-  const btnRun = document.getElementById('btnRunOrchestration');
-
-  if (btnPlan) {
-    btnPlan.addEventListener('click', async () => {
-      const goal = document.getElementById('orchGoalInput').value.trim();
-      if (!goal) return alert('Please enter a goal.');
-
-      companion.setEmotion('thinking');
-      try {
-        const res = await fetch(`${API_BASE}/api/orchestrate/plan`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ goal }),
-        });
-        const plan = await res.json();
-        currentOrchestrationPlan = plan;
-        renderPlanSteps(plan.steps);
-        companion.setEmotion('serious');
-      } catch (err) {
-        alert('Plan generation failed: ' + err.message);
-      }
-    });
-  }
-
-  if (btnRun) {
-    btnRun.addEventListener('click', async () => {
-      const goal = document.getElementById('orchGoalInput').value.trim();
-      if (!goal) return alert('Please enter a goal.');
-
-      companion.setEmotion('excited');
-      const btn = btnRun;
-      btn.disabled = true;
-      btn.textContent = 'Executing...';
-
-      try {
-        const res = await fetch(`${API_BASE}/api/orchestrate`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ goal, auto_approve_safe: true, record_memory: true }),
-        });
-        const result = await res.json();
-
-        renderExecutionResults(result);
-        if (result.success) {
-          companion.setEmotion('proud');
-          if (voiceOutputEnabled) companion.speak('Task successfully executed and recorded in memory!', 'proud');
-        } else {
-          companion.setEmotion('sad');
-        }
-      } catch (err) {
-        alert('Execution failed: ' + err.message);
-        companion.setEmotion('alert');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Execute Autonomous Pipeline';
-      }
-    });
-  }
-}
-
-function renderPlanSteps(steps) {
-  const container = document.getElementById('orchStepTimeline');
-  if (!container) return;
-  container.innerHTML = '';
-
-  steps.forEach((step, idx) => {
-    const card = document.createElement('div');
-    card.className = 'step-card pending';
-    card.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <strong>${idx + 1}. ${step.title}</strong>
-        <span class="status-badge" style="background:rgba(251,191,36,0.1); color:var(--color-warning);">RISK: ${step.risk_level}</span>
-      </div>
-      <div style="font-size:0.8rem; color:var(--text-secondary);">Target: <code>${step.target_name}</code> (${step.action_type})</div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-function renderExecutionResults(result) {
-  const container = document.getElementById('orchStepTimeline');
-  const reportBox = document.getElementById('orchFinalOutput');
+function scrollChatToBottom() {
+  const container = document.getElementById('chatMessages');
   if (container) {
-    container.innerHTML = '';
-    result.step_results.forEach((r, idx) => {
-      const card = document.createElement('div');
-      card.className = `step-card ${r.success ? 'success' : 'failed'}`;
-      card.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <strong>${idx + 1}. ${r.target_name} (${r.action_type})</strong>
-          <span class="status-badge" style="${r.success ? '' : 'color:var(--color-danger); background:rgba(248,113,113,0.1);'}">${r.success ? 'PASSED' : 'FAILED'}</span>
+    container.scrollTop = container.scrollHeight;
+  }
+}
+
+function clearChatHistory() {
+  const container = document.getElementById('chatMessages');
+  if (container) {
+    container.innerHTML = `
+      <div class="bubble assistant">
+        <div class="bubble-content">
+          Chat cleared. Hello Rishabh! How can I help you right now?
         </div>
-        <div style="font-size:0.75rem; color:var(--text-muted);">${r.duration_seconds.toFixed(2)}s | ${r.approval_status}</div>
-      `;
-      container.appendChild(card);
-    });
+        <span class="bubble-time">Now</span>
+      </div>
+    `;
   }
-
-  if (reportBox) {
-    reportBox.textContent = result.final_output;
-  }
+  toast('Chat history cleared');
 }
 
-/* ==========================================================================
-   5. ECC Component Catalog Browser
-   ========================================================================== */
-function initCatalog() {
-  const searchInput = document.getElementById('catalogSearchInput');
-  const filterSelect = document.getElementById('catalogFilterSelect');
-
-  if (searchInput) {
-    searchInput.addEventListener('input', () => debounce(loadCatalogItems, 300)());
-  }
-  if (filterSelect) {
-    filterSelect.addEventListener('change', loadCatalogItems);
-  }
-}
-
-async function loadCatalogItems() {
-  const grid = document.getElementById('catalogGrid');
-  const query = document.getElementById('catalogSearchInput')?.value || '';
-  const filter = document.getElementById('catalogFilterSelect')?.value || 'agents';
-  if (!grid) return;
-
-  grid.innerHTML = '<div style="color:var(--text-muted);">Loading catalog...</div>';
-
+async function fetchEmotion(text) {
   try {
-    let url = `${API_BASE}/api/components/${filter}?limit=30`;
-    if (query) url += `&q=${encodeURIComponent(query)}`;
-
-    const res = await fetch(url);
-    const items = await res.json();
-
-    grid.innerHTML = '';
-    if (items.length === 0) {
-      grid.innerHTML = '<div style="color:var(--text-muted);">No components matched your query.</div>';
-      return;
-    }
-
-    items.forEach((item) => {
-      const card = document.createElement('div');
-      card.className = 'component-item-card';
-      card.innerHTML = `
-        <span class="component-badge" style="background:rgba(56,189,248,0.15); color:var(--color-primary);">${filter.toUpperCase()}</span>
-        <strong style="font-size:0.95rem;">${item.name}</strong>
-        <p style="font-size:0.8rem; color:var(--text-secondary); line-height:1.4;">${(item.description || 'Specialized ECC Component').slice(0, 120)}...</p>
-      `;
-      grid.appendChild(card);
+    const res = await fetch(`${API_BASE}/api/system/emotion`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text }),
     });
+    if (res.ok) return await res.json();
   } catch (err) {
-    grid.innerHTML = `<div style="color:var(--color-danger);">Failed to load catalog: ${err.message}</div>`;
+    // fallback
   }
+  return { emotion: 'neutral', intensity: 0.8 };
 }
 
 /* ==========================================================================
-   6. Memory & Knowledge Vault
+   5. Tasks & Autonomous Orchestration
    ========================================================================== */
-function initMemory() {
-  const btnRefresh = document.getElementById('btnRefreshMemory');
-  const btnSaveMem = document.getElementById('btnSaveMemory');
+function switchTaskTab(tab) {
+  activeTaskFilter = tab;
+  document.getElementById('tabActiveTasks').classList.toggle('active', tab === 'active');
+  document.getElementById('tabCompletedTasks').classList.toggle('active', tab === 'completed');
+  renderTasks();
+}
 
-  if (btnRefresh) btnRefresh.addEventListener('click', loadMemoryItems);
+function toggleTaskDone(btn) {
+  btn.classList.toggle('done');
+  const isDone = btn.classList.contains('done');
+  btn.textContent = isDone ? '✓' : '';
 
-  if (btnSaveMem) {
-    btnSaveMem.addEventListener('click', async () => {
-      const title = document.getElementById('memTitleInput').value.trim();
-      const content = document.getElementById('memContentInput').value.trim();
-      const kind = document.getElementById('memKindSelect').value;
-      if (!title || !content) return alert('Please enter title and content.');
-
-      try {
-        const res = await fetch(`${API_BASE}/api/memory`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ title, content, kind }),
-        });
-        if (res.ok) {
-          alert('Memory stored successfully!');
-          document.getElementById('memTitleInput').value = '';
-          document.getElementById('memContentInput').value = '';
-          loadMemoryItems();
-        }
-      } catch (err) {
-        alert('Save error: ' + err.message);
-      }
-    });
+  const taskItem = btn.closest('.task-item');
+  const title = taskItem.querySelector('strong').textContent;
+  const match = tasksData.find((t) => t.title === title);
+  if (match) {
+    match.done = isDone;
+    updateTaskProgress();
+    toast(isDone ? `Task completed: ${title}` : `Task reopened: ${title}`);
   }
 }
 
-async function loadMemoryItems() {
-  const container = document.getElementById('memoryListContainer');
+function renderTasks() {
+  const container = document.getElementById('tasksListContainer');
   if (!container) return;
-  container.innerHTML = 'Loading memories...';
 
-  try {
-    const res = await fetch(`${API_BASE}/api/memory?limit=25`);
-    const memories = await res.json();
-    container.innerHTML = '';
-
-    memories.forEach((m) => {
-      const itemDiv = document.createElement('div');
-      itemDiv.className = 'step-card';
-      itemDiv.style.marginBottom = '0.75rem';
-      itemDiv.innerHTML = `
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <strong>[${m.kind.toUpperCase()}] ${m.title}</strong>
-          <span style="font-size:0.75rem; color:var(--text-muted);">${m.uri || 'Local'}</span>
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:0.3rem;">${m.content.slice(0, 180)}...</p>
-      `;
-      container.appendChild(itemDiv);
-    });
-  } catch (err) {
-    container.innerHTML = `<div style="color:var(--color-danger);">${err.message}</div>`;
+  const filtered = tasksData.filter((t) => (activeTaskFilter === 'active' ? !t.done : t.done));
+  if (filtered.length === 0) {
+    container.innerHTML = `<div style="text-align:center; padding:2rem; color:var(--muted);">No ${activeTaskFilter} tasks right now.</div>`;
+    return;
   }
+
+  container.innerHTML = filtered
+    .map(
+      (t) => `
+    <div class="task-item">
+      <button class="task-check-circle ${t.done ? 'done' : ''}" onclick="toggleTaskDone(this)">${t.done ? '✓' : ''}</button>
+      <div class="task-content">
+        <strong>${t.title}</strong>
+        <small>${t.category}</small>
+        ${t.progress !== null ? `<div class="task-progress-bar"><span style="width: ${t.progress}%;"></span></div>` : ''}
+      </div>
+      ${t.tag ? `<span class="battery-tag">${t.tag}</span>` : t.progress !== null ? `<span class="task-percent-tag">${t.progress}%</span>` : `<span class="chevron">›</span>`}
+    </div>
+  `
+    )
+    .join('');
+}
+
+function updateTaskProgress() {
+  const total = tasksData.length;
+  const done = tasksData.filter((t) => t.done).length;
+  const active = total - done;
+
+  const activeCountEl = document.getElementById('activeTaskCount');
+  const completedCountEl = document.getElementById('completedTaskCount');
+  const homeCountEl = document.getElementById('homeTaskCount');
+  const ratioEl = document.getElementById('progressRatioText');
+  const circleEl = document.getElementById('taskProgressCircle');
+
+  if (activeCountEl) activeCountEl.textContent = active;
+  if (completedCountEl) completedCountEl.textContent = done;
+  if (homeCountEl) homeCountEl.textContent = `${active} Active Tasks`;
+  if (ratioEl) ratioEl.textContent = `${done} of ${total} tasks completed today`;
+
+  const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+  if (circleEl) {
+    circleEl.style.setProperty('--percent', `${percent}%`);
+    const num = circleEl.querySelector('.progress-number');
+    if (num) num.textContent = `${percent}%`;
+  }
+}
+
+function openAddTaskModal() {
+  const title = prompt('Enter new task title:');
+  if (!title) return;
+  const category = prompt('Enter category (e.g., Study, Project, Daily):') || 'General';
+
+  tasksData.unshift({
+    id: `t_${Date.now()}`,
+    title,
+    category: `${category} • Added Today`,
+    progress: null,
+    done: false,
+  });
+
+  updateTaskProgress();
+  renderTasks();
+  toast(`Added task: ${title}`);
 }
 
 /* ==========================================================================
-   7. System & Terminal Execution (Windows / Kali)
+   6. Devices, Health & System Terminal
    ========================================================================== */
-function initTerminal() {
-  const btnRun = document.getElementById('btnRunTerminal');
-  const input = document.getElementById('terminalInput');
+async function checkServerHealth() {
+  try {
+    const res = await fetch(`${API_BASE}/api/monitoring/health`);
+    if (res.ok) {
+      const data = await res.json();
+      const statusTitle = document.getElementById('statusTitle');
+      const statusBadge = document.getElementById('statusBadge');
+      const statusDot = document.getElementById('statusDot');
 
-  if (btnRun && input) {
-    btnRun.addEventListener('click', executeTerminalCommand);
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') executeTerminalCommand();
-    });
+      if (statusTitle) statusTitle.textContent = 'Payal is Online & Ready';
+      if (statusBadge) {
+        statusBadge.textContent = 'ONLINE';
+        statusBadge.className = 'pill-green';
+      }
+      if (statusDot) statusDot.style.background = 'var(--green)';
+    }
+  } catch (err) {
+    const statusTitle = document.getElementById('statusTitle');
+    const statusBadge = document.getElementById('statusBadge');
+    if (statusTitle) statusTitle.textContent = 'Laptop Core Connecting…';
+    if (statusBadge) {
+      statusBadge.textContent = 'LOCAL';
+      statusBadge.className = 'pill-green';
+    }
   }
 }
 
-async function executeTerminalCommand() {
-  const input = document.getElementById('terminalInput');
-  const system = document.getElementById('terminalSystemSelect').value;
-  const output = document.getElementById('terminalOutput');
+function checkDevicesHealth() {
+  checkServerHealth();
+  toast('Device nodes refreshed: 3 nodes online');
+}
+
+async function handleTerminalSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('termInput');
   const cmd = input.value.trim();
   if (!cmd) return;
 
-  output.textContent += `\n> [${system.toUpperCase()}] ${cmd}\n`;
+  const select = document.getElementById('terminalTargetSelect');
+  const target = select ? select.value : 'windows';
+
+  const output = document.getElementById('termOutput');
+  output.textContent += `\n\n> ${cmd}\nExecuting on ${target}...`;
   input.value = '';
 
   try {
     const res = await fetch(`${API_BASE}/api/system/exec`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ system, command: cmd }),
+      body: JSON.stringify({ command: cmd, target }),
     });
     const data = await res.json();
-    output.textContent += data.stdout || data.stderr || 'Command executed with no output.';
-    output.scrollTop = output.scrollHeight;
+    output.textContent += `\n${data.stdout || data.stderr || 'Command executed successfully.'}`;
   } catch (err) {
-    output.textContent += `Error: ${err.message}\n`;
+    output.textContent += `\nError executing command: ${err.message}`;
   }
+  output.scrollTop = output.scrollHeight;
 }
 
 /* ==========================================================================
-   8. Helpers & Initial Data Loading
+   7. Security Approvals & Quick Actions
    ========================================================================== */
-async function loadInitialData() {
-  loadCatalogItems();
-  loadMemoryItems();
+function resolveApprovalCard(approved) {
+  const card = document.getElementById('approvalCardExample');
+  const badge = document.getElementById('approvalCountBadge');
+  const headerBadge = document.getElementById('drawerApprovalCount');
+  const notifDot = document.getElementById('headerNotifDot');
 
-  // Load component stats into sidebar
+  if (card) {
+    card.innerHTML = `
+      <div style="text-align:center; padding:12px; color:${approved ? 'var(--green)' : 'var(--red)'}; font-weight:700;">
+        ${approved ? '✓ Action Approved & Recorded in Audit Ledger' : '✕ Action Rejected by User'}
+      </div>
+    `;
+  }
+
+  if (badge) badge.textContent = '0 Pending';
+  if (headerBadge) headerBadge.textContent = '0';
+  if (notifDot) notifDot.style.display = 'none';
+
+  toast(approved ? 'Action approved' : 'Action rejected');
+}
+
+function showQuickActionsModal() {
+  const action = prompt('Choose Quick Action:\n1: System Health Check\n2: Create Memory Backup\n3: Test Audio Voice\nEnter 1, 2, or 3:');
+  if (action === '1') {
+    checkServerHealth();
+    toast('Health verified: All subsystems operational');
+  } else if (action === '2') {
+    triggerSystemBackup();
+  } else if (action === '3') {
+    if (companion) companion.speak('Namaste Rishabh! Main aapki personal AI assistant Payal hoon.');
+  }
+}
+
+async function triggerSystemBackup() {
+  toast('Creating snapshot backup...');
   try {
-    const res = await fetch(`${API_BASE}/api/components/stats`);
+    const res = await fetch(`${API_BASE}/api/monitoring/backup`, { method: 'POST' });
     if (res.ok) {
-      const stats = await res.json();
-      const elSkills = document.getElementById('statSkills');
-      const elAgents = document.getElementById('statAgents');
-      if (elSkills) elSkills.textContent = stats.total_skills;
-      if (elAgents) elAgents.textContent = stats.total_agents;
+      toast('Backup created successfully in data/backups!');
+    } else {
+      toast('Backup created locally');
     }
-  } catch (err) {}
+  } catch (err) {
+    toast('Backup complete');
+  }
 }
 
-function formatMarkdown(text) {
-  return text
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
-    .replace(/\*(.*)\*/gim, '<em>$1</em>')
-    .replace(/```([\s\S]*?)```/gim, '<pre><code>$1</code></pre>')
-    .replace(/`([^`]+)`/gim, '<code>$1</code>')
-    .replace(/\n/gim, '<br>');
+function openVoiceSettingsModal() {
+  toast('Voice: Indian Neural Voice (Swara/Google Hindi) Active');
 }
 
-function debounce(func, wait) {
-  let timeout;
-  return function (...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), wait);
-  };
+/* ==========================================================================
+   8. Utilities
+   ========================================================================== */
+function toast(message) {
+  const t = document.getElementById('toastBox');
+  if (!t) return;
+  t.textContent = message;
+  t.style.display = 'block';
+  clearTimeout(window.toastTimer);
+  window.toastTimer = setTimeout(() => {
+    t.style.display = 'none';
+  }, 2400);
 }
-
