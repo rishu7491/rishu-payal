@@ -2,9 +2,12 @@
 
 import re
 from typing import Any, Dict, Optional
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel, Field
 
+from core.monitoring.security_monitor import SECURITY_MONITOR
+from core.monitoring.audit_logger import AUDIT_LOGGER
+from core.security.auth import verify_auth_token
 from execution.windows.powershell_adapter import PowerShellAdapter
 from execution.linux.kali_adapter import KALI, KaliAdapter
 
@@ -15,6 +18,7 @@ powershell = PowerShellAdapter()
 
 class CommandExecRequest(BaseModel):
     system: str = Field(default="windows", description="'windows' (PowerShell) or 'kali' (Kali Linux / WSL)")
+    target: Optional[str] = Field(default=None, description="Optional target alias for 'system'")
     command: str = Field(..., description="Command string to execute")
     cwd: Optional[str] = Field(default=None, description="Working directory")
     timeout: int = Field(default=60, ge=1, le=300)
@@ -25,11 +29,43 @@ class EmotionClassifyRequest(BaseModel):
 
 
 @router.post("/exec")
-async def execute_command(req: CommandExecRequest):
-    """Execute a command on Windows 11 PowerShell or Kali Linux."""
+async def execute_command(
+    req: CommandExecRequest,
+    _auth: bool = Depends(verify_auth_token),
+):
+    """Execute a command on Windows 11 PowerShell or Kali Linux with safety evaluation."""
+    resolved_system = (req.target or req.system).lower()
+
+    # Pre-flight security audit
+    sec_eval = SECURITY_MONITOR.evaluate_action(
+        action=f"system_exec_{resolved_system}",
+        target=req.command,
+        arguments={"system": resolved_system, "cwd": req.cwd},
+    )
+    if sec_eval.get("blocked", False):
+        AUDIT_LOGGER.log_event(
+            event_type="SECURITY_BLOCK",
+            actor="terminal",
+            action=f"exec_{resolved_system}",
+            target=req.command,
+            status="DENIED",
+            details=sec_eval,
+        )
+        raise HTTPException(
+            status_code=403,
+            detail=f"Security Policy Blocked: {sec_eval.get('description', 'Dangerous command denied')}",
+        )
+
     try:
-        if req.system.lower() == "kali":
+        if resolved_system == "kali":
             res = await KALI.execute(req.command, timeout=req.timeout)
+            AUDIT_LOGGER.log_event(
+                event_type="COMMAND_EXEC",
+                actor="terminal",
+                action="exec_kali",
+                target=req.command,
+                status="SUCCESS" if res.get("success") else "FAILURE",
+            )
             return {
                 "system": "kali",
                 "success": res.get("success", False),
@@ -39,6 +75,13 @@ async def execute_command(req: CommandExecRequest):
             }
         else:
             res = await powershell.execute(req.command, cwd=req.cwd, timeout=req.timeout)
+            AUDIT_LOGGER.log_event(
+                event_type="COMMAND_EXEC",
+                actor="terminal",
+                action="exec_windows",
+                target=req.command,
+                status="SUCCESS" if res.get("success") else "FAILURE",
+            )
             return {
                 "system": "windows",
                 "success": res.get("success", False),

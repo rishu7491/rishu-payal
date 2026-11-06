@@ -361,32 +361,34 @@
             </div>
           </div>
 
-          <!-- Device Nodes -->
-          <div class="device-node-card">
-            <div class="node-icon">💻</div>
-            <div class="node-details">
-              <strong>Windows Laptop</strong>
-              <small>Payal Core Host • Online</small>
+          <!-- Device Nodes Container -->
+          <div id="devicesListContainer">
+            <div class="device-node-card">
+              <div class="node-icon">💻</div>
+              <div class="node-details">
+                <strong>Windows Laptop</strong>
+                <small>Payal Core Host • Online</small>
+              </div>
+              <span class="pill-green">THIS DEVICE</span>
             </div>
-            <span class="pill-green">THIS DEVICE</span>
-          </div>
 
-          <div class="device-node-card">
-            <div class="node-icon">📱</div>
-            <div class="node-details">
-              <strong>Home Phone</strong>
-              <small>Android • Always-Listening Station</small>
+            <div class="device-node-card">
+              <div class="node-icon">📱</div>
+              <div class="node-details">
+                <strong>Personal Phone</strong>
+                <small>Android • Samsung Galaxy A50s</small>
+              </div>
+              <span class="pill-green">ONLINE</span>
             </div>
-            <span class="pill-green">ONLINE</span>
-          </div>
 
-          <div class="device-node-card">
-            <div class="node-icon">📱</div>
-            <div class="node-details">
-              <strong>Personal Phone</strong>
-              <small>Android • Pocket Mobile UI</small>
+            <div class="device-node-card">
+              <div class="node-icon">📱</div>
+              <div class="node-details">
+                <strong>Home Phone</strong>
+                <small>Android • Always-Listening Station</small>
+              </div>
+              <span class="pill-green">ONLINE</span>
             </div>
-            <span class="pill-green">ONLINE</span>
           </div>
 
           <!-- Network Info Card -->
@@ -416,19 +418,21 @@
             <span class="pill-red" id="approvalCountBadge">1 Pending</span>
           </div>
 
-          <!-- Active Approval Card -->
-          <div class="approval-card" id="approvalCardExample">
-            <div class="approval-title-row">
-              <span class="approval-icon">🛡️</span>
-              <div>
-                <strong>Sensitive Action Request</strong>
-                <small>Payal Execution Runtime</small>
+          <!-- Pending Approvals Container -->
+          <div id="pendingApprovalsContainer">
+            <div class="approval-card" id="approvalCardExample">
+              <div class="approval-title-row">
+                <span class="approval-icon">🛡️</span>
+                <div>
+                  <strong>Sensitive Action Request</strong>
+                  <small>Payal Execution Runtime</small>
+                </div>
               </div>
-            </div>
-            <p class="approval-desc">Payal wants to take a full system snapshot and sync memory to backup vault.</p>
-            <div class="approval-buttons">
-              <button class="btn-approve" onclick="resolveApprovalCard(true)">Approve ✓</button>
-              <button class="btn-reject" onclick="resolveApprovalCard(false)">Reject ✕</button>
+              <p class="approval-desc">Payal wants to take a full system snapshot and sync memory to backup vault.</p>
+              <div class="approval-buttons">
+                <button class="btn-approve" onclick="resolveApprovalCard('apr_cache_clear', true)">Approve ✓</button>
+                <button class="btn-reject" onclick="resolveApprovalCard('apr_cache_clear', false)">Reject ✕</button>
+              </div>
             </div>
           </div>
 

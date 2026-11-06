@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from core.identity.config import CONFIG
-from core.model_router.router import ModelRouter
+from core.model_router.router import ROUTER, ModelRouter
 from services.api.schemas import ModelsResponse
 
 
@@ -10,8 +10,8 @@ router = APIRouter(prefix="/api/v1", tags=["Models"])
 
 
 def get_model_router() -> ModelRouter:
-    """Dependency for obtaining the ModelRouter instance."""
-    return ModelRouter(config=CONFIG)
+    """Dependency for obtaining the shared ModelRouter singleton."""
+    return ROUTER
 
 
 @router.get("/models", response_model=ModelsResponse)

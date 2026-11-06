@@ -27,4 +27,6 @@ data/memory/*.db
 data/backups/
 data/*.jsonl
 data/*.zip
+*.secret
+data/*.secret
 

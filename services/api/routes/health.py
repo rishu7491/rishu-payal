@@ -3,7 +3,7 @@
 from fastapi import APIRouter, Depends
 from core.identity.config import CONFIG, PayalConfig
 from core.identity.identity import get_identity
-from core.model_router.router import ModelRouter
+from core.model_router.router import ROUTER, ModelRouter
 from services.api.schemas import HealthResponse
 
 
@@ -11,8 +11,8 @@ router = APIRouter(tags=["Health"])
 
 
 def get_model_router() -> ModelRouter:
-    """Dependency for obtaining the ModelRouter instance."""
-    return ModelRouter(config=CONFIG)
+    """Dependency for obtaining the shared ModelRouter singleton."""
+    return ROUTER
 
 
 @router.get("/health", response_model=HealthResponse)

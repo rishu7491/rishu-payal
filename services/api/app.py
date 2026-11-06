@@ -10,9 +10,11 @@ from fastapi.staticfiles import StaticFiles
 from core.identity.config import CONFIG
 from core.identity.identity import get_identity
 from services.api.routes import (
+    approvals_router,
     automation_router,
     chat_router,
     components_router,
+    devices_router,
     ecosystem_router,
     health_router,
     memory_router,
@@ -71,6 +73,8 @@ def create_app() -> FastAPI:
     app.include_router(multimodal_router)
     app.include_router(monitoring_router)
     app.include_router(ecosystem_router)
+    app.include_router(devices_router)
+    app.include_router(approvals_router)
 
     # Mount Static Web Interface for Desktop & Mobile UI
     frontend_dir = Path(__file__).resolve().parent.parent.parent / "apps" / "frontend"

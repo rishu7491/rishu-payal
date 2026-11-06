@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCompanionFace();
   initRouting();
   checkServerHealth();
-  updateTaskProgress();
+  loadTasksFromBackend();
+  checkDevicesHealth();
+  loadPendingApprovals();
 });
 
 /* ==========================================================================
@@ -101,6 +103,12 @@ function showPage(pageId) {
   // Page-specific trigger hooks
   if (pageId === 'chat') {
     scrollChatToBottom();
+  } else if (pageId === 'tasks') {
+    loadTasksFromBackend();
+  } else if (pageId === 'devices') {
+    checkDevicesHealth();
+  } else if (pageId === 'approvals') {
+    loadPendingApprovals();
   }
 }
 
@@ -329,6 +337,38 @@ async function fetchEmotion(text) {
 /* ==========================================================================
    5. Tasks & Autonomous Orchestration
    ========================================================================== */
+async function loadTasksFromBackend() {
+  try {
+    const res = await fetch(`${API_BASE}/api/automation/tasks`);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        tasksData = data.map((t) => {
+          const isDone = t.status === 'completed';
+          let prog = null;
+          if (t.progress !== null && t.progress > 0 && t.progress < 1) {
+            prog = Math.round(t.progress * 100);
+          } else if (isDone) {
+            prog = 100;
+          }
+          return {
+            id: t.task_id,
+            title: t.name,
+            category: (t.metadata && t.metadata.category) || 'General Task',
+            progress: prog,
+            done: isDone,
+            tag: t.name.toLowerCase().includes('battery') ? '🔋 84%' : null,
+          };
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('Fallback to local task cache:', err);
+  }
+  updateTaskProgress();
+  renderTasks();
+}
+
 function switchTaskTab(tab) {
   activeTaskFilter = tab;
   document.getElementById('tabActiveTasks').classList.toggle('active', tab === 'active');
@@ -336,18 +376,27 @@ function switchTaskTab(tab) {
   renderTasks();
 }
 
-function toggleTaskDone(btn) {
-  btn.classList.toggle('done');
-  const isDone = btn.classList.contains('done');
+async function toggleTaskDone(btn, taskId) {
+  const isDone = !btn.classList.contains('done');
+  btn.classList.toggle('done', isDone);
   btn.textContent = isDone ? '✓' : '';
 
   const taskItem = btn.closest('.task-item');
-  const title = taskItem.querySelector('strong').textContent;
-  const match = tasksData.find((t) => t.title === title);
+  const title = taskItem ? taskItem.querySelector('strong').textContent : '';
+  const match = tasksData.find((t) => t.id === taskId || t.title === title);
   if (match) {
     match.done = isDone;
     updateTaskProgress();
+  }
+
+  try {
+    const targetId = match ? match.id : taskId;
+    await fetch(`${API_BASE}/api/automation/tasks/${encodeURIComponent(targetId)}/toggle?done=${isDone}`, {
+      method: 'POST',
+    });
     toast(isDone ? `Task completed: ${title}` : `Task reopened: ${title}`);
+  } catch (err) {
+    toast(`Status updated`);
   }
 }
 
@@ -365,7 +414,7 @@ function renderTasks() {
     .map(
       (t) => `
     <div class="task-item">
-      <button class="task-check-circle ${t.done ? 'done' : ''}" onclick="toggleTaskDone(this)">${t.done ? '✓' : ''}</button>
+      <button class="task-check-circle ${t.done ? 'done' : ''}" onclick="toggleTaskDone(this, '${t.id}')">${t.done ? '✓' : ''}</button>
       <div class="task-content">
         <strong>${t.title}</strong>
         <small>${t.category}</small>
@@ -402,10 +451,30 @@ function updateTaskProgress() {
   }
 }
 
-function openAddTaskModal() {
+async function openAddTaskModal() {
   const title = prompt('Enter new task title:');
   if (!title) return;
   const category = prompt('Enter category (e.g., Study, Project, Daily):') || 'General';
+
+  try {
+    const res = await fetch(`${API_BASE}/api/automation/tasks`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: title,
+        goal: title,
+        context: category,
+        auto_approve_safe: true,
+      }),
+    });
+    if (res.ok) {
+      await loadTasksFromBackend();
+      toast(`Added task: ${title}`);
+      return;
+    }
+  } catch (err) {
+    console.warn('Backend task creation fallback:', err);
+  }
 
   tasksData.unshift({
     id: `t_${Date.now()}`,
@@ -450,9 +519,52 @@ async function checkServerHealth() {
   }
 }
 
-function checkDevicesHealth() {
-  checkServerHealth();
-  toast('Device nodes refreshed: 3 nodes online');
+async function checkDevicesHealth() {
+  const container = document.getElementById('devicesListContainer');
+  const banner = document.querySelector('.devices-banner-success');
+  try {
+    const res = await fetch(`${API_BASE}/api/devices`);
+    if (res.ok) {
+      const data = await res.json();
+      const devices = data.devices || [];
+      if (container && devices.length > 0) {
+        container.innerHTML = devices.map((d) => {
+          const isWindows = d.device_type === 'windows';
+          const icon = isWindows ? '💻' : '📱';
+          const statusText = d.online ? (isWindows ? 'THIS DEVICE' : 'ONLINE') : 'OFFLINE';
+          const statusPill = d.online ? 'pill-green' : 'pill-red';
+          const bat = d.battery !== null ? ` • 🔋 ${d.battery}%` : '';
+          return `
+            <div class="device-node-card">
+              <div class="node-icon">${icon}</div>
+              <div class="node-details">
+                <strong>${d.name}</strong>
+                <small>${d.role}${bat}</small>
+                <div style="font-size:0.75rem; color:var(--text-dim); margin-top:2px;">IP: ${d.ip}</div>
+              </div>
+              <span class="${statusPill}">${statusText}</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      if (banner) {
+        const onlineCount = data.online_count || 1;
+        banner.innerHTML = `
+          <span class="banner-icon">🛡️</span>
+          <div>
+            <strong>${onlineCount} of ${devices.length} Devices Connected</strong>
+            <small>Local Wi-Fi Mesh Perfect! 🎉</small>
+          </div>
+        `;
+      }
+      toast(`Device nodes verified: ${data.online_count} online`);
+      return;
+    }
+  } catch (err) {
+    console.warn('Device registry fetch error:', err);
+  }
+  toast('Device nodes refreshed');
 }
 
 async function handleTerminalSubmit(e) {
@@ -471,8 +583,11 @@ async function handleTerminalSubmit(e) {
   try {
     const res = await fetch(`${API_BASE}/api/system/exec`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ command: cmd, target }),
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Payal-Token': localStorage.getItem('payal_token') || '',
+      },
+      body: JSON.stringify({ command: cmd, system: target, target: target }),
     });
     const data = await res.json();
     output.textContent += `\n${data.stdout || data.stderr || 'Command executed successfully.'}`;
@@ -485,12 +600,73 @@ async function handleTerminalSubmit(e) {
 /* ==========================================================================
    7. Security Approvals & Quick Actions
    ========================================================================== */
-function resolveApprovalCard(approved) {
-  const card = document.getElementById('approvalCardExample');
+async function loadPendingApprovals() {
+  const container = document.getElementById('pendingApprovalsContainer');
   const badge = document.getElementById('approvalCountBadge');
   const headerBadge = document.getElementById('drawerApprovalCount');
   const notifDot = document.getElementById('headerNotifDot');
 
+  try {
+    const res = await fetch(`${API_BASE}/api/approvals/pending`);
+    if (res.ok) {
+      const data = await res.json();
+      const list = data.pending || [];
+      const count = list.length;
+      if (badge) badge.textContent = `${count} Pending`;
+      if (headerBadge) headerBadge.textContent = count;
+      if (notifDot) notifDot.style.display = count > 0 ? 'block' : 'none';
+
+      if (!container) return;
+      if (count === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:2rem; color:var(--muted);">
+            <div style="font-size:1.8rem; margin-bottom:8px;">🛡️</div>
+            <div>No pending security approvals.</div>
+            <small>All operations authorized.</small>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map((r) => `
+        <div class="approval-card" id="approvalCard_${r.request_id}">
+          <div class="approval-title-row">
+            <span class="approval-icon">🛡️</span>
+            <div>
+              <strong>${r.action_type || 'Security Action Request'}</strong>
+              <small>Target: ${r.target || 'System Subsystem'}</small>
+            </div>
+          </div>
+          <p class="approval-desc">${r.reason || 'Approval required for execution.'}</p>
+          <div class="approval-buttons">
+            <button class="btn-approve" onclick="resolveApprovalCard('${r.request_id}', true)">Approve ✓</button>
+            <button class="btn-reject" onclick="resolveApprovalCard('${r.request_id}', false)">Reject ✕</button>
+          </div>
+        </div>
+      `).join('');
+    }
+  } catch (err) {
+    console.warn('Pending approvals fetch error:', err);
+  }
+}
+
+async function resolveApprovalCard(reqId, approved) {
+  try {
+    const res = await fetch(`${API_BASE}/api/approvals/${encodeURIComponent(reqId)}/decision`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ approved, note: approved ? 'Authorized by Rishu' : 'Rejected by Rishu' }),
+    });
+    if (res.ok) {
+      toast(approved ? 'Action approved and logged to audit ledger' : 'Action rejected');
+      await loadPendingApprovals();
+      return;
+    }
+  } catch (err) {
+    console.warn('Approval decision error:', err);
+  }
+
+  const card = document.getElementById(`approvalCard_${reqId}`) || document.getElementById('approvalCardExample');
   if (card) {
     card.innerHTML = `
       <div style="text-align:center; padding:12px; color:${approved ? 'var(--green)' : 'var(--red)'}; font-weight:700;">
@@ -498,11 +674,6 @@ function resolveApprovalCard(approved) {
       </div>
     `;
   }
-
-  if (badge) badge.textContent = '0 Pending';
-  if (headerBadge) headerBadge.textContent = '0';
-  if (notifDot) notifDot.style.display = 'none';
-
   toast(approved ? 'Action approved' : 'Action rejected');
 }
 

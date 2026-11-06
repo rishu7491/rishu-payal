@@ -73,6 +73,15 @@ async def cancel_task(task_id: str):
     return {"status": "cancelled", "task_id": task_id}
 
 
+@router.post("/tasks/{task_id}/toggle")
+async def toggle_task_status(task_id: str, done: bool = Query(...)):
+    """Toggle task status between completed and active."""
+    task = BACKGROUND_TASK_MANAGER.toggle_task(task_id, done=done)
+    if not task:
+        raise HTTPException(status_code=404, detail=f"Task '{task_id}' not found.")
+    return task.model_dump()
+
+
 @router.get("/schedules")
 async def list_schedules(active_only: bool = False):
     """List scheduled jobs."""

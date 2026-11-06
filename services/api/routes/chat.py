@@ -4,7 +4,7 @@ import re
 from fastapi import APIRouter, Depends, HTTPException
 from core.identity.config import CONFIG
 from core.identity.persona import SYSTEM_PROMPT
-from core.model_router.router import ModelRouter
+from core.model_router.router import ROUTER, ModelRouter
 from core.model_router.schemas import ChatMessage, CompletionRequest
 from services.api.schemas import ChatRequest, ChatResponse
 
@@ -24,8 +24,8 @@ router = APIRouter(prefix="/api/v1", tags=["Chat"])
 
 
 def get_model_router() -> ModelRouter:
-    """Dependency for obtaining the ModelRouter instance."""
-    return ModelRouter(config=CONFIG)
+    """Dependency for obtaining the shared ModelRouter singleton."""
+    return ROUTER
 
 
 @router.post("/chat", response_model=ChatResponse)

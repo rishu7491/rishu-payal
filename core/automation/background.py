@@ -21,6 +21,38 @@ class BackgroundTaskManager:
         self.notifications = notifications or NOTIFICATION_HUB
         self._tasks: Dict[str, BackgroundTask] = {}
         self._async_handles: Dict[str, asyncio.Task] = {}
+        self._seed_default_tasks()
+
+    def _seed_default_tasks(self) -> None:
+        """Seed initial real user goals so task hub operates with actual database items."""
+        initial_goals = [
+            ("Complete BCA Notes", "Summarize Semester 4 Operating Systems & Data Structures units", "BCA Study • High Priority", 0.0, False),
+            ("Workout 2 Hours", "Track evening calisthenics & strength training progress", "Health • Daily Habit", 0.35, False),
+            ("Update RishuMart", "Audit database schema and API contracts for RishuMart", "Project • In Progress", 0.0, False),
+            ("Check Phone Battery", "Monitor connected device battery, memory, and telemetry", "Daily • System Monitor", 1.0, True),
+        ]
+        for name, goal, cat, prog, completed in initial_goals:
+            t = BackgroundTask(
+                name=name,
+                goal=goal,
+                status=TaskStatus.COMPLETED if completed else TaskStatus.RUNNING,
+                progress=prog,
+                metadata={"category": cat},
+            )
+            if completed:
+                t.completed_at = time.time()
+            self._tasks[t.task_id] = t
+
+    def toggle_task(self, task_id: str, done: bool) -> Optional[BackgroundTask]:
+        """Toggle task completion state."""
+        task = self._tasks.get(task_id)
+        if task:
+            task.status = TaskStatus.COMPLETED if done else TaskStatus.RUNNING
+            task.progress = 1.0 if done else 0.5
+            if done:
+                task.completed_at = time.time()
+            return task
+        return None
 
     def submit_task(
         self,
