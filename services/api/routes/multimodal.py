@@ -1,7 +1,7 @@
 """Multimodal Intelligence API routes for Payal."""
 
 from typing import Any, Dict, Optional
-from fastapi import APIRouter, HTTPException, UploadFile, File, Form
+from fastapi import APIRouter, File, Form, HTTPException, Query, Response, UploadFile
 from pydantic import BaseModel, Field
 
 from core.multimodal import (
@@ -76,6 +76,27 @@ async def synthesize_speech_endpoint(req: SynthesizeRequest) -> Dict[str, Any]:
         voice_id=req.voice_id,
     )
     return {"status": "success", "speech": result}
+
+
+@router.get("/tts")
+async def get_neural_tts_stream(
+    text: str = Query(..., description="Text to synthesize with natural neural voice"),
+    voice: Optional[str] = Query(None, description="Neural voice name"),
+):
+    """Stream live natural neural MP3 audio (ChatGPT / Alexa quality)."""
+    audio_bytes = await VOICE_ENGINE.synthesize_neural_audio(text=text, voice_name=voice)
+    if not audio_bytes:
+        raise HTTPException(status_code=500, detail="Neural speech synthesis failed")
+    return Response(content=audio_bytes, media_type="audio/mpeg")
+
+
+@router.post("/tts")
+async def post_neural_tts_stream(req: SynthesizeRequest):
+    """POST endpoint to stream live natural neural MP3 audio."""
+    audio_bytes = await VOICE_ENGINE.synthesize_neural_audio(text=req.text, voice_name=req.voice_id)
+    if not audio_bytes:
+        raise HTTPException(status_code=500, detail="Neural speech synthesis failed")
+    return Response(content=audio_bytes, media_type="audio/mpeg")
 
 
 @router.post("/vision/analyze")

@@ -40,3 +40,4 @@ def test_verify_auth_token_header():
     with pytest.raises(HTTPException) as exc:
         verify_auth_token(req, x_payal_token="invalid_token")
     assert exc.value.status_code == 401
+

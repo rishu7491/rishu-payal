@@ -164,3 +164,4 @@ async def device_heartbeat(req: DeviceHeartbeatRequest):
     """Register or refresh heartbeat from a phone or mesh client."""
     node = DEVICE_REGISTRY.update_heartbeat(req)
     return {"status": "ok", "device_id": node.device_id, "online": True}
+

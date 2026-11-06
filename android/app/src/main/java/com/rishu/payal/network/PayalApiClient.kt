@@ -32,6 +32,8 @@ class PayalApiClient {
 
     private var activeBaseUrl: String = BASE_URL_USB
 
+    fun getActiveBaseUrl(): String = activeBaseUrl
+
     /**
      * Checks if the laptop FastAPI server is accessible.
      */
@@ -69,9 +71,14 @@ class PayalApiClient {
         }
 
         try {
+            val messagesArray = org.json.JSONArray().apply {
+                put(JSONObject().apply {
+                    put("role", "user")
+                    put("content", userText)
+                })
+            }
             val jsonBody = JSONObject().apply {
-                put("message", userText)
-                put("stream", false)
+                put("messages", messagesArray)
             }
             val body = jsonBody.toString().toRequestBody("application/json".toMediaType())
             val request = Request.Builder()
@@ -83,7 +90,7 @@ class PayalApiClient {
                 if (response.isSuccessful) {
                     val respStr = response.body?.string() ?: ""
                     val jsonObj = JSONObject(respStr)
-                    return@withContext jsonObj.optString("response", "All systems operational, Rishu.")
+                    return@withContext jsonObj.optString("content", jsonObj.optString("response", "Maine aapka request process kar diya hai, Rishu."))
                 } else {
                     return@withContext "I encountered a processing issue with the core engine (HTTP ${response.code})."
                 }

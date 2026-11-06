@@ -192,14 +192,50 @@ class RobotCompanion {
   }
 
   speak(text, emotion = null) {
-    if (!this.synth) return;
     if (emotion) this.setEmotion(emotion);
 
-    this.synth.cancel(); // Stop prior utterance
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio = null;
+    }
+    if (this.synth) this.synth.cancel();
 
     const speechText = this.prepareTextForSpeech(text);
     if (!speechText) return;
 
+    // 1. Try Ultra-Natural Neural Voice (Swara/ChatGPT style) from server first
+    try {
+      const neuralUrl = `${API_BASE}/api/multimodal/tts?text=${encodeURIComponent(speechText)}`;
+      const audio = new Audio(neuralUrl);
+      this.currentAudio = audio;
+
+      audio.onplay = () => {
+        this.isSpeaking = true;
+      };
+      audio.onended = () => {
+        this.isSpeaking = false;
+        this.mouthOpen = 0;
+        this.audioLevel = 0;
+        this.currentAudio = null;
+      };
+      audio.onerror = () => {
+        this.currentAudio = null;
+        this.fallbackBrowserSpeak(speechText);
+      };
+
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          this.fallbackBrowserSpeak(speechText);
+        });
+      }
+    } catch (err) {
+      this.fallbackBrowserSpeak(speechText);
+    }
+  }
+
+  fallbackBrowserSpeak(speechText) {
+    if (!this.synth) return;
     const utterance = new SpeechSynthesisUtterance(speechText);
     if (!this.selectedVoice) this.initVoice();
     if (this.selectedVoice) {
@@ -209,44 +245,17 @@ class RobotCompanion {
       utterance.lang = 'hi-IN';
     }
 
-    // Natural, Human-Like Voice Modulation (not cartoonish/robotic)
-    switch (this.emotion) {
-      case 'happy':
-      case 'excited':
-        utterance.pitch = 1.04;
-        utterance.rate = 1.05;
-        break;
-      case 'proud':
-        utterance.pitch = 1.02;
-        utterance.rate = 1.02;
-        break;
-      case 'sad':
-        utterance.pitch = 0.95;
-        utterance.rate = 0.92;
-        break;
-      case 'serious':
-        utterance.pitch = 0.98;
-        utterance.rate = 0.98;
-        break;
-      case 'thinking':
-        utterance.pitch = 1.0;
-        utterance.rate = 1.0;
-        break;
-      default:
-        utterance.pitch = 1.0;
-        utterance.rate = 1.02;
-    }
+    utterance.pitch = 1.0;
+    utterance.rate = 1.02;
 
     utterance.onstart = () => {
       this.isSpeaking = true;
     };
-
     utterance.onend = () => {
       this.isSpeaking = false;
       this.mouthOpen = 0;
       this.audioLevel = 0;
     };
-
     utterance.onerror = () => {
       this.isSpeaking = false;
     };
@@ -255,11 +264,16 @@ class RobotCompanion {
   }
 
   stopSpeaking() {
+    if (this.currentAudio) {
+      this.currentAudio.pause();
+      this.currentAudio = null;
+    }
     if (this.synth) {
       this.synth.cancel();
-      this.isSpeaking = false;
-      this.mouthOpen = 0;
     }
+    this.isSpeaking = false;
+    this.mouthOpen = 0;
+    this.audioLevel = 0;
   }
 
   animate() {
