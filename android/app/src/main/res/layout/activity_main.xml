@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_obsidian">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text="PAYAL ASSISTANT"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:id="@+id/tvCoreStatusBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/charcoal_surface"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Core: Checking…"
+                android:textColor="@color/neon_cyan"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Main Action Buttons -->
+        <Button
+            android:id="@+id/btnLaunchHud"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/neon_purple"
+            android:fontFamily="sans-serif-medium"
+            android:text="✨ Open Holographic JARVIS HUD"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnToggleVoiceService"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/charcoal_surface"
+                android:text="Enable Wake-Word"
+                android:textColor="@color/neon_cyan"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/btnToggleFloatingBubble"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="@color/charcoal_surface"
+                android:text="Floating Bubble"
+                android:textColor="@color/neon_magenta"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Embedded Web Workspace -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/charcoal_surface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <WebView
+                android:id="@+id/webViewWorkspace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

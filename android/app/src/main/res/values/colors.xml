@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_obsidian">#08080B</color>
+    <color name="charcoal_surface">#12131A</color>
+    <color name="card_bg">#181924</color>
+    <color name="neon_purple">#7B2CBF</color>
+    <color name="neon_magenta">#C77DFF</color>
+    <color name="neon_cyan">#00F5D4</color>
+    <color name="electric_blue">#00B4D8</color>
+    <color name="crimson_glow">#FF2448</color>
+    <color name="status_green">#26D977</color>
+    <color name="text_primary">#F0F4F8</color>
+    <color name="text_secondary">#9DA5B4</color>
+    <color name="text_muted">#5C6370</color>
+</resources>
+

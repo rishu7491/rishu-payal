@@ -16,6 +16,7 @@ def get_model_router() -> ModelRouter:
 
 
 @router.get("/health", response_model=HealthResponse)
+@router.get("/api/health", response_model=HealthResponse)
 @router.get("/api/v1/health", response_model=HealthResponse)
 async def health_check(
     router_instance: ModelRouter = Depends(get_model_router),

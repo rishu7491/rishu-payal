@@ -1,0 +1,2 @@
+# Payal Assistant Proguard Rules
+

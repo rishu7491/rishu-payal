@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Payal</string>
+    <string name="assistant_title">Payal — Personal AI Assistant</string>
+    <string name="listening_text">I\'m listening…</string>
+    <string name="thinking_text">Thinking…</string>
+    <string name="speaking_text">Responding…</string>
+    <string name="idle_text">Tap or say \"Payal\"</string>
+    <string name="service_notification_title">Payal Voice Assistant</string>
+    <string name="service_notification_desc">Listening for \"Payal\" wake-word</string>
+</resources>
+

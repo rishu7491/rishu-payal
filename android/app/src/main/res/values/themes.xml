@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Payal" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/black_obsidian</item>
+        <item name="android:navigationBarColor">@color/black_obsidian</item>
+        <item name="android:windowBackground">@color/black_obsidian</item>
+    </style>
+
+    <style name="Theme.Payal.HUD" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/black_obsidian</item>
+        <item name="android:statusBarColor">@color/black_obsidian</item>
+        <item name="android:navigationBarColor">@color/black_obsidian</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+</resources>
+
